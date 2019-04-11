@@ -1,14 +1,56 @@
-.gradle
-/build/
+# Compiled class file
+*.class
 
-# Ignore Gradle GUI config
-gradle-app.setting
+# Log file
+*.log
 
-# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
-!gradle-wrapper.jar
+# BlueJ files
+*.ctxt
 
-# Cache of project
-.gradletasknamecache
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
 
-# # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
-# gradle/wrapper/gradle-wrapper.properties
+# Package Files #
+*.nar
+*.ear
+*.tar.gz
+*.rar
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+.DS_Store
+
+#Folder and Files on eclipse
+
+**/Workspace
+**/kv0-parent/.gradle
+**/kv0-parent/gradle
+**/kv0-parent/.settings
+**/kv0-parent/.project
+**/kv0-parent/kv0-api/bin
+**/kv0-parent/kv0-api/build
+**/kv0-parent/kv0-api/.gradle
+**/kv0-parent/kv0-api/gradle
+**/kv0-parent/kv0-api/target
+**/kv0-api/.settings
+**/kv0-parent/kv0-api/.classpath
+**/kv0-parent/kv0-api/.project
+**/kv0-parent/kv0-batch/bin
+**/kv0-parent/kv0-batch/build
+**/kv0-parent/kv0-batch/.gradle
+**/kv0-parent/kv0-batch/gradle
+**/kv0-parent/kv0-batch/target
+**/kv0-batch/.settings
+**/kv0-parent/kv0-batch/.classpath
+**/kv0-parent/kv0-batch/.project
+**/kv0-parent/kv0-web/bin
+**/kv0-parent/kv0-web/build
+**/kv0-parent/kv0-web/.gradle
+**/kv0-parent/kv0-web/gradle
+**/kv0-parent/kv0-web/target
+**/kv0-web/.settings
+**/kv0-parent/kv0-web/.classpath
+**/kv0-parent/kv0-web/.project
+**/kv0-parent/kv0-web/.factorypath
+**/kv0-web/.settings/org.eclipse.wst.common.component
