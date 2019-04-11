@@ -1,0 +1,8 @@
+rootProject.name = 'kv0-parent'
+include ':kv0-api'
+include ':kv0-batch'
+include ':kv0-web'
+
+project(':kv0-api').projectDir = "$rootDir/kv0-api" as File
+project(':kv0-batch').projectDir = "$rootDir/kv0-batch" as File
+project(':kv0-web').projectDir = "$rootDir/kv0-web" as File

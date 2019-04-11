@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<systemInfo systemDn="kv0.tmap-em.toyota.co.th.asia">
+	<role>ADMIN.tmap-em.toyota.co.th.asia</role>
+	<role>ST3DUMMY.tmap-em.toyota.co.th.asia</role>
+
+	<functionInfo group="KV0300" functionId="KV0311">
+		<screenInfo screenId="WKV03110" screenResource="newCarList">
+			<buttonInfo buttonId="WKV03110Search" accessRight="1" />
+			<buttonInfo buttonId="WKV03110Clear" accessRight="1" />
+		</screenInfo>
+	</functionInfo>
+	
+	<functionInfo group="KV0300" functionId="KV0312">
+		<screenInfo screenId="WKV03120" screenResource="newCarRedPlant">
+			<buttonInfo buttonId="WKV03120Activate" accessRight="1" />
+		</screenInfo>
+	</functionInfo>
+	
+	<functionInfo group="KV0300" functionId="KV0321">
+		<screenInfo screenId="WKV03210" screenResource="newCarReport">
+			<buttonInfo buttonId="WKV03210Search" accessRight="1" />
+			<buttonInfo buttonId="WKV03210Clear" accessRight="1" />
+			<buttonInfo buttonId="WKV03210Download" accessRight="1" />
+		</screenInfo>
+	</functionInfo>
+	
+	<functionInfo group="KV0400" functionId="KV0411">
+		<screenInfo screenId="WKV04110" screenResource="insRenewal">
+			<buttonInfo buttonId="WKV04110Search" accessRight="1" />
+			<buttonInfo buttonId="WKV04110Clear" accessRight="1" />
+		</screenInfo>
+	</functionInfo>
+	
+	<functionInfo group="KV0400" functionId="KV0421">
+		<screenInfo screenId="WKV04210" screenResource="addCustomer">
+			<buttonInfo buttonId="WKV04210Search" accessRight="1" />
+		</screenInfo>
+	</functionInfo>
+	
+	<functionInfo group="KV0500" functionId="KV0511">
+		<screenInfo screenId="WKV05110" screenResource="insuranceCompany">
+			<buttonInfo buttonId="WKV05110Import" accessRight="1" />
+			<buttonInfo buttonId="WKV05110Export" accessRight="1" />
+		</screenInfo>
+	</functionInfo>
+	
+	<functionInfo group="KV0600" subGroup="KV06100" functionId="KV0611">
+		<screenInfo screenId="WKV06110" screenResource="insPortfolioManagement">
+			<buttonInfo buttonId="WKV06110Search" accessRight="1" />
+			<buttonInfo buttonId="WKV06110Clear" accessRight="1" />
+		</screenInfo>
+	</functionInfo>
+	
+	<functionInfo group="KV0600" subGroup="KV06100" functionId="KV0612">
+		<screenInfo screenId="WKV06120" screenResource="insActivationManagement">
+			<buttonInfo buttonId="WKV06120Search" accessRight="1" />
+			<buttonInfo buttonId="WKV06120Clear" accessRight="1" />
+		</screenInfo>
+	</functionInfo>
+	
+	<functionInfo group="KV0600" subGroup="KV06200" functionId="KV0621">
+		<screenInfo screenId="WKV06211" screenResource="standardRenewalSOPPICSetting">
+			<buttonInfo buttonId="WKV06211Confirm" accessRight="1" />
+		</screenInfo>
+		<screenInfo screenId="WKV06212" screenResource="insuranceRenewPortfolioControl">
+			<buttonInfo buttonId="WKV06212Confirm" accessRight="1" />
+		</screenInfo>
+		<screenInfo screenId="WKV06213" screenResource="teleSalesTeamManagement">
+			<buttonInfo buttonId="WKV06213Confirm" accessRight="1" />
+		</screenInfo>
+	</functionInfo>
+	
+	<functionInfo group="KV0600" subGroup="KV06220" functionId="KV0622">
+		<screenInfo screenId="WKV06221" screenResource="specialContactActivitivity">
+			<buttonInfo buttonId="WKV06221Search" accessRight="1" />
+			<buttonInfo buttonId="WKV06221Clear" accessRight="1" />
+			<buttonInfo buttonId="WKV06221Download" accessRight="1" />
+		</screenInfo>
+		<screenInfo screenId="WKV06222" screenResource="createNewSpecialContact">
+			<buttonInfo buttonId="WKV06222Search" accessRight="1" />
+			<buttonInfo buttonId="WKV06222Clear" accessRight="1" />
+			<buttonInfo buttonId="WKV06222Confirm" accessRight="1" />
+		</screenInfo>		
+	</functionInfo>
+	
+	<functionInfo group="KV0600" subGroup="KV06200" functionId="KV0623">
+		<screenInfo screenId="WKV06231" screenResource="activitiesReminder">
+			<buttonInfo buttonId="WKV06231Confirm" accessRight="1" />
+		</screenInfo>
+	</functionInfo>
+	
+	<functionInfo group="KV0600" subGroup="KV06300" functionId="KV0631">
+		<screenInfo screenId="WKV06311" screenResource="insuranceCustomerDatabased">
+			<buttonInfo buttonId="WKV06311Search" accessRight="1" />
+			<buttonInfo buttonId="WKV06311Clear" accessRight="1" />
+		</screenInfo>
+	</functionInfo>
+	
+	<functionInfo group="KV0600" subGroup="KV06300" functionId="KV0632">
+		<screenInfo screenId="WKV06321" screenResource="accountManagement">
+			<buttonInfo buttonId="WKV06231Search" accessRight="1" />
+			<buttonInfo buttonId="WKV06231Clear" accessRight="1" />
+		</screenInfo>
+	</functionInfo>
+	
+	<functionInfo group="KV0600" functionId="KV0641">
+		<screenInfo screenId="WKV06410" screenResource="insurancePremiumManagement">
+			<buttonInfo buttonId="WKV06410Search" accessRight="1" />
+			<buttonInfo buttonId="WKV06410Clear" accessRight="1" />
+			<buttonInfo buttonId="WKV06410Download1" accessRight="1" />
+			<buttonInfo buttonId="WKV06410Download2" accessRight="1" />
+		</screenInfo>
+	</functionInfo>
+	
+	<functionInfo group="KV0600" subGroup="KV06500" functionId="KV0651">
+		<screenInfo screenId="WKV06510" screenResource="reportDataOfINSRenewal">
+			<buttonInfo buttonId="WKV06510Search" accessRight="1" />
+			<buttonInfo buttonId="WKV06510Clear" accessRight="1" />
+		</screenInfo>
+	</functionInfo>
+	
+	<functionInfo group="KV0600" subGroup="KV06500" functionId="KV0652">
+		<screenInfo screenId="WKV06520" screenResource="processResultKPIs">
+			<buttonInfo buttonId="WKV06520Search" accessRight="1" />
+			<buttonInfo buttonId="WKV06520Clear" accessRight="1" />
+		</screenInfo>
+	</functionInfo>
+	
+	<functionInfo group="KV0600" subGroup="KV06500" functionId="KV0653">
+		<screenInfo screenId="WKV06530" screenResource="bpReturningReport">
+			<buttonInfo buttonId="WKV06530Search" accessRight="1" />
+			<buttonInfo buttonId="WKV06530Clear" accessRight="1" />
+		</screenInfo>
+	</functionInfo>
+	
+	<functionInfo group="KV0600" subGroup="KV06500" functionId="KV0654">
+		<screenInfo screenId="WKV06540" screenResource="firstYearRedPlateINSReport">
+			<buttonInfo buttonId="WKV06540Search" accessRight="1" />
+			<buttonInfo buttonId="WKV06540Clear" accessRight="1" />
+		</screenInfo>
+	</functionInfo>
+
+
+
+	<!-- Begin Kaikieng -->
+	<functionInfo group="KV0100" functionId="KV0111">
+		<screenInfo screenId="WKV01110" screenResource="kaikiengInput">
+			<buttonInfo buttonId="WKV01110Search" accessRight="1" />
+			<buttonInfo buttonId="WKV01110Clear" accessRight="1" />
+			<buttonInfo buttonId="WKV01110Edit" accessRight="3" />
+			<buttonInfo buttonId="WKV01110Save" accessRight="3" />
+			<buttonInfo buttonId="WKV01110Cancel" accessRight="3" />
+			<buttonInfo buttonId="WKV01110Download" accessRight="3" />
+			<buttonInfo buttonId="WKV01110Browse" accessRight="1" />
+			<buttonInfo buttonId="WKV01110Upload" accessRight="3" />
+			<buttonInfo buttonId="WKV01110Submit" accessRight="3" />
+			<buttonInfo buttonId="WKV01110Fix" accessRight="3" />
+			<buttonInfo buttonId="WKV01110RejectKaikieng" accessRight="3" />
+		</screenInfo>
+	</functionInfo>
+	<functionInfo group="KV0100" functionId="KV0115">
+		<screenInfo screenId="WKV01150" screenResource="getsudoWorksheet">
+			<buttonInfo buttonId="WKV01150Search" accessRight="1" />
+			<buttonInfo buttonId="WKV01150Clear" accessRight="1" />
+			<buttonInfo buttonId="WKV01150Download" accessRight="3" />
+			<buttonInfo buttonId="WKV01150Browse" accessRight="1" />
+			<buttonInfo buttonId="WKV01150Upload" accessRight="3" />
+			<buttonInfo buttonId="WKV01150Log" accessRight="1" />
+			<buttonInfo buttonId="WKV01150Complete" accessRight="3" />
+			<buttonInfo buttonId="WKV01150Reset" accessRight="3" />
+			<buttonInfo buttonId="WKV01150CompletedReset" accessRight="3" />			
+		</screenInfo>
+	</functionInfo>
+	<!-- End Kaikieng price -->
+	<!-- Begin Rundown and Unit -->
+	<functionInfo group="KV0200" functionId="KV0211">
+		<screenInfo screenId="WKV02110" screenResource="rundownAndKompo">
+			<buttonInfo buttonId="WKV02110Search" accessRight="1" />
+			<buttonInfo buttonId="WKV02110Clear" accessRight="1" />
+			<buttonInfo buttonId="WKV02110Browse" accessRight="1" />
+			<buttonInfo buttonId="WKV02110Validate" accessRight="3" />
+			<buttonInfo buttonId="WKV02110Detail" accessRight="1" />
+			<buttonInfo buttonId="WKV02110Log" accessRight="1" />
+			<buttonInfo buttonId="WKV02110Fix" accessRight="3" />				
+		</screenInfo>
+	</functionInfo>
+	<functionInfo group="KV0200" functionId="KV0211">
+		<screenInfo screenId="WKV02111" screenResource="vanningAdjustment">
+			<buttonInfo buttonId="WKV02111Round" accessRight="3" />	
+			<buttonInfo buttonId="WKV02111Save" accessRight="3" />
+			<buttonInfo buttonId="WKV02111Cancel" accessRight="3" />					
+		</screenInfo>
+	</functionInfo>
+	<functionInfo group="KV0200" functionId="KV0216">
+		<screenInfo screenId="WKV02160" screenResource="unitCapacityManagement">
+			<buttonInfo buttonId="WKV02160Search" accessRight="1" />
+			<buttonInfo buttonId="WKV02160Clear" accessRight="1" />
+			<buttonInfo buttonId="WKV02160Download" accessRight="1" />
+			<buttonInfo buttonId="WKV02160Browse" accessRight="1" />
+			<buttonInfo buttonId="WKV02160Upload" accessRight="3" />
+			<buttonInfo buttonId="WKV02160CheckingReport" accessRight="1" />
+			<buttonInfo buttonId="WKV02160Confirm" accessRight="3" />			
+		</screenInfo>
+	</functionInfo>
+	<!-- End Rundown and Unit -->
+	
+	<!-- Begin Master-FIS -->
+	<functionInfo group="ST3001" subGroup="ST30011" functionId="KV0411">
+		<screenInfo screenId="WKV04110" screenResource="vehiclePlant">
+			<buttonInfo buttonId="WKV04110Search" accessRight="1" />
+			<buttonInfo buttonId="WKV04110Clear" accessRight="1" />
+			<buttonInfo buttonId="WKV04110Add" accessRight="1" />
+			<buttonInfo buttonId="WKV04110Edit" accessRight="4" />
+			<buttonInfo buttonId="WKV04110Delete" accessRight="3" />
+			<buttonInfo buttonId="WKV04110Save" accessRight="3" />
+			<buttonInfo buttonId="WKV04110Cancel" accessRight="3" />
+		</screenInfo>
+	</functionInfo>
+	<functionInfo group="ST3001" subGroup="ST30011" functionId="KV0413">
+		<screenInfo screenId="WKV04130" screenResource="vehicleUnitRelation">
+			<buttonInfo buttonId="WKV04130Search" accessRight="1" />
+			<buttonInfo buttonId="WKV04130Clear" accessRight="1" />
+			<buttonInfo buttonId="WKV04130Add" accessRight="1" />
+			<buttonInfo buttonId="WKV04130Edit" accessRight="4" />
+			<buttonInfo buttonId="WKV04130Delete" accessRight="3" />
+			<buttonInfo buttonId="WKV04130Save" accessRight="3" />
+			<buttonInfo buttonId="WKV04130Cancel" accessRight="3" />
+		</screenInfo>
+		<screenInfo screenId="WKV04131" screenResource="subScreenUnitModelAndUnitPlant">
+			<buttonInfo buttonId="WKV04131Select" accessRight="1" />
+			<buttonInfo buttonId="WKV04131Cancel" accessRight="1" />
+		</screenInfo>
+	</functionInfo>
+
+
+	<functionInfo group="ST3001" subGroup="ST30012" functionId="KV0423">
+		<screenInfo screenId="WKV04230" screenResource="standardStock">
+			<buttonInfo buttonId="WKV04230Search" accessRight="1" />
+			<buttonInfo buttonId="WKV04230Clear" accessRight="1" />
+			<buttonInfo buttonId="WKV04230Edit" accessRight="4" />
+			<buttonInfo buttonId="WKV04230Save" accessRight="3" />
+			<buttonInfo buttonId="WKV04230Cancel" accessRight="3" />
+		</screenInfo>
+	</functionInfo>
+	<functionInfo group="ST3001" subGroup="ST30012" functionId="KV0424">
+		<screenInfo screenId="WKV04240" screenResource="calendar">
+			<buttonInfo buttonId="WKV04240Search" accessRight="1" />
+			<buttonInfo buttonId="WKV04240Clear" accessRight="1" />
+			<buttonInfo buttonId="WKV04240Edit" accessRight="4" />
+			<buttonInfo buttonId="WKV04240Save" accessRight="3" />
+			<buttonInfo buttonId="WKV04240Cancel" accessRight="3" />
+			<buttonInfo buttonId="WKV04240Download" accessRight="1" />
+			<buttonInfo buttonId="WKV04240Browse" accessRight="1" />
+			<buttonInfo buttonId="WKV04240Upload" accessRight="3" />
+		</screenInfo>
+	</functionInfo>		
+	<!-- End Master-FIS -->
+	
+	<functionInfo group="ST3001" functionId="ST3306">
+		<screenInfo screenId="WST33060" screenResource="systemManagementList">
+			<buttonInfo buttonId="WST33060Search" accessRight="1" />
+			<buttonInfo buttonId="WST33060Add" accessRight="1" />
+			<buttonInfo buttonId="WST33060Edit" accessRight="4" />
+			<buttonInfo buttonId="WST33060Delete" accessRight="3" />
+			<buttonInfo buttonId="WST33060Download" accessRight="3" />
+			<buttonInfo buttonId="WST33060Save" accessRight="3" />
+		</screenInfo>
+	</functionInfo>
+	
+	<functionInfo group="ST3001" functionId="ST3304">
+		<screenInfo screenId="WST33040" screenResource="batchManagementList">
+			<buttonInfo buttonId="WST33040Search" accessRight="1" />
+			<buttonInfo buttonId="WST33040Add" accessRight="1" />
+			<buttonInfo buttonId="WST33040Edit" accessRight="4" />
+			<buttonInfo buttonId="WST33040Delete" accessRight="3" />
+			<buttonInfo buttonId="WST33040Download" accessRight="3" />
+			<buttonInfo buttonId="WST33040Save" accessRight="3" />
+		</screenInfo>
+	</functionInfo>
+	
+	<functionInfo group="ST3002" subGroup="ST30021" functionId="ST3301">
+		<screenInfo screenId="WST33010" screenResource="logMonitoring">
+			<buttonInfo buttonId="WST33010Search" accessRight="1" />
+			<buttonInfo buttonId="WST33010Refresh" accessRight="1" />
+			<buttonInfo buttonId="WST33010Download" accessRight="1" />
+		</screenInfo>
+	</functionInfo>
+	<functionInfo group="ST3002" subGroup="ST30021" functionId="ST3302">
+		<screenInfo screenId="WST33020" screenResource="excelDownloadMonitoring">
+			<buttonInfo buttonId="WST33020Search" accessRight="1" />
+			<buttonInfo buttonId="WST33020Clear" accessRight="1" />
+			<buttonInfo buttonId="WST33020Details" accessRight="1" />
+			<buttonInfo buttonId="WST33020Delete" accessRight="1" />
+			<buttonInfo buttonId="WST33020Cancel" accessRight="1" />
+		</screenInfo>
+		<screenInfo screenId="WST33022" screenResource="excelDownloadMonitoringMiniList">
+			<buttonInfo buttonId="WST33022MiniClose" accessRight="1" />
+			<buttonInfo buttonId="WST33022MiniDetails" accessRight="1" />
+			<buttonInfo buttonId="WST33022MiniRefresh" accessRight="1" />
+		</screenInfo>
+	</functionInfo>
+	<functionInfo group="ST3002" subGroup="ST30021" functionId="ST3305">
+		<screenInfo screenId="WST33050" screenResource="batchStatusList">
+			<buttonInfo buttonId="WST33050Search" accessRight="1" />
+			<buttonInfo buttonId="WST33050Clear" accessRight="1" />
+			<buttonInfo buttonId="WST33050Details" accessRight="3" />
+			<buttonInfo buttonId="WST33050Cancel" accessRight="3" />
+			<buttonInfo buttonId="WST33050Delete" accessRight="3" />
+			<buttonInfo buttonId="WST33050Download" accessRight="3" />
+			<buttonInfo buttonId="WST33050Save" accessRight="3" />
+		</screenInfo>
+	</functionInfo>
+	<functionInfo group="ST3002" subGroup="ST30022" functionId="ST3090">
+		<screenInfo screenId="WST30900" screenResource="excelDownload">
+			<buttonInfo buttonId="WST30900XlsDownload" accessRight="1" />
+			<buttonInfo buttonId="WST30900XlsxDownload" accessRight="1" />
+			<buttonInfo buttonId="WST30900CsvDownload" accessRight="1" />
+		</screenInfo>
+	</functionInfo>
+	
+	<functionInfo group="ST3003" functionId="ST3030">
+		<screenInfo screenId="WST30300" screenResource="applicationAbout">
+			<buttonInfo buttonId="WST30300Ok" accessRight="1" />
+		</screenInfo>
+	</functionInfo>
+	
+	<!-- API Test: Upload/Download, Error Handler, Data File Upload, Jasper -->
+	<functionInfo group="ST3003" functionId="ST3007">
+		<screenInfo screenId="WST30070" screenResource="uploadDownloadTest">
+			<buttonInfo buttonId="WST30070TestUpload" accessRight="1" />
+			<buttonInfo buttonId="WST30070TestDownload" accessRight="1" />
+			<buttonInfo buttonId="WST30070TestDelete" accessRight="1" />
+			<buttonInfo buttonId="WST30070TestError" accessRight="1" />
+			<buttonInfo buttonId="WST30070TestDataUpload" accessRight="1" />
+			<buttonInfo buttonId="WST30070TestJasper" accessRight="1" />
+		</screenInfo>
+	</functionInfo>	
+	<!-- End -->
+</systemInfo>
