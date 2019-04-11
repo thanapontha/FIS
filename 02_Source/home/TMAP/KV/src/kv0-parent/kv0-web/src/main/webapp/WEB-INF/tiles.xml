@@ -76,7 +76,7 @@
 	  <put-attribute name="body"   value="/WEB-INF/views/renewal/WKV04210AddNewCustomerProfile.jsp"/>	
   </definition>
 
-  <definition name="WKV05110" extends="baseLayout">		
+  <definition name="WKV05110" extends="baseLayoutOld">		
   	  <put-attribute name="title"  value="Insurance Company"/>
 	  <put-attribute name="body"   value="/WEB-INF/views/insCompany/WKV05110InsuranceCompany.jsp"/>	
   </definition>

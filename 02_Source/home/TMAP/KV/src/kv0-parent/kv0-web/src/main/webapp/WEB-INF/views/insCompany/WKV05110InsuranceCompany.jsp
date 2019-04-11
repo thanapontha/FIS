@@ -50,7 +50,7 @@
        						<label for="importFile" class="mx-1 my-0"><spring:message code="KV0.WKV01110.Label.FileName" />&nbsp;:</label>
 							<input type="file" class="form-control-file" id="importFile">
        					</div>
-       					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-right">
+       					<div class="pt-1 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-right">
 	                       <sc2:button functionId="KV0511"  screenId="WKV05110" buttonId="WKV05110Import"
 								type="button" value="Import"
 								styleClass="button" secured="false" onClick="clearSearch();"

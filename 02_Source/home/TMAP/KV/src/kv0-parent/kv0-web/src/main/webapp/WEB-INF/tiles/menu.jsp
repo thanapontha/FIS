@@ -37,9 +37,9 @@
 			<sc2:menuItem screenId="WKV03110" href="${pageContext.request.contextPath}/NewCarInsurance" target="WKV03110">${itemNewCarInquiry}</sc2:menuItem>
 		</sc2:menuGroup>
 		
-		<sc2:menuGroup groupId="KV0200" title="${subGroupInsCompany}">
+		<sc2:menuGroup groupId="KV0500" title="${subGroupInsCompany}">
 			<!-- Define Menu Item -->
-			<sc2:menuItem screenId="WKV02110" href="${pageContext.request.contextPath}/RundownandUnit/rundownAndKompoManagement" target="WKV02110">${itemInsCompImportExport}</sc2:menuItem>
+			<sc2:menuItem screenId="WKV05110" href="${pageContext.request.contextPath}/InsuranceCompany" target="WKV05110">${itemInsCompImportExport}</sc2:menuItem>
 		</sc2:menuGroup>
 
 		<!-- Define the Group Menu -->
@@ -66,7 +66,7 @@
 			<sc2:menuSubGroup subGroupId="ST30021" title="${subGroupMonitoring}">
 				<sc2:menuItem screenId="WST33010" href="${pageContext.request.contextPath}/common/logMonitoring" target="WST33010">${itemLogMonitoring}</sc2:menuItem>
 				<sc2:menuItem screenId="WST33020" href="${pageContext.request.contextPath}/common/excelDownloadMonitoring" target="WST33020">${itemExcelDownloadMonitoring}</sc2:menuItem>
-				<sc2:menuItem screenId="WST33050" href="${pageContext.request.contextPath}/common/batchStatus" target="WST33050">${itemBatchStatusMonitoring}</sc2:menuItem> 
+				<!--<sc2:menuItem screenId="WST33050" href="${pageContext.request.contextPath}/common/batchStatus" target="WST33050">${itemBatchStatusMonitoring}</sc2:menuItem> -->
 			</sc2:menuSubGroup>
 			
 			<!--
