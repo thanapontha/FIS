@@ -34,11 +34,11 @@
  	<div class="row"> 
        	<div class="py-1 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
 			<div class="card">
-				<div class="card-header text-white bg-primary">Import</div>
+				<div class="card-header text-white bg-primary">Import / Download template</div>
 		     	<div class="card-body">
 		        	<div class="row"> 
-       					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-       						<label for="importType" class="mx-1 my-0">Import Type&nbsp;:</label>
+       					<div class="input-group col-12">
+       						<label for="importType" class="mx-1 my-0">Type&nbsp;:</label>
 	                       	<select class="form-control form-control-sm" id="importType">
 	                           <option>1st year INS Sales Premium <br>(Normal/TLT Exclusive and etc.)</option>
 	                           <option>Import Transfer Premium</option>
@@ -46,13 +46,17 @@
 	                           <option>Status of issued INS Policy</option>
 	                       	</select>
        					</div>
-       					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+       					<div class="col-12">
        						<label for="importFile" class="mx-1 my-0"><spring:message code="KV0.WKV01110.Label.FileName" />&nbsp;:</label>
 							<input type="file" class="form-control-file" id="importFile">
        					</div>
-       					<div class="pt-1 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-right">
+       					<div class="pt-1 col-12 text-right">
 	                       <sc2:button functionId="KV0511"  screenId="WKV05110" buttonId="WKV05110Import"
 								type="button" value="Import"
+								styleClass="button" secured="false" onClick="clearSearch();"
+							/>
+							<sc2:button functionId="KV0511"  screenId="WKV05110" buttonId="WKV05110DownloadTemplate"
+								type="button" value="DownloadTemplate"
 								styleClass="button" secured="false" onClick="clearSearch();"
 							/>
 	                   </div>
@@ -65,19 +69,17 @@
 				<div class="card-header text-white bg-success">Export</div>
 		     	<div class="card-body">
 		        	<div class="row"> 
-       					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+       					<div class="input-group col-12">
        						<label for="exportType" class="mx-1 my-0">Type&nbsp;:</label>
 	                       <select class="form-control form-control-sm" id=""exportType"">
 	                           <option>1st year INS Sales Daily</option>
 	                           <option>Renewal Insurance Sales Daily</option>
 	                       </select>
-       					</div>
-       					<div class="py-1 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-right" >
 	                       <sc2:button functionId="KV0511"  screenId="WKV05110" buttonId="WKV05110Export"
 								type="button" value="Export"
 								styleClass="button" secured="false" onClick="clearSearch();"
 							/>
-	                   </div>
+       					</div>
        				</div>
 		      	</div>
 		  	</div>
@@ -101,7 +103,7 @@
 						    					row="row" 
 						    					cssClass="result fixedheader fixedcolumn" 
 						    					paginate="true" 
-						    					cssStyle="height:100%;width:100%;"
+						    					cssStyle="height:310px;width:100%;"
 												info="true" 
 												filter="false"
 												displayLength="${form.rowsPerPage}" 

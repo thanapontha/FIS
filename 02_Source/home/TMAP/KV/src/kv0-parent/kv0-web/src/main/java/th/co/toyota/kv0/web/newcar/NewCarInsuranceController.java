@@ -92,7 +92,6 @@ public class NewCarInsuranceController extends CommonBaseController {
 		return mv;
 	}
 	
-	
 	@RequestMapping(value = "/search", method = RequestMethod.POST, produces = "application/json")
 	public @ResponseBody Object searchData(NewCarInsuranceForm form, HttpServletRequest request, RequestContext context) {
 		log.info("Searching New Car Insurance");

@@ -82,18 +82,18 @@
 
 .MandatoryField
 {
-	background : #DEF7FD; /*#A6DBE8;*/
+	background : #DEF7FD !important; /*#A6DBE8;*/
 	/*border: 1px inset; 
 	height: 21px;*/
 }
 
 .MandatoryField:focus
 {
-	background : #DEF7FD;
+	background : #DEF7FD !important;
 }
 
 input[readonly].MandatoryField ,textarea[readonly].MandatoryField{
-	background : #DEF7FD;
+	background : #DEF7FD !important;
 	/* border: 1px inset;  */
 }
 
@@ -362,7 +362,7 @@ table.template, tr.template{
 
 img.ui-datepicker-trigger{
 	height: 25px !important;
-	margin-top: 2px;
+	margin-top: 0px;
 }
 
 #left-menu-panel{
