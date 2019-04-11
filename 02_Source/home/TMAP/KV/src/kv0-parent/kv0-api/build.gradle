@@ -46,6 +46,7 @@ dependencies {
     compile group: 'javax.mail', name: 'mail', version:'1.4'
 	compile group: 'com.oracle', name: 'ojdbc7', version:'12.1.0.1'
 	compile group: 'org.jdom', name: 'jdom2', version:'2.0.5'
+	compile group: 'com.google.code.gson', name: 'gson', version:'2.2.2'
 	
 	compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.1.7'
 	

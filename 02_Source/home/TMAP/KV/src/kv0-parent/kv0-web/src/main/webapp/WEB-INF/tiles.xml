@@ -78,7 +78,7 @@
 
   <definition name="WKV05110" extends="baseLayoutOld">		
   	  <put-attribute name="title"  value="Insurance Company"/>
-	  <put-attribute name="body"   value="/WEB-INF/views/insCompany/WKV05110InsuranceCompany.jsp"/>	
+	  <put-attribute name="body"   value="/WEB-INF/views/insCompany/WKV05110InsuranceCompany2.jsp"/>	
   </definition>
 
   <definition name="WKV06000" extends="baseLayout">		
