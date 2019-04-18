@@ -546,6 +546,7 @@ public class CommonDataFileUpload {
 			        if (iFileSize > maxFileSizeChk) {
 			        	BigDecimal fileSizeMB = new BigDecimal(iFileSize/(1024.0)); 
 			        	fileSizeMB = fileSizeMB.setScale(2, BigDecimal.ROUND_DOWN);
+			        	is.close();
 			    		throw new CommonErrorException(CST30000Messages.ERROR_UNDEFINED_ERROR, 
 			    									  new String[]{"Found excel file size "+(fileSizeMB.toString())+" MB ("+fileName+") more than "+(maxFileSizeChk/1024)+" MB."}, 
 			    									  AppConstants.ERROR);

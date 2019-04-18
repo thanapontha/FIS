@@ -58,8 +58,13 @@
 			                       	</select>
 		       					</div>
 		       					<div class="col-12">
+		       						<spring:message code="KV0.WKV01110.Label.BtnBrowse" var="WKV05110Browse" />
 		       						<label for="importFile" class="mx-1 my-0"><spring:message code="KV0.WKV01110.Label.FileName" />&nbsp;:</label>
-									<input type="file" class="form-control-file" id="importFile">
+									<!-- <input type="file" class="form-control-file" id="importFile"> -->
+									<sc2:button functionId="KV0511" screenId="WKV05110"
+									buttonId="WKV05110Browse" type="file" value="${WKV05110Browse}"
+									styleClass="button MandatoryField form-control-file"
+									onClick="" />
 		       					</div>
 		       					<div class="pt-1 col-12 text-right">
 			                       <sc2:button functionId="KV0511"  screenId="WKV05110" buttonId="WKV05110Import"

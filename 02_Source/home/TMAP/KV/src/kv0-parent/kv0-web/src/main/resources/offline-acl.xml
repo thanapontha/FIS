@@ -39,6 +39,7 @@
 	
 	<functionInfo group="KV0500" functionId="KV0511">
 		<screenInfo screenId="WKV05110" screenResource="insuranceCompany">
+			<buttonInfo buttonId="WKV05110Browse" accessRight="1" />
 			<buttonInfo buttonId="WKV05110Import" accessRight="1" />
 			<buttonInfo buttonId="WKV05110Export" accessRight="1" />
 		</screenInfo>

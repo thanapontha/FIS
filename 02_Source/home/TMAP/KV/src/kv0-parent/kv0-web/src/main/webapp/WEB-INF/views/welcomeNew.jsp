@@ -81,16 +81,16 @@
 	 	<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 	 		<div class="form-row center">
 	 			<sc2nav:menuImage type="groupId" groupId="KV0300" styleColDiv="pt-3 pb-1 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6" style="my-1 textMenuImage"
-	 				href="NewCarInsuranceMenu" title="${ActivitiesReminder1}" src="${imagepath}images/tim/New_Car_Insurance.png" dataBadge="45" badgeStyle="badge1">
+	 				href="NewCarInsurance" title="${ActivitiesReminder1}" src="${imagepath}images/tim/New_Car_Insurance.png" dataBadge="45" badgeStyle="badge1">
 	 			</sc2nav:menuImage>
 	 			<sc2nav:menuImage type="groupId" groupId="KV0400" styleColDiv="pt-3 pb-1 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6" style="my-1 textMenuImage"
-	 				href="InsuranceRenewalMenu" title="${ActivitiesReminder2}" src="${imagepath}images/tim/Insurance_Renewal.png">
+	 				href="NewCarInsurance" title="${ActivitiesReminder2}" src="${imagepath}images/tim/Insurance_Renewal.png">
 	 			</sc2nav:menuImage>
 	 			<sc2nav:menuImage type="groupId" groupId="KV0500" styleColDiv="pt-3 pb-1 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6" style="my-1 textMenuImage"
-	 				href="InsuranceCompany" title="${ActivitiesReminder3}" src="${imagepath}images/tim/Insurance_Company.png" dataBadge="32" badgeStyle="badge1">
+	 				href="NewCarInsurance" title="${ActivitiesReminder3}" src="${imagepath}images/tim/Insurance_Company.png" dataBadge="32" badgeStyle="badge1">
 	 			</sc2nav:menuImage>
 	 			<sc2nav:menuImage type="groupId" groupId="KV0600" styleColDiv="pt-3 pb-1 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6" style="my-1 textMenuImage"
-	 				href="ManagementMenu" title="${ActivitiesReminder4}" src="${imagepath}images/tim/Management.png" dataBadge="19" badgeStyle="badge1" >
+	 				href="NewCarInsurance" title="${ActivitiesReminder4}" src="${imagepath}images/tim/Management.png" dataBadge="19" badgeStyle="badge1" >
 	 			</sc2nav:menuImage>
             </div>
 		</div>
