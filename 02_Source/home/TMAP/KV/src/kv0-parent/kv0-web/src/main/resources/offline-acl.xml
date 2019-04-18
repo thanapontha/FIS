@@ -192,17 +192,6 @@
 			<buttonInfo buttonId="WKV02111Cancel" accessRight="3" />					
 		</screenInfo>
 	</functionInfo>
-	<functionInfo group="KV0200" functionId="KV0216">
-		<screenInfo screenId="WKV02160" screenResource="unitCapacityManagement">
-			<buttonInfo buttonId="WKV02160Search" accessRight="1" />
-			<buttonInfo buttonId="WKV02160Clear" accessRight="1" />
-			<buttonInfo buttonId="WKV02160Download" accessRight="1" />
-			<buttonInfo buttonId="WKV02160Browse" accessRight="1" />
-			<buttonInfo buttonId="WKV02160Upload" accessRight="3" />
-			<buttonInfo buttonId="WKV02160CheckingReport" accessRight="1" />
-			<buttonInfo buttonId="WKV02160Confirm" accessRight="3" />			
-		</screenInfo>
-	</functionInfo>
 	<!-- End Rundown and Unit -->
 	
 	<!-- Begin Master-FIS -->
