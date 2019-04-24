@@ -7,43 +7,34 @@ import th.co.toyota.kv0.util.FormatUtil;
 
 public class NewCarInfo {
 
-	private String ddmsStatus;
-	private String insStatus;
+	private String documentStatus;
 	private String model;
 	private String vinNo;
-	private String typeOfPurchase;
-	private String fnCompany;
-	private String insCode;
-	private String insCompany;
-	private String insType;
-	private String insPremium;
-	private String insActivationDate;
 	private String customerName;
+	private String insType;
+	private String premiumType;
+	private String insCompany;
+	private String insClass;
+	private String insPremium;
+	private String activationDate;
 	private String dealerCode;
+	private String ddmsStatus;
 
 	private Date createDt;
 	private Date updateDt;
 	private String createBy;
 	private String updateBy;
-
+	
 	public String getUpdateDateDisp() {
 		return FormatUtil.convertDateToString(this.getUpdateDt(), AppConstants.DATE_TIME_IN_SCREEN_NOT_24);
 	}
 
-	public String getDdmsStatus() {
-		return ddmsStatus;
+	public String getDocumentStatus() {
+		return documentStatus;
 	}
 
-	public void setDdmsStatus(String ddmsStatus) {
-		this.ddmsStatus = ddmsStatus;
-	}
-
-	public String getInsStatus() {
-		return insStatus;
-	}
-
-	public void setInsStatus(String insStatus) {
-		this.insStatus = insStatus;
+	public void setDocumentStatus(String documentStatus) {
+		this.documentStatus = documentStatus;
 	}
 
 	public String getModel() {
@@ -62,36 +53,12 @@ public class NewCarInfo {
 		this.vinNo = vinNo;
 	}
 
-	public String getTypeOfPurchase() {
-		return typeOfPurchase;
+	public String getCustomerName() {
+		return customerName;
 	}
 
-	public void setTypeOfPurchase(String typeOfPurchase) {
-		this.typeOfPurchase = typeOfPurchase;
-	}
-
-	public String getFnCompany() {
-		return fnCompany;
-	}
-
-	public void setFnCompany(String fnCompany) {
-		this.fnCompany = fnCompany;
-	}
-
-	public String getInsCode() {
-		return insCode;
-	}
-
-	public void setInsCode(String insCode) {
-		this.insCode = insCode;
-	}
-
-	public String getInsCompany() {
-		return insCompany;
-	}
-
-	public void setInsCompany(String insCompany) {
-		this.insCompany = insCompany;
+	public void setCustomerName(String customerName) {
+		this.customerName = customerName;
 	}
 
 	public String getInsType() {
@@ -102,6 +69,30 @@ public class NewCarInfo {
 		this.insType = insType;
 	}
 
+	public String getPremiumType() {
+		return premiumType;
+	}
+
+	public void setPremiumType(String premiumType) {
+		this.premiumType = premiumType;
+	}
+
+	public String getInsCompany() {
+		return insCompany;
+	}
+
+	public void setInsCompany(String insCompany) {
+		this.insCompany = insCompany;
+	}
+
+	public String getInsClass() {
+		return insClass;
+	}
+
+	public void setInsClass(String insClass) {
+		this.insClass = insClass;
+	}
+
 	public String getInsPremium() {
 		return insPremium;
 	}
@@ -110,12 +101,28 @@ public class NewCarInfo {
 		this.insPremium = insPremium;
 	}
 
-	public String getInsActivationDate() {
-		return insActivationDate;
+	public String getActivationDate() {
+		return activationDate;
 	}
 
-	public void setInsActivationDate(String insActivationDate) {
-		this.insActivationDate = insActivationDate;
+	public void setActivationDate(String activationDate) {
+		this.activationDate = activationDate;
+	}
+
+	public String getDealerCode() {
+		return dealerCode;
+	}
+
+	public void setDealerCode(String dealerCode) {
+		this.dealerCode = dealerCode;
+	}
+
+	public String getDdmsStatus() {
+		return ddmsStatus;
+	}
+
+	public void setDdmsStatus(String ddmsStatus) {
+		this.ddmsStatus = ddmsStatus;
 	}
 
 	public Date getCreateDt() {
@@ -148,22 +155,6 @@ public class NewCarInfo {
 
 	public void setUpdateBy(String updateBy) {
 		this.updateBy = updateBy;
-	}
-
-	public String getCustomerName() {
-		return customerName;
-	}
-
-	public void setCustomerName(String customerName) {
-		this.customerName = customerName;
-	}
-
-	public String getDealerCode() {
-		return dealerCode;
-	}
-
-	public void setDealerCode(String dealerCode) {
-		this.dealerCode = dealerCode;
 	}
 
 }

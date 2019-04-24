@@ -39,15 +39,45 @@
 			
 			<div class="row"> 
 			 	<div class="pt-2 col-12">
-		               <h3>Screening Criteria</h3>
+		              <!-- <h3>Screening Criteria</h3> -->
 		               
 		               <!-- form complex example -->
 		               <div class="form-row mt-1">
-		               	    <div class="pb-1 pr-3 col-md-4">
-		                       <label for="vinNo" class="mx-1 my-0">Vin&nbsp;</label>
-		                       <input type="text" class="form-control form-control-sm" id="vinNo">
+		               	    <div class="pb-1 pr-3 col-md-3">
+		                       <label for="vinNo" class="mx-1 my-0">Vin No.&nbsp;:</label>
+		                       <input type="text" class="form-control form-control-sm" id="vinNo" name="vinNo">
+		                   </div>		                   
+		                   <div class="pb-1 pr-3 col-md-2">
+		                       <label for="series" class="mx-1 my-0">Series&nbsp;:</label>
+		                       <select class="form-control form-control-sm" id="series">
+		                           <option>All</option>
+		                           <option>Vios</option>
+		                           <option>Yaris</option>
+		                           <option>Camry</option>
+		                       </select>
+		                   </div>		                   
+		                   <div class="pb-1 pr-3 col-md-2">
+		                       <label for="model" class="mx-1 my-0">Model&nbsp;:</label>
+		                       <select class="form-control form-control-sm" id="model">
+		                           <option>All</option>
+		                           <option>2019</option>
+		                           <option>2011</option>
+		                       </select>
+		                   </div>		                   
+		                   <div class="pb-1 pr-3 col-md-3">
+		                       <label for="ddmsStatus" class="mx-1 my-0">DDMS Status&nbsp;:</label>
+		                       <select class="form-control form-control-sm" id="ddmsStatus">
+		                           <option>All</option>
+		                           <option>Unassign (Buy Off)</option>
+		                           <option>Final Assign</option>
+		                           <option>Dealer Arrival</option>
+		                           <option>Matched</option>
+		                           <option>Delivery</option>
+		                           <option>Revise Retail Sales</option>
+		                       </select>
 		                   </div>
-		                   <div class="pb-1 pr-3 col-md-4">
+		                                      
+		                   <div class="pb-1 pr-3 col-md-2">
 		                       <label for="typeOfPurchase" class="mx-1 my-0">Type of purchase&nbsp;:</label>
 		                       <select class="form-control form-control-sm" id="typeOfPurchase">
 		                           <option>All</option>
@@ -56,24 +86,38 @@
 		                           <option>Fleet</option>
 		                       </select>
 		                   </div>
+		                   
+		                   
+		                   <div class="pb-1 pr-3 col-md-2">
+		                       <label for="personalId" class="mx-1 my-0">Personal ID&nbsp;</label>
+		                       <input type="text" class="form-control form-control-sm" id="personalId">
+		                   </div>		                   
+		                   <div class="pb-1 pr-3 col-md-3">
+		                       <label for="firstName" class="mx-1 my-0">First Name&nbsp;</label>
+		                       <input type="text" class="form-control form-control-sm" id="firstName">
+		                   </div>		                   
+		                   <div class="pb-1 pr-3 col-md-3">
+		                       <label for="lastName" class="mx-1 my-0">Last Name&nbsp;</label>
+		                       <input type="text" class="form-control form-control-sm" id="lastName">
+		                   </div>		                   
 		                   <div class="pb-1 pr-3 col-md-4">
-		                       <label for="ddmsPeriodOfTime" class="mx-1 my-0">DDMS Period of time&nbsp;:</label>
-		                       <div class="d-flex flex-row">
-        							<input type="text" class="form-control form-control-sm" id="ddmsPeriodOfTime" maxlength="10">
-        						</div>
+		                       <label for="companyName" class="mx-1 my-0">Company Name&nbsp;</label>
+		                       <input type="text" class="form-control form-control-sm" id="companyName">
 		                   </div>
 		                   
-		                   <div class="pb-1 pr-3 col-md-4">
-		                       <label for="exampleAccount" class="mx-1 my-0">DDMS Status&nbsp;:</label>
-		                       <select class="form-control form-control-sm" id="exampleSt">
+		                   <div class="pb-1 pr-3 col-md-2">
+		                       <label for="documentStatus" class="mx-1 my-0">Document Status&nbsp;:</label>
+		                       <select class="form-control form-control-sm" id="documentStatus">
 		                           <option>All</option>
-		                           <option>Buy off</option>
-		                           <option>Dealer arrival</option>
-		                           <option>Confirm Booking</option>
-		                           <option>Retail sale</option>
+		                           <option>New</option>
+		                           <option>Waiting Activate</option>
+		                           <option>Need Info</option>
+		                           <option>Request Cancel</option>
+		                           <option>Completed</option>
+		                           <option>Cancel</option>
 		                       </select>
 		                   </div>
-		                   <div class="pb-1 pr-3 col-md-4">
+		                   <div class="pb-1 pr-3 col-md-2">
 		                       <label for="insuranceCompany" class="mx-1 my-0">Insurance Company&nbsp;:</label>
 		                       <select class="form-control form-control-sm" id="insuranceCompany">
 		                           <option>All</option>
@@ -81,60 +125,58 @@
 		                           <option>Viriya</option>
 		                       </select>
 		                   </div>
-		                   <div class="pb-1 pr-3 col-md-4">
-		                       <label for="insActivationPeriod" class="mx-1 my-0">INS Activation Period&nbsp;:</label>
-		                       <div class="d-flex flex-row">
-        							<input type="text" class="form-control form-control-sm" id="insActivationPeriod" maxlength="10">
-        						</div>
-		                   </div>
-		                   
-		                   <div class="pb-1 pr-3 col-md-4">
-		                       <label for="insStatus" class="mx-1 my-0">INS Status&nbsp;:</label>
-		                       <select class="form-control form-control-sm" id="insStatus">
+		                   <div class="pb-1 pr-3 col-md-2">
+		                       <label for="insuranceType" class="mx-1 my-0">Insurance Type&nbsp;:</label>
+		                       <select class="form-control form-control-sm" id="insuranceType">
 		                           <option>All</option>
-		                           <option>Temporary number</option>
-		                           <option>Issued Insurance policy</option>
+		                           <option>T. Care</option>
+		                           <option>None T. Care</option>
 		                       </select>
 		                   </div>
-		                   <div class="pb-1 pr-3 col-md-4">
-		                       <label for="typeOfInsurance" class="mx-1 my-0">Type of Insurance&nbsp;:</label>
-		                       <select class="form-control form-control-sm" id="typeOfInsurance">
-		                           <option>1st class</option>
-		                           <option>2nd class</option>
-		                           <option>3rd class</option>
-		                           <option>other</option>
-		                       </select>
-		                   </div>
-		                    <div class="pb-1 pr-3 col-md-4">
-		                       <label for="keyInDate" class="mx-1 my-0">Key in date&nbsp;:</label>
-		                       <div class="d-flex flex-row">
-        							<input type="text" class="form-control form-control-sm" id="keyInDate" maxlength="10">
-        						</div>
-		                   </div>
-		                   
-		                   <div class="pb-1 pr-3 col-md-4">
-		                       <label for="model" class="mx-1 my-0">Model&nbsp;:</label>
-		                       <select class="form-control form-control-sm" id="model">
-		                           <option>All</option>
-		                           <option>Vios</option>
-		                           <option>Yaris</option>
-		                           <option>Camry</option>
-		                       </select>
-		                   </div>
-		                   
-		                   <div class="pb-1 pr-3 col-md-4">
+		                   <div class="pb-1 pr-3 col-md-2">
 		                       <label for="premiumType" class="mx-1 my-0">Premium Type&nbsp;:</label>
 		                       <select class="form-control form-control-sm" id="premiumType">
 		                           <option>All</option>
-		                           <option>Premium 1</option>
-		                           <option>Premium 2</option>
-		                           <option>Premium 3</option>
+		                           <option>TMT Campaign</option>
 		                       </select>
 		                   </div>
+		                   <div class="pb-1 pr-3 col-md-2">
+		                       <label for="insuranceClass" class="mx-1 my-0">Insurance Class&nbsp;:</label>
+		                       <select class="form-control form-control-sm" id="insuranceClass">
+		                           <option>All</option>
+		                           <option>1st class</option>
+		                           <option>2nd class</option>
+		                           <option>3rd class</option>
+		                       </select>
+		                   </div>
+		                   <div class="pb-1 pr-3 col-md-2">
+		                   </div>
 		                   
+		                   <div class="pb-1 pr-3 col-md-2">
+		                       <label for="createDateFrom" class="mx-1 my-0">Create From Date&nbsp;:</label>
+		                       <div class="d-flex flex-row">
+        							<input type="text" class="form-control form-control-sm" id="createDateFrom" maxlength="10">
+        						</div>
+		                   </div>		                   
+		                   <div class="pb-1 pr-3 col-md-2">
+		                       <label for="createDateTo" class="mx-1 my-0">Create To Date&nbsp;:</label>
+		                       <div class="d-flex flex-row">
+        							<input type="text" class="form-control form-control-sm" id="createDateTo" maxlength="10">
+        						</div>
+		                   </div>
+		                   <div class="pb-1 pr-3 col-md-2">
+		                       <label for="activationDateFrom" class="mx-1 my-0"><span class="MandatoryFieldFont">*</span>Activation From Date&nbsp;:</label>
+		                       <div class="d-flex flex-row">
+        							<input type="text" class="form-control form-control-sm MandatoryField" id="activationDateFrom" maxlength="10">
+        						</div>
+		                   </div>		                   
+		                   <div class="pb-1 pr-3 col-md-2">
+		                       <label for="activationDateTo" class="mx-1 my-0"><span class="MandatoryFieldFont">*</span>Activation To Date&nbsp;:</label>
+		                       <div class="d-flex flex-row">
+        							<input type="text" class="form-control form-control-sm MandatoryField" id="activationDateTo" maxlength="10">
+        						</div>
+		                   </div>
 		                   <div class="pb-1 pr-3 col-md-4">
-		                       <label for="citizenId" class="mx-1 my-0">Citizen ID&nbsp;</label>
-		                       <input type="text" class="form-control form-control-sm" id="citizenId">
 		                   </div>
 		                   
 		                   <div class="pb-1 pr-3 col-12" style="text-align: right;">
@@ -144,7 +186,10 @@
 										styleClass="button mr-1" secured="false" onClick="clickSearch();" />
 									<sc2:button functionId="KV0311"  screenId="WKV03110" buttonId="WKV03110Clear"
 										type="button" value="Clear"
-										styleClass="button" secured="false" onClick="clearSearch();" />
+										styleClass="button mr-1" secured="false" onClick="clearSearch();" />
+									<sc2:button functionId="KV0311"  screenId="WKV03110" buttonId="WKV03110Export"
+										type="button" value="Export"
+										styleClass="button" secured="false" onClick="" />
 								</div>
 							</div>
 		               </div>
@@ -183,19 +228,17 @@
 													>
 											  
 								<datatables:column title="No." cssClass="col1 rownum" sortable="false" searchable="false" cssStyle="text-align:center;" />
-				        		<datatables:column title="DDMS Status" cssClass="col2" cssStyle="text-align:center;" sortable="false" searchable="false"/>
-				        		<datatables:column title="INS Status" cssClass="col3" sortable="false" cssStyle="text-align:center;" />
-								<datatables:column title="Model" cssClass="col4 fixed" sortable="false" cssStyle="text-align:center;" />
-								<datatables:column title="V/N" cssClass="col5" sortable="false" searchable="false" cssStyle="text-align:center;"/>
-								<datatables:column title="Type of purchase" cssClass="col6" sortable="false" searchable="false" cssStyle="text-align:center;"/>
-								<datatables:column title="FN Company" cssClass="col7" sortable="false" searchable="false" cssStyle="text-align:center;"/>
-								<datatables:column title="INS Code" cssClass="col8" sortable="false" searchable="false" cssStyle="text-align:center;"/>
-								<datatables:column title="INS Company" cssClass="col9" sortable="false" searchable="false" cssStyle="text-align:center;"/>
-								<datatables:column title="INS Type" cssClass="col10" sortable="false" searchable="false" cssStyle="text-align:center;"/>
-								<datatables:column title="INS Premium" cssClass="col11" sortable="false" searchable="false" cssStyle="text-align:center;"/>
-								<datatables:column title="INS Activation Date" cssClass="col12" sortable="false" searchable="false" cssStyle="text-align:center;"/>
-								<datatables:column title="Customer Name" cssClass="col13" sortable="false" searchable="false" cssStyle="text-align:center;"/>
-								<datatables:column title="Dealer Code" cssClass="col14" sortable="false" searchable="false" cssStyle="text-align:center;"/>
+				        		<datatables:column title="Document Status" cssClass="col2" cssStyle="text-align:center;" sortable="false" searchable="false"/>
+								<datatables:column title="Model" cssClass="col3 fixed" sortable="false" searchable="false" cssStyle="text-align:center;" />
+								<datatables:column title="VIN" cssClass="col4" sortable="false" searchable="false" cssStyle="text-align:center;"/>
+								<datatables:column title="Customer Name" cssClass="col5" sortable="false" cssStyle="text-align:center;" />
+								<datatables:column title="INS Type" cssClass="col6" sortable="false" searchable="false" cssStyle="text-align:center;"/>
+								<datatables:column title="Premium Type" cssClass="col7" sortable="false" searchable="false" cssStyle="text-align:center;"/>
+								<datatables:column title="INS Company" cssClass="col8" sortable="false" searchable="false" cssStyle="text-align:center;"/>
+								<datatables:column title="INS Class" cssClass="col9" sortable="false" searchable="false" cssStyle="text-align:center;"/>
+								<datatables:column title="INS Premium" cssClass="col10" sortable="false" searchable="false" cssStyle="text-align:center;"/>
+								<datatables:column title="Activation Date" cssClass="col11" sortable="false" searchable="false" cssStyle="text-align:center;"/>
+								<datatables:column title="DDMS Status" cssClass="col12" sortable="false" searchable="false" cssStyle="text-align:center;"/>
 								
 							</datatables:table>
 						</form>		

@@ -371,19 +371,35 @@ public class NewCarInsuranceRepositoryImpl implements NewCarInsuranceRepository 
 			while (rs.next()) {*/
 			for(int i=0;i<10;i++){
 				newCarInfo = new NewCarInfo();
-				newCarInfo.setDdmsStatus("ddmsStatus"+i);
-				newCarInfo.setInsStatus("insStatus"+i);
-				newCarInfo.setModel("model"+i);
-				newCarInfo.setVinNo("VinNo"+i);
-				newCarInfo.setTypeOfPurchase("typeOfPurchase"+i);
-				newCarInfo.setFnCompany("fnCompany"+i);
-				newCarInfo.setInsCode("insCode"+i);
-				newCarInfo.setInsCompany("insCompany"+i);
-				newCarInfo.setInsType("insType"+i);
-				newCarInfo.setInsPremium("insPremium"+i);
-				newCarInfo.setInsActivationDate("12/12/2017");
-				newCarInfo.setCustomerName("customerName"+i);
-				newCarInfo.setDealerCode("dealerCode"+i);
+
+				if(i==0) {
+					newCarInfo.setDocumentStatus("Waiting Activate");
+					newCarInfo.setModel("Camry");
+					newCarInfo.setVinNo("MR053REH100010123");
+					newCarInfo.setCustomerName("Somchai Manadee");
+					newCarInfo.setInsType("T. Care");
+					newCarInfo.setPremiumType("TMT Campaign");
+					newCarInfo.setInsCompany("AOIO");
+					newCarInfo.setInsClass("1st class");
+					newCarInfo.setInsPremium("20,000");
+					newCarInfo.setActivationDate("01/12/2018");
+					newCarInfo.setDealerCode("dealerCode"+i);
+					newCarInfo.setDdmsStatus("Dealer arrival");
+				}else {
+					newCarInfo.setDocumentStatus("Completed");
+					newCarInfo.setModel("Vios");
+					newCarInfo.setVinNo("vinNo"+i);
+					newCarInfo.setCustomerName("customerName"+i);
+					newCarInfo.setInsType("None T. Care");
+					newCarInfo.setPremiumType("TMT Campaign");
+					newCarInfo.setInsCompany("Viriya");
+					newCarInfo.setInsClass("2nd class");
+					newCarInfo.setInsPremium("15,000");
+					newCarInfo.setActivationDate("12/12/2017");
+					newCarInfo.setDealerCode("dealerCode"+i);
+					newCarInfo.setDdmsStatus("Delivery");
+				}
+				
 				listResult.add(newCarInfo);
 			}
 		} catch (Exception e) {

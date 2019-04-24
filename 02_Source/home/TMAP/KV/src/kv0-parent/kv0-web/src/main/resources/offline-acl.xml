@@ -7,6 +7,7 @@
 		<screenInfo screenId="WKV03110" screenResource="newCarList">
 			<buttonInfo buttonId="WKV03110Search" accessRight="1" />
 			<buttonInfo buttonId="WKV03110Clear" accessRight="1" />
+			<buttonInfo buttonId="WKV03110Export" accessRight="1" />
 		</screenInfo>
 	</functionInfo>
 	
