@@ -357,7 +357,7 @@ table.template, tr.template{
 }
 
 .card-body{
-	padding: .5rem 2rem;
+	padding: .5rem 2rem !important;
 }
 
 img.ui-datepicker-trigger{
