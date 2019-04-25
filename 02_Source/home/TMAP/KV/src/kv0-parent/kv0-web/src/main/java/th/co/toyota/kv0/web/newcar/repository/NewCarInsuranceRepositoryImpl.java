@@ -374,7 +374,7 @@ public class NewCarInsuranceRepositoryImpl implements NewCarInsuranceRepository 
 
 				if(i==0) {
 					newCarInfo.setDocumentStatus("Waiting Activate");
-					newCarInfo.setModel("Hi");
+					newCarInfo.setModel("HI");
 					newCarInfo.setVinNo("MR053REH100010123");
 					newCarInfo.setCustomerName("Somchai Manadee");
 					newCarInfo.setInsType("T. Care");

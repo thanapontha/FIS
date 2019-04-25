@@ -5,6 +5,10 @@
 </style>
 
 <script type="text/javascript">
+	$(function(){
+		$('#ui-accordion-menu-header-0').click();
+		$('#ui-accordion-menu-header-0').attr('tabindex','-1');
+	});
 </script>
 
 <div class="container-fluid">
@@ -16,12 +20,12 @@
 	<div class="row px-4"> 
 	 	<div class="col-12 border">
 	 		<div class="row"> 
-	 			<div class="col-3">Waiting activate</div>
-	 			<div class="col-9">: 10</div>
-	 			<div class="col-3">Need more information</div>
-	 			<div class="col-9">: 20</div>
-	 			<div class="col-3">Activated</div>
-	 			<div class="col-9">: 1,100</div>
+	 			<div class="col-3"><a href="${pageContext.request.contextPath}/NewCarInsurance">Waiting activate</a></div>
+	 			<div class="col-9">: <a href="${pageContext.request.contextPath}/NewCarInsurance">10</a></div>
+	 			<div class="col-3"><a href="${pageContext.request.contextPath}/NewCarInsurance">Need more information</a></div>
+	 			<div class="col-9">: <a href="${pageContext.request.contextPath}/NewCarInsurance">20</a></div>
+	 			<div class="col-3"><a href="${pageContext.request.contextPath}/NewCarInsurance">Activated</a></div>
+	 			<div class="col-9">: <a href="${pageContext.request.contextPath}/NewCarInsurance">1,100</a></div>
 	 		</div>
 		</div>
 	</div>

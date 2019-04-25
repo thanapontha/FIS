@@ -102,7 +102,7 @@
        	<div class="row" style="height:510px; overflow: auto;"> 
         	<div class="col-12">
 				<div class="row"> 
-		        	<div class="col-12">
+		        	<div class="py-2 col-12">
 						<div class="card">
 							<div class="card-header text-white bg-secondary">1. Vehicle Information</div>
 					     	<div class="card-body">
@@ -277,18 +277,21 @@
 		        							<input type="text" class="form-control form-control-sm MandatoryField" id="coverageUntil" maxlength="6">
 		        						</div>
 		        					</div>
-		        					
-		        					<div class="col-md-3 col-12">
-		        						<label for="policyNo" class="mx-1 my-0">Temp Policy no.&nbsp;:</label>
-		        						<input type="text" class="form-control form-control-sm" id="tempPolicyNo" disabled>
-		        					</div>
-		        					<div class="col-md-3 col-12">
-		        						<label for="policyNo" class="mx-1 my-0">Policy no.&nbsp;:</label>
-		        						<input type="text" class="form-control form-control-sm" id="policyNo" disabled>
-		        					</div>
-		        					<div class="col-md-6 col-12">
+		        					<div class="col-md-8 col-12">
 		        						<label for="remark" class="mx-1 my-0">Remark&nbsp;:</label>
-		        						<textarea class="form-control" id="remark" rows="3" maxlength="2000"></textarea>
+		        						<textarea class="form-control" id="remark" rows="4" maxlength="2000"></textarea>
+		        					</div>
+		        					<div class="col-md-4 col-12">
+		        						<div class="row">
+				        					<div class="col-md-12 col-12">
+				        						<label for="policyNo" class="mx-1 my-0">Temp Policy no.&nbsp;:</label>
+				        						<input type="text" class="form-control form-control-sm" id="tempPolicyNo" disabled>
+				        					</div>
+				        					<div class="col-md-12 col-12">
+				        						<label for="policyNo" class="mx-1 my-0">Policy no.&nbsp;:</label>
+				        						<input type="text" class="form-control form-control-sm" id="policyNo" disabled>
+				        					</div>
+			        					</div>
 		        					</div>
 		        				</div>
 					      	</div>
@@ -421,7 +424,7 @@
 				        			</div>
 				        			<div class="col-12 py-2">
 					                       	<div class="form-check form-check-inline">
-											  <input class="form-check-input" type="radio" name="personalDelivery" value="Dealer" checked="checked">
+											  <input class="form-check-input" type="checkbox" name="personalDelivery" value="Dealer">
 											  <label class="form-check-label" for="personalDelivery">Same as address</label>
 											</div>
 									</div>
@@ -582,8 +585,8 @@
 				        			</div>
 				        			<div class="col-12 py-2">
 					                       	<div class="form-check form-check-inline">
-											  <input class="form-check-input" type="radio" name="personalDelivery" value="Dealer" checked="checked">
-											  <label class="form-check-label" for="personalDelivery">Same as address</label>
+											  <input class="form-check-input" type="checkbox" name="companyDelivery" value="Dealer">
+											  <label class="form-check-label" for="companyDelivery">Same as address</label>
 											</div>
 									</div>
 				        			<div class="col-12">
@@ -656,8 +659,35 @@
 					      	</div>
 					  	</div>
 					</div>
+				</div>
+				<div class="row"> 
+		        	<div class="py-2 col-12">
+						<div class="card">
+							<div class="card-body">
+					        	<div class="row"> 
+		        					<div class="col-md-3 col-6">
+		        						<label for="createdBy" class="mx-1 my-0">Created By&nbsp;:</label>
+				                       	<input type="text" class="form-control form-control-sm" id="createdBy" value="Mr. Somchay Nadin" disabled>
+		        					</div>
+		        					<div class="col-md-3 col-6">
+		        						<label for="createdDate" class="mx-1 my-0">Created Date&nbsp;:</label>
+				                       	<input type="text" class="form-control form-control-sm" id="createdDate" value="20/12/2018 13:45:12" disabled>
+		        					</div>
+		        					<div class="col-md-3 col-6">
+		        						<label for="updatedBy" class="mx-1 my-0">Updated By&nbsp;:</label>
+				                       	<input type="text" class="form-control form-control-sm" id="updatedBy" value="Mr. Somchay Nadin" disabled>
+		        					</div>
+		        					<div class="col-md-3 col-6">
+		        						<label for="updatedDate" class="mx-1 my-0">Updated Date&nbsp;:</label>
+				                       	<input type="text" class="form-control form-control-sm" id="updatedDate" value="21/12/2018 15:45:02" disabled>
+		        					</div>
+		        				</div>
+					      	</div>
+					  	</div>
+					</div>
 					
-				</div>		
+				</div>
+				
 			</div>
 		</div>
 	</div>
