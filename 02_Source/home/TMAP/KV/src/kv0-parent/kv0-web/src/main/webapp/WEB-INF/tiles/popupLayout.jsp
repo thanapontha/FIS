@@ -32,6 +32,10 @@
 	<views:script src="st3.script.js"/>
 	<views:script src="fis.lib.js"/>
 	<views:script src="fis.lib.ext.js"/>
+	<views:script src="bootstrap.min.js"/>
+ 	<views:style src="bootstrap.min.css" />
+ 	<views:style src="bootstrap-reboot.min.css" />
+	<views:script src="st3.script.js"/>
 	
 	<%
 		request.setAttribute("_mappingPath",request.getContextPath() 

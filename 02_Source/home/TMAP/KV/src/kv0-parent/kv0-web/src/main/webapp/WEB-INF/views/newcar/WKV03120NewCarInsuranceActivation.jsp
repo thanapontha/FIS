@@ -39,7 +39,7 @@
 		validateDate(document.getElementById('activation'));
 		validateDate(document.getElementById('birthDate'));
 		validateDate(document.getElementById('registerDate'));
-		validateDate(document.getElementById('coverageUntil'));
+		validateDate(document.getElementById('coverageTo'));
 		
 		validateDecimal(document.getElementById('insPremium'), 10, 0, '');
 		validateDecimal(document.getElementById('coverage'), 10, 0, '');
@@ -76,6 +76,12 @@
 		$("input:radio[name='typeOfCustomer']:first").click();
 	});
 	
+	window.doConfirmSubmit = function doConfirmSubmit() {
+		FISLib.dialog.open("NewCarConfirmSubmitDialog", _rootPath
+				+ "/NewCarInsurance/ActivateRedPlant/confirmSubmit",
+				"Do you confirm to activate ?", 400, 200);
+	}
+	
 </script>
 
 <jsp:useBean id="now" class="java.util.Date" />
@@ -91,7 +97,7 @@
 			</div>
         	<div class="col-8" style="text-align: right;">
         		<sc2:button functionId="KV0312"  screenId="WKV03120" buttonId="WKV03120Submit"
-							type="button" value="Submit" styleClass="button" secured="false" onClick=""/>
+							type="button" value="Submit" styleClass="button" secured="false" onClick="doConfirmSubmit();"/>
 				<sc2:button functionId="KV0312"  screenId="WKV03120" buttonId="WKV03120Save"
 							type="button" value="Save" styleClass="button" secured="false" onClick=""/>
 				<sc2:button functionId="KV0312"  screenId="WKV03120" buttonId="WKV03120Reset"
@@ -272,9 +278,9 @@
 		        					</div>
 		
 		        					<div class="col-md-2 col-12">
-		        						<label for="coverageUntil" class="mx-1 my-0"><span class="MandatoryFieldFont">*</span>Coverage To Date&nbsp;:</label>
+		        						<label for="coverageTo" class="mx-1 my-0"><span class="MandatoryFieldFont">*</span>Coverage To Date&nbsp;:</label>
 		        						<div class="d-flex flex-row">
-		        							<input type="text" class="form-control form-control-sm MandatoryField" id="coverageUntil" maxlength="6">
+		        							<input type="text" class="form-control form-control-sm MandatoryField" id="coverageTo" maxlength="10">
 		        						</div>
 		        					</div>
 		        					<div class="col-md-8 col-12">
@@ -424,8 +430,8 @@
 				        			</div>
 				        			<div class="col-12 py-2">
 					                       	<div class="form-check form-check-inline">
-											  <input class="form-check-input" type="checkbox" name="personalDelivery" value="Dealer">
-											  <label class="form-check-label" for="personalDelivery">Same as address</label>
+											  <input class="form-check-input" type="checkbox" name="personalSameAsAddress" value="Y">
+											  <label class="form-check-label" for="personalSameAsAddress">Same as address</label>
 											</div>
 									</div>
 				        			<div class="col-12">
@@ -499,12 +505,12 @@
 		        					<div class="col-12 py-1">
 		        						<div class="input-group col-12">Company Delivery&nbsp;:&nbsp;&nbsp;
 					                       	<div class="form-check form-check-inline">
-											  <input class="form-check-input" type="radio" name="personalDelivery" value="Dealer" checked="checked">
-											  <label class="form-check-label" for="personalDelivery">Dealer</label>
+											  <input class="form-check-input" type="radio" name="companyDelivery" value="Dealer" checked="checked">
+											  <label class="form-check-label" for="companyDelivery">Dealer</label>
 											</div>
 											<div class="form-check form-check-inline">
-											  <input class="form-check-input" type="radio" name="personalDelivery" value="Customer">
-											  <label class="form-check-label" for="personalDelivery">Customer</label>
+											  <input class="form-check-input" type="radio" name="companyDelivery" value="Customer">
+											  <label class="form-check-label" for="companyDelivery">Customer</label>
 											</div>
 										</div>
 									</div>
@@ -585,8 +591,8 @@
 				        			</div>
 				        			<div class="col-12 py-2">
 					                       	<div class="form-check form-check-inline">
-											  <input class="form-check-input" type="checkbox" name="companyDelivery" value="Dealer">
-											  <label class="form-check-label" for="companyDelivery">Same as address</label>
+											  <input class="form-check-input" type="checkbox" name="companySameAsAddress" value="Y">
+											  <label class="form-check-label" for="companySameAsAddress">Same as address</label>
 											</div>
 									</div>
 				        			<div class="col-12">

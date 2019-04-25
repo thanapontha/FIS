@@ -56,6 +56,11 @@
 		<put-attribute name="body"   value="/WEB-INF/views/newcar/WKV03120NewCarInsuranceActivation.jsp"/>	
   </definition>
   
+  <definition name="WKV03130" extends="popupLayout">		
+	<put-attribute name="title"  value="New Car Aonfirm Activate Screen"/>	
+	<put-attribute name="body"   value="/WEB-INF/views/newcar/WKV03130NewCarConfirmSubmit.jsp"/>	
+  </definition>
+  
   <definition name="WKV03210" extends="baseLayout">		
 		<put-attribute name="title"  value="Report and Data Export"/>
 		<put-attribute name="body"   value="/WEB-INF/views/newcar/WKV03210ReportDataExport.jsp"/>	

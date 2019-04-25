@@ -76,6 +76,34 @@ public class ActivateRedPlantController extends CommonBaseController {
 		return mv;
 	}
 	
+	@RequestMapping(value = "/confirmSubmit", method = RequestMethod.GET)
+	public ModelAndView initialConfirmSubmit(HttpServletRequest request, NewCarInsuranceForm form) {
+		ModelAndView mv = new ModelAndView("WKV03130");
+		Payload payload = new XmlPayload();
+		ServiceStatus status = ServiceStatus.OK;
+		try {			
+			payload = populatePayloadForDisplay(VIEW_NAME, payload, RequestContextUtils.getLocale(request));
+			CSC22110UserInfo userInfo = getUserInSession(request);
+
+			mv.addObject(AppConstants.MV_USER_COMPANY, this.getUserCompany(userInfo));
+			mv.addObject(AppConstants.MV_USER, userInfo);
+			mv.addObject(AppConstants.MV_FORM, form);
+			mv.addObject(AppConstants.MV_PAYLOAD, payload);
+	
+//		}catch (CommonErrorException e){
+//			log.error(ExceptionUtils.getStackTrace(e));
+//			status = ServiceStatus.NG;
+//			payload.addErrorMessage(messageSource.getMessage(e.getMessageCode(), e.getMessageArg(), Locale.getDefault()));
+		} catch (Exception e) {
+			log.error(ExceptionUtils.getStackTrace(e));
+			status = ServiceStatus.NG;
+			payload.addErrorMessage(messageSource.getMessage(CST30000Messages.ERROR_UNDEFINED_ERROR, new String[] { e.getMessage() },
+					RequestContextUtils.getLocale(request)));
+		}
+		payload.setStatus(status);
+		return mv;
+	}
+	
 	/*
 	@RequestMapping(value = "/search", method = RequestMethod.POST, produces = "application/json")
 	public @ResponseBody Object searchData(CKV04110Form form, HttpServletRequest request, RequestContext context) {

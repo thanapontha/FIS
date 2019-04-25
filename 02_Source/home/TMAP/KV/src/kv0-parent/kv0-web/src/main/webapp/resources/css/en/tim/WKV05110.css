@@ -1,127 +1,18 @@
-<style>
-	.result{
-		table-layout:fixed !important;
+<style>	
+	.nav-tabs .nav-item.show .nav-link{
+		background:#E60000;
+		color:#fff;
 	}
-	.result td{
-		word-wrap:break-word !important;
+	.nav-tabs .nav-link.active{
+		background:#E60000;
+		color:#fff;
 	}
-	.dataTables_length {
-		display:block;	
-		position: relative;
-		top: 2px;
-	}
-	.dataTable-wrapper {
-		height: 300px;
-		overflow: auto;
-	}
-	
-	/* Datatable columns */
-	.result .col1  { width: 3%; text-align: center; }
-	.result .col2  { width: 7%; text-align: right; }
-	.result .col3  { width: 7%; text-align: left;}
-	.result .col4  { width: 6%; text-align: center;  }
-	.result .col5  { width: 6%; text-align: center; }
-	.result .col6  { width: 10%; text-align: left; }
-	.result .col7  { width: 10%; text-align: center;}
-	.result .col8  { width: 10%; text-align: center;}
-	.result .col9  { width: 10%; text-align: center;}
-	.result .col10  { width: 10%; text-align: center;}
-	.result .col11  { width: 10%; text-align: center;}
-	.result .col12  { width: 10%; text-align: center;}
-	.result .col13  { width: 10%; text-align: center;}
-	.result .col14  { width: 10%; text-align: center;}
-
-	.dataTables_paginate  span {
-		display: none;
-	}
-	
-	.checkbox {
-		padding: 0px;
-		margin: 0px;
-	}
-	
-	.card-top-15{
-		margin-top: 10px;
-	}
-	/*----- Tabs -----*/
-	.card .tabs {
-		width:100%;
-		display:inline-block;
-		padding:10px 10px;
-	}
-	
-	/*----- Tab Links -----*/
-	/* Clearfix */
-	.card .tab-links:after {
-		display:block;
-		clear:both;
-		content:'';
-	}
-	.card .tabs ul{
-		border-bottom: 1px solid #ccc;
-	}
-	.card .tab-links li {
-		margin:0px 2px;
-		float:left;
-		list-style:none;
-		border-
-	}
-	
-	.card .tab-links a {
-		padding:3px 15px;
-		display:inline-block;
-		border-radius:3px 3px 0px 0px;
+	.nav-tabs .nav-link{
 		background:#17a2b8;
-		font-size:16px;
-		font-weight:600;
-		color:#fff;
-		transition:all linear 0.15s;
-	}
-	
-	.card .tab-links a:hover {
-		background:#f00;
-		text-decoration:none;
-	}
-	
-	.card li.active a, .card li.active a:hover {
-		background:#f00;
 		color:#fff;
 	}
 	
-	/*----- Content of Tabs -----*/
-	.card .tab-content {
-		padding:15px;
-		border-radius:3px;
-		background:#fff;
+	.form-control-sm-file{
+		padding: .01rem .01rem;
 	}
-	
-	.card .tab {
-		display:none;
-	}
-	
-	.card .tab.active {
-		display:block;
-	}
-	.star-red{
-		color:#f00;
-		
-	}
-	.row-body-center{
-		margin: 0 auto;
-	}
-	.form-group-input ,.form-group-button{
-		text-align: right;
-		padding-bottom: 3px;
-	}
-	.form-group-input label{
-	text-align: right;
-	padding-right: 10px;
-	width: 150px;
-	
-	}
-	.form-group-input input ,.form-group-input select{
-	width:  400px;
-	display: inline !important;
-	}
-	
 </style>

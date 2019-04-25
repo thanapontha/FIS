@@ -20,6 +20,8 @@
 	<div class="row px-4"> 
 	 	<div class="col-12 border">
 	 		<div class="row"> 
+	 			<div class="col-3"><a href="${pageContext.request.contextPath}/NewCarInsurance">New</a></div>
+	 			<div class="col-9">: <a href="${pageContext.request.contextPath}/NewCarInsurance">15</a></div>
 	 			<div class="col-3"><a href="${pageContext.request.contextPath}/NewCarInsurance">Waiting activate</a></div>
 	 			<div class="col-9">: <a href="${pageContext.request.contextPath}/NewCarInsurance">10</a></div>
 	 			<div class="col-3"><a href="${pageContext.request.contextPath}/NewCarInsurance">Need more information</a></div>
