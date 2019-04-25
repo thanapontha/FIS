@@ -13,7 +13,25 @@
 	
 	<functionInfo group="KV0300" functionId="KV0312">
 		<screenInfo screenId="WKV03120" screenResource="newCarRedPlant">
+			<buttonInfo buttonId="WKV03120Submit" accessRight="1" />
+			<buttonInfo buttonId="WKV03120Save" accessRight="1" />
+			<buttonInfo buttonId="WKV03120Reset" accessRight="1" />
 			<buttonInfo buttonId="WKV03120Activate" accessRight="1" />
+			<buttonInfo buttonId="WKV03120NeedMoreInfo" accessRight="1" />
+			<buttonInfo buttonId="WKV03120Back" accessRight="1" />
+		</screenInfo>
+	</functionInfo>
+	
+	<functionInfo group="KV0300" functionId="KV0313">
+		<screenInfo screenId="WKV03130" screenResource="newCarConfirmSubmit">
+			<buttonInfo buttonId="WKV03130Submit" accessRight="1" />
+			<buttonInfo buttonId="WKV03130Cancel" accessRight="1" />
+		</screenInfo>
+	</functionInfo>
+	
+	<functionInfo group="KV0300" functionId="KV0314">
+		<screenInfo screenId="WKV03140" screenResource="newCarActivated">
+			<buttonInfo buttonId="WKV03140OK" accessRight="1" />
 		</screenInfo>
 	</functionInfo>
 	

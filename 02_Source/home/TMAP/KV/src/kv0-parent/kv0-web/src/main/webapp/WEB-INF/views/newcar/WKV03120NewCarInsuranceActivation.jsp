@@ -82,6 +82,12 @@
 				"Do you confirm to activate ?", 400, 200);
 	}
 	
+	window.doActivate = function doActivate() {
+		FISLib.dialog.open("NewCarActivateDialog", _rootPath
+				+ "/NewCarInsurance/ActivateRedPlant/activate",
+				"Temporary Policy activated", 220, 120);
+	}
+	
 </script>
 
 <jsp:useBean id="now" class="java.util.Date" />
@@ -96,12 +102,19 @@
 				<label>Status&nbsp;: New</label>
 			</div>
         	<div class="col-8" style="text-align: right;">
-        		<sc2:button functionId="KV0312"  screenId="WKV03120" buttonId="WKV03120Submit"
+        		<%-- <sc2:button functionId="KV0312"  screenId="WKV03120" buttonId="WKV03120Submit"
 							type="button" value="Submit" styleClass="button" secured="false" onClick="doConfirmSubmit();"/>
 				<sc2:button functionId="KV0312"  screenId="WKV03120" buttonId="WKV03120Save"
 							type="button" value="Save" styleClass="button" secured="false" onClick=""/>
 				<sc2:button functionId="KV0312"  screenId="WKV03120" buttonId="WKV03120Reset"
-							type="button" value="Reset" styleClass="button" secured="false" onClick=""/>
+							type="button" value="Reset" styleClass="button" secured="false" onClick=""/> --%>
+							
+				<sc2:button functionId="KV0312"  screenId="WKV03120" buttonId="WKV03120Activate"
+							type="button" value="Activate" styleClass="button" secured="false" onClick="doActivate();"/>
+				<sc2:button functionId="KV0312"  screenId="WKV03120" buttonId="WKV03120NeedMoreInfo"
+							type="button" value="Need More infor." styleClass="button" secured="false" onClick=""/>
+				<sc2:button functionId="KV0312"  screenId="WKV03120" buttonId="WKV03120Back"
+							type="button" value="Back" styleClass="button" secured="false" onClick=""/>
         	</div>
         </div>
        	<hr/>
