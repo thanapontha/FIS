@@ -13,7 +13,7 @@
 		enableDisableButton(false);
 		$('#rowsPerPage').val(rowsPerPage);
 		
-		$('#createDateFrom, #createDateTo, #activationDateFrom, #activationDateTo').datepicker({
+		$('#createDateFrom, #createDateTo, #deliveryDateFrom, #deliveryDateTo, #activationDateFrom, #activationDateTo').datepicker({
 			showOn: "button",
 			buttonImage: calendarImgPath,
 			buttonImageOnly: true,
@@ -24,6 +24,8 @@
 			}
 		});
 		
+		validateDate(document.getElementById('deliveryDateFrom'));
+		validateDate(document.getElementById('deliveryDateTo'));
 		validateDate(document.getElementById('createDateFrom'));
 		validateDate(document.getElementById('createDateTo'));
 		validateDate(document.getElementById('activationDateFrom'));

@@ -83,7 +83,6 @@
 		                           <option>All</option>
 		                           <option>Cash</option>
 		                           <option>Finance</option>
-		                           <option>Fleet</option>
 		                       </select>
 		                   </div>
 		                   
@@ -165,6 +164,18 @@
         						</div>
 		                   </div>
 		                   <div class="pb-1 pr-3 col-md-2">
+		                       <label for="deliveryDateFrom" class="mx-1 my-0">Delivery From Date&nbsp;:</label>
+		                       <div class="d-flex flex-row">
+        							<input type="text" class="form-control form-control-sm" id="deliveryDateFrom" maxlength="10">
+        						</div>
+		                   </div>		                   
+		                   <div class="pb-1 pr-3 col-md-2">
+		                       <label for="deliveryDateTo" class="mx-1 my-0">Delivery To Date&nbsp;:</label>
+		                       <div class="d-flex flex-row">
+        							<input type="text" class="form-control form-control-sm" id="deliveryDateTo" maxlength="10">
+        						</div>
+		                   </div>
+		                   <div class="pb-1 pr-3 col-md-2">
 		                       <label for="activationDateFrom" class="mx-1 my-0"><span class="MandatoryFieldFont">*</span>Activation From Date&nbsp;:</label>
 		                       <div class="d-flex flex-row">
         							<input type="text" class="form-control form-control-sm MandatoryField" id="activationDateFrom" maxlength="10">
@@ -176,10 +187,8 @@
         							<input type="text" class="form-control form-control-sm MandatoryField" id="activationDateTo" maxlength="10">
         						</div>
 		                   </div>
-		                   <div class="pb-1 pr-3 col-md-4">
-		                   </div>
 		                   
-		                   <div class="pb-1 pr-3 col-12" style="text-align: right;">
+		                   <div class="py-1 pr-3 col-12" style="text-align: right;">
 								<div class="d-flex align-items-end justify-content-end" style="height:100%">
 			                       <sc2:button functionId="KV0311"  screenId="WKV03110" buttonId="WKV03110Search"
 										type="button" value="Search"
@@ -193,8 +202,8 @@
 								</div>
 							</div>
 		               </div>
+					</div>
 				</div>
-			</div>
 			</form:form>
 		</div>
 		
@@ -229,9 +238,9 @@
 											  
 								<datatables:column title="No." cssClass="col1 rownum" sortable="false" searchable="false" cssStyle="text-align:center;" />
 				        		<datatables:column title="Document Status" cssClass="col2" cssStyle="text-align:center;" sortable="false" searchable="false"/>
-								<datatables:column title="Model" cssClass="col3 fixed" sortable="false" searchable="false" cssStyle="text-align:center;" />
+								<datatables:column title="Model" cssClass="col3" sortable="false" searchable="false" cssStyle="text-align:center;" />
 								<datatables:column title="VIN" cssClass="col4" sortable="false" searchable="false" cssStyle="text-align:center;"/>
-								<datatables:column title="Customer Name" cssClass="col5" sortable="false" cssStyle="text-align:center;" />
+								<datatables:column title="Customer Name" cssClass="col5 " sortable="false" cssStyle="text-align:center;" />
 								<datatables:column title="INS Type" cssClass="col6" sortable="false" searchable="false" cssStyle="text-align:center;"/>
 								<datatables:column title="Premium Type" cssClass="col7" sortable="false" searchable="false" cssStyle="text-align:center;"/>
 								<datatables:column title="INS Company" cssClass="col8" sortable="false" searchable="false" cssStyle="text-align:center;"/>

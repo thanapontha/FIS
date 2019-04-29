@@ -97,28 +97,42 @@
 
 <form>
 	<div id="screen-panel" class="container-fluid"">
-		<div class="row py-2"> 
-			<div class="col-4" style="text-align: left;">
-				<label>Status&nbsp;: New</label>
+		<div class="row pt-2 pb-1">
+			<div class="col-6">
+				<div class="row">
+					<div class="col-12" style="text-align: left;">
+						<label>Document No.&nbsp;: INS00001</label>
+					</div>
+					<div class="col-12" style="text-align: left;">
+						<label>Status&nbsp;: New</label>
+					</div>
+				</div>
 			</div>
-        	<div class="col-8" style="text-align: right;">
-        		<%-- <sc2:button functionId="KV0312"  screenId="WKV03120" buttonId="WKV03120Submit"
-							type="button" value="Submit" styleClass="button" secured="false" onClick="doConfirmSubmit();"/>
-				<sc2:button functionId="KV0312"  screenId="WKV03120" buttonId="WKV03120Save"
-							type="button" value="Save" styleClass="button" secured="false" onClick=""/>
-				<sc2:button functionId="KV0312"  screenId="WKV03120" buttonId="WKV03120Reset"
-							type="button" value="Reset" styleClass="button" secured="false" onClick=""/> --%>
-							
-				<sc2:button functionId="KV0312"  screenId="WKV03120" buttonId="WKV03120Activate"
-							type="button" value="Activate" styleClass="button" secured="false" onClick="doActivate();"/>
-				<sc2:button functionId="KV0312"  screenId="WKV03120" buttonId="WKV03120NeedMoreInfo"
-							type="button" value="Need More infor." styleClass="button" secured="false" onClick=""/>
-				<sc2:button functionId="KV0312"  screenId="WKV03120" buttonId="WKV03120Back"
-							type="button" value="Back" styleClass="button" secured="false" onClick=""/>
+			<div class="col-6">
+				<div class="row">
+					<div class="col-12">&nbsp;</div>
+		        	<div class="col-12" style="text-align: right;">
+		        		<sc2:button functionId="KV0312"  screenId="WKV03120" buttonId="WKV03120Delete"
+									type="button" value="Delete" styleClass="button" secured="false" onClick=""/>
+		        		<sc2:button functionId="KV0312"  screenId="WKV03120" buttonId="WKV03120Submit"
+									type="button" value="Submit" styleClass="button" secured="false" onClick="doConfirmSubmit();"/>
+						<sc2:button functionId="KV0312"  screenId="WKV03120" buttonId="WKV03120Save"
+									type="button" value="Save" styleClass="button" secured="false" onClick=""/>
+						<sc2:button functionId="KV0312"  screenId="WKV03120" buttonId="WKV03120Reset"
+									type="button" value="Reset" styleClass="button" secured="false" onClick=""/>
+									
+						<%-- <sc2:button functionId="KV0312"  screenId="WKV03120" buttonId="WKV03120Activate"
+									type="button" value="Activate" styleClass="button" secured="false" onClick="doActivate();"/>
+						<sc2:button functionId="KV0312"  screenId="WKV03120" buttonId="WKV03120NeedMoreInfo"
+									type="button" value="Need More infor." styleClass="button" secured="false" onClick=""/>
+						<sc2:button functionId="KV0312"  screenId="WKV03120" buttonId="WKV03120Back"
+									type="button" value="Back" styleClass="button" secured="false" onClick=""/> --%>
+		        	</div>
+	        	</div>
         	</div>
         </div>
        	<hr/>
-       	<div class="row" style="height:510px; overflow: auto;"> 
+       	<div class="row" style="height:495px; overflow: auto;"> 
         	<div class="col-12">
 				<div class="row"> 
 		        	<div class="py-2 col-12">
@@ -233,6 +247,17 @@
 		        						<select class="form-control form-control-sm MandatoryField" id="insuranceCompany">
 				                           <option>AIOI</option>
 				                           <option>Viriya</option>
+				                           <option>Company 1</option>
+				                           <option>Company 2</option>
+				                           <option>Company 3</option>
+				                           <option>Company 4</option>
+				                           <option>Company 5</option>
+				                           <option>Company 6</option>
+				                           <option>Company 7</option>
+				                           <option>Company 8</option>
+				                           <option disabled>--------------------------------</option>
+				                           <option>Company 9</option>
+				                           <option>Company 10</option>
 				                       	</select>
 		        					</div>
 		        					<div class="col-md-2 col-12">
@@ -338,14 +363,14 @@
 		        				
 		        				<div class="row" id="customerIndividual">
 		        					<div class="col-12 py-1">
-		        						<div class="input-group col-12">Personal Delivery&nbsp;:&nbsp;&nbsp;
+		        						<div class="input-group col-12"><label>Policy Delivery&nbsp;:&nbsp;&nbsp;</label>
 					                       	<div class="form-check form-check-inline">
-											  <input class="form-check-input" type="radio" name="personalDelivery" value="Dealer" checked="checked">
-											  <label class="form-check-label" for="personalDelivery">Dealer</label>
+											  <input class="form-check-input" type="radio" name="policyDelivery" value="Dealer" checked="checked">
+											  <label class="form-check-label" for="policyDelivery">Dealer</label>
 											</div>
 											<div class="form-check form-check-inline">
-											  <input class="form-check-input" type="radio" name="personalDelivery" value="Customer">
-											  <label class="form-check-label" for="personalDelivery">Customer</label>
+											  <input class="form-check-input" type="radio" name="policyDelivery" value="Customer">
+											  <label class="form-check-label" for="policyDelivery">Customer</label>
 											</div>
 										</div>
 									</div>
@@ -516,14 +541,14 @@
 		        			
 		        				<div class="row" id="customerJuristic">
 		        					<div class="col-12 py-1">
-		        						<div class="input-group col-12">Company Delivery&nbsp;:&nbsp;&nbsp;
+		        						<div class="input-group col-12"><label>Policy Delivery&nbsp;:&nbsp;&nbsp;</label>
 					                       	<div class="form-check form-check-inline">
-											  <input class="form-check-input" type="radio" name="companyDelivery" value="Dealer" checked="checked">
-											  <label class="form-check-label" for="companyDelivery">Dealer</label>
+											  <input class="form-check-input" type="radio" name="compPolicyDelivery" value="Dealer" checked="checked">
+											  <label class="form-check-label" for="compPolicyDelivery">Dealer</label>
 											</div>
 											<div class="form-check form-check-inline">
-											  <input class="form-check-input" type="radio" name="companyDelivery" value="Customer">
-											  <label class="form-check-label" for="companyDelivery">Customer</label>
+											  <input class="form-check-input" type="radio" name="compPolicyDelivery" value="Customer">
+											  <label class="form-check-label" for="compPolicyDelivery">Customer</label>
 											</div>
 										</div>
 									</div>
@@ -680,7 +705,7 @@
 					</div>
 				</div>
 				<div class="row"> 
-		        	<div class="py-2 col-12">
+		        	<div class="pt-2 pb-3 col-12">
 						<div class="card">
 							<div class="card-body">
 					        	<div class="row"> 
@@ -699,6 +724,22 @@
 		        					<div class="col-md-3 col-6">
 		        						<label for="updatedDate" class="mx-1 my-0">Updated Date&nbsp;:</label>
 				                       	<input type="text" class="form-control form-control-sm" id="updatedDate" value="21/12/2018 15:45:02" disabled>
+		        					</div>
+		        					<div class="col-md-4 col-12">
+		        						<div class="row">
+				        					<div class="col-md-12 col-12">
+				        						<label for="policyNo" class="mx-1 my-0">Cancel By&nbsp;:</label>
+				        						<input type="text" class="form-control form-control-sm" id="cancelBy" disabled>
+				        					</div>
+				        					<div class="col-md-12 col-12">
+				        						<label for="policyNo" class="mx-1 my-0">Cancel Date&nbsp;:</label>
+				        						<input type="text" class="form-control form-control-sm" id="cancelDate" disabled>
+				        					</div>
+			        					</div>
+		        					</div>
+		        					<div class="col-md-8 col-12">
+		        						<label for="remark" class="mx-1 my-0">Cancel Reason&nbsp;:</label>
+		        						<textarea class="form-control" id="cancelReason" rows="4" maxlength="2000"></textarea>
 		        					</div>
 		        				</div>
 					      	</div>
