@@ -38,8 +38,8 @@ import com.google.common.base.Strings;
 
 @Controller
 @RequestMapping("NewCarInsurance")
-public class NewCarInsuranceController extends CommonBaseController {
-	final Logger log = LoggerFactory.getLogger(NewCarInsuranceController.class);
+public class NewCarInsuranceListController extends CommonBaseController {
+	final Logger log = LoggerFactory.getLogger(NewCarInsuranceListController.class);
 	static final String VIEW_NAME = "WKV03110";
 	
 	@Value("${projectCode}")
@@ -53,8 +53,6 @@ public class NewCarInsuranceController extends CommonBaseController {
 
 	@Autowired
 	protected CommonWebService commonService;
-	
-	private HashMap<String,Object> tableMeataData;
 
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView initial(HttpServletRequest request, NewCarInsuranceForm form) {
@@ -100,7 +98,7 @@ public class NewCarInsuranceController extends CommonBaseController {
 		ServiceStatus status = ServiceStatus.OK;
 		try {
 			Set<ConstraintViolation<NewCarInsuranceForm>> errors = validator.validate(form);
-			List<String> errorList = form.validate(messageSource, RequestContextUtils.getLocale(request), AppConstants.ACTION_SEARCH, payload, tableMeataData);
+			List<String> errorList = form.validate(messageSource, RequestContextUtils.getLocale(request), AppConstants.ACTION_SEARCH, payload);
 
 			if ((!errors.isEmpty()) || (!errorList.isEmpty())) {
 				errorList.addAll(processErrorMessageFromValidator(errors.toArray(), RequestContextUtils.getLocale(request), new NewCarInsuranceForm()));

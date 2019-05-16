@@ -126,6 +126,7 @@ public final class AppConstants {
 	public static final String SYS_CATEGORY_PIC = "PIC";
 	public static final String SYS_CATEGORY_FIS = "FIS";
 	public static final String SYS_CATEGORY_COMMON_UPLOAD = "COMMON_UPLOAD";
+	public static final String SYS_CATEGORY_LIST = "LIST";
 	
 	public static final String SYS_SUB_CATEGORY_FUNCTION_UPLOAD = "FUNCTION";
 	public static final String SYS_SUB_CATEGORY_MAX_SIZE_EXCEL = "MAX_SIZE_EXCEL";
@@ -138,6 +139,13 @@ public final class AppConstants {
 	public static final String SYS_SUB_CATEGORY_USER_ROLE_FOR_DOWNLOAD = "USER_ROLE_FOR_DOWNLOAD";
 	public static final String SYS_SUB_CATEGORY_MAXROW_OF_REPORT = "MAXROW";
 	public static final String SYS_SUB_CATEGORY_UPLOAD = "UPLOAD";
+	public static final String SYS_SUB_CATEGORY_BRAND = "BRAND";
+	public static final String SYS_SUB_CATEGORY_GENDER = "GENDER";
+	public static final String SYS_SUB_CATEGORY_FIN_LEASING_COMPANY = "FIN_LEASING_COMPANY";
+	public static final String SYS_SUB_CATEGORY_FIN_TYPE_PURCHASE = "FIN_TYPE_PURCHASE";
+	public static final String SYS_SUB_CATEGORY_INS_CLASS = "INS_CLASS";
+	public static final String SYS_SUB_CATEGORY_INS_PREMIUM_TYPE = "INS_PREMIUM_TYPE";
+	public static final String SYS_SUB_CATEGORY_INS_TYPE = "INS_TYPE";
 	
 	public static final String SYSTEM_NAME = "SYSTEM";
 	public static final String SYS_CD_MANAGER = "MANAGER";

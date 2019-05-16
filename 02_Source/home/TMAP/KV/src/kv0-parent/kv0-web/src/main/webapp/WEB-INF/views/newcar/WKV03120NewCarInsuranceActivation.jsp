@@ -9,7 +9,7 @@
 <views:script src="json2.js"/>
 <views:script src="jquery.caret.1.02.min.js"/>
 
-<views:style src="fis/WKV04110.css"/>
+<views:style src="fis/WKV03120.css"/>
 
 <style>
 
@@ -20,10 +20,13 @@
 	firstResult = '${form.firstResult}';
 	rowsPerPage = '${form.rowsPerPage}';
 	MSTD0031AERR = '<spring:message code="MSTD0031AERR"></spring:message>';
+	MSTD0003ACFM = '<spring:message code="MSTD0003ACFM"></spring:message>';
+	MKV00002ACFM = '<spring:message code="MKV00002ACFM"></spring:message>';
+	MKV00001ACFM = '<spring:message code="MKV00001ACFM"></spring:message>';
 
 	
 	
-	$(function(){
+	/* $(function(){
 		
 		$('#premiumInput, #activation, #birthDate, #dateCompRegistration, #coverageUntil').datepicker({
 			showOn: "button",
@@ -44,22 +47,6 @@
 		validateDecimal(document.getElementById('insPremium'), 10, 0, '');
 		validateDecimal(document.getElementById('coverage'), 10, 0, '');
 		validateNumber(document.getElementById('vehicleAct'), 3, 0, false);
-		
-		
-/* 		$('#coverageUntil').MonthPicker({
-	        MonthFormat: 'M-y', // Short month name, Full year.
-	        Button: '<img class="ui-datepicker-trigger" title="Select Month" src='+calendarImgPath+ '/>',
-	        AltFormat: 'M-y', //result
-	        onSelect: function(){
-				$(this).focus();
-			},
-			OnAfterChooseMonth: function(){
-				$('#coverageUntil').focus();
-			}
-	    });
-		
-		validateDateMMMYY(document.getElementById('coverageUntil')); 
-*/
 		
 		$("[name='typeOfCustomer']").click(function() {
 			if($(this).val()=='Personal'){
@@ -86,16 +73,22 @@
 		FISLib.dialog.open("NewCarActivateDialog", _rootPath
 				+ "/NewCarInsurance/ActivateRedPlant/activate",
 				"Temporary Policy activated", 220, 120);
-	}
+	} */
 	
 </script>
 
 <jsp:useBean id="now" class="java.util.Date" />
 <fmt:formatDate pattern = "yyyyMMddmmss"  value="${now}" var="currentTimestamp" />
 
-<views:script src="fis/WKV04110.js?t=${currentTimestamp}"/>
+<views:script src="fis/WKV03120.js?t=${currentTimestamp}"/>
 
-<form>
+<form:form method="post" 
+						   id="search-form" 
+						   action="${_mappingPath}/search" 
+						   ajax="searchFinish" 
+						   ajax-loading-target="#screen-panel" 
+						   validate-error="searchValidateError">
+						   
 	<div id="screen-panel" class="container-fluid"">
 		<div class="row pt-2 pb-1">
 			<div class="col-6">
@@ -198,17 +191,23 @@
 					        		<div class="col-md-6 col-12">
 					        			<div class="row"> 
 				        					<div class="col-md-4 col-12">
-				        						<label for="typeOfPurchase" class="mx-1 my-0"><span class="MandatoryFieldFont">*</span>Type of purchase&nbsp;:</label>
-						                       	<select class="form-control form-control-sm MandatoryField" id="typeOfPurchase">
-						                           <option>Financial</option>
-						                           <option>Cash</option>
+				        						<label for="finTypePurchase" class="mx-1 my-0"><span class="MandatoryFieldFont">*</span>Type of purchase&nbsp;:</label>
+						                       	<select class="form-control form-control-sm MandatoryField" id="finTypePurchase">
+							                       	<option value=""><spring:message code="KV0.common.combobox.select" /></option>
+													<c:forEach items="${form.finTypePurchaseList}" var="item">
+														<option value="${item.stValue}"><c:out
+																value="${item.stLabel}" /></option>
+													</c:forEach>
 						                       	</select>
 				        					</div>
 				        					<div class="col-md-8 col-12">
-				        						<label for="fnCompany" class="mx-1 my-0"><span class="MandatoryFieldFont">*</span>Leasing company&nbsp;:</label>
-						                       	<select class="form-control form-control-sm MandatoryField" id="fnCompany">
-						                           <option>Toyota Leasing</option>
-						                           <option>KK</option>
+				        						<label for="finLisingCompany" class="mx-1 my-0"><span class="MandatoryFieldFont">*</span>Leasing company&nbsp;:</label>
+						                       	<select class="form-control form-control-sm MandatoryField" id="finLisingCompany">
+						                        	<option value=""><spring:message code="KV0.common.combobox.select" /></option>
+													<c:forEach items="${form.finLisingCompanyList}" var="item">
+														<option value="${item.stValue}"><c:out
+																value="${item.stLabel}" /></option>
+													</c:forEach>
 						                       	</select>
 				        					</div>
 			        					</div>
@@ -261,24 +260,33 @@
 				                       	</select>
 		        					</div>
 		        					<div class="col-md-2 col-12">
-		        						<label for="insuranceClass" class="mx-1 my-0"><span class="MandatoryFieldFont">*</span>Insurance Class&nbsp;:</label>
-				                       	<select class="form-control form-control-sm MandatoryField" id="insuranceClass">
-				                           <option>1st class</option>
-				                           <option>2nd class</option>
-				                           <option>3rd class</option>
+		        						<label for="insClass" class="mx-1 my-0"><span class="MandatoryFieldFont">*</span>Insurance Class&nbsp;:</label>
+				                       	<select class="form-control form-control-sm MandatoryField" id="insClass">
+				                       		<option value=""><spring:message code="KV0.common.combobox.select" /></option>
+											<c:forEach items="${form.insClassList}" var="item">
+												<option value="${item.stValue}"><c:out
+														value="${item.stLabel}" /></option>
+											</c:forEach>
 				                       	</select>
 		        					</div>
 		        					<div class="col-md-2 col-12">
-				                       <label for="insuranceType" class="mx-1 my-0"><span class="MandatoryFieldFont">*</span>Insurance Type&nbsp;:</label>
-				                       <select class="form-control form-control-sm MandatoryField" id="insuranceType">
-				                           <option>T. Care</option>
-				                           <option>None T. Care</option>
+				                       <label for="insType" class="mx-1 my-0"><span class="MandatoryFieldFont">*</span>Insurance Type&nbsp;:</label>
+				                       <select class="form-control form-control-sm MandatoryField" id="insType">
+				                       		<option value=""><spring:message code="KV0.common.combobox.select" /></option>
+											<c:forEach items="${form.insTypeList}" var="item">
+												<option value="${item.stValue}"><c:out
+														value="${item.stLabel}" /></option>
+											</c:forEach>
 				                       </select>
 				                    </div>
 				                    <div class="col-md-2 col-12">
-				                       <label for="premiumType" class="mx-1 my-0"><span class="MandatoryFieldFont">*</span>Premium Type&nbsp;:</label>
-				                       <select class="form-control form-control-sm MandatoryField" id="premiumType">
-				                           <option>Convini</option>
+				                       <label for="insPremiumType" class="mx-1 my-0"><span class="MandatoryFieldFont">*</span>Premium Type&nbsp;:</label>
+				                       <select class="form-control form-control-sm MandatoryField" id="insPremiumType">
+				                           	<option value=""><spring:message code="KV0.common.combobox.select" /></option>
+											<c:forEach items="${form.insPremiumTypeList}" var="item">
+												<option value="${item.stValue}"><c:out
+														value="${item.stLabel}" /></option>
+											</c:forEach>
 				                       </select>
 				                    </div>
 		        					<div class="col-md-2 col-12">
@@ -405,10 +413,13 @@
 				                       			<input type="text" class="form-control form-control-sm MandatoryField" id="lastName">
 				        					</div>
 				        					<div class="col-md-1">
-				        						<label for="gender" class="mx-1 my-0"><span class="MandatoryFieldFont">*</span>Gender&nbsp;:</label>
-						                       	<select class="form-control form-control-sm MandatoryField" id="gender">
-						                           <option>Male</option>
-						                           <option>Female</option>
+				        						<label for="cuspGender" class="mx-1 my-0"><span class="MandatoryFieldFont">*</span>Gender&nbsp;:</label>
+						                       	<select class="form-control form-control-sm MandatoryField" id="cuspGender">
+						                           	<option value=""><spring:message code="KV0.common.combobox.select" /></option>
+													<c:forEach items="${form.genderList}" var="item">
+														<option value="${item.stValue}"><c:out
+																value="${item.stLabel}" /></option>
+													</c:forEach>
 						                       	</select>
 				        					</div>
 				        				</div>
@@ -435,30 +446,44 @@
 				        			<div class="col-12">
 					     				<div class="row">
 					     					<div class="col-md-3 col-12">
-				        						<label for="province" class="mx-1 my-0"><span class="MandatoryFieldFont">*</span>Province&nbsp;:</label>
-						                       	<select class="form-control form-control-sm MandatoryField" id="province">
-						                       		<option>Select</option>
-						                           	<option>Bangkok</option>
-						                           	<option>XXXX</option>
+				        						<label for="cuspProvince" class="mx-1 my-0"><span class="MandatoryFieldFont">*</span>Province&nbsp;:</label>
+						                       	<select class="form-control form-control-sm MandatoryField" id="cuspProvince">
+						                       		<option value=""><spring:message code="KV0.common.combobox.select" /></option>
+													<c:forEach items="${form.cuspProvinceList}" var="item">
+														<option value="${item.stValue}"><c:out
+																value="${item.stLabel}" /></option>
+													</c:forEach>
 						                       	</select>
 				        					</div>
 				        					<div class="col-md-3 col-12">
-				        						<label for="district" class="mx-1 my-0"><span class="MandatoryFieldFont">*</span>District&nbsp;:</label>
-						                       	<select class="form-control form-control-sm MandatoryField" id="district">
-						                       		<option>Select</option>
-						                           	<option>XXX</option>
+				        						<label for="cuspDistrict" class="mx-1 my-0"><span class="MandatoryFieldFont">*</span>District&nbsp;:</label>
+						                       	<select class="form-control form-control-sm MandatoryField" id="cuspDistrict">
+						                       		<option value=""><spring:message code="KV0.common.combobox.select" /></option>
+													<c:forEach items="${form.cuspDistrictList}" var="item">
+														<option value="${item.stValue}"><c:out
+																value="${item.stLabel}" /></option>
+													</c:forEach>
 						                       	</select>
 				        					</div>
 					     					<div class="col-md-2 col-12">
-				        						<label for="subDistrict" class="mx-1 my-0"><span class="MandatoryFieldFont">*</span>Sub District&nbsp;:</label>
-						                       	<select class="form-control form-control-sm MandatoryField" id="subDistrict">
-						                       		<option>Select</option>
-						                           	<option>XXX</option>
+				        						<label for="cuspSubDistrict" class="mx-1 my-0"><span class="MandatoryFieldFont">*</span>Sub District&nbsp;:</label>
+						                       	<select class="form-control form-control-sm MandatoryField" id="cuspSubDistrict">
+						                       		<option value=""><spring:message code="KV0.common.combobox.select" /></option>
+													<c:forEach items="${form.cuspSubDistrictList}" var="item">
+														<option value="${item.stValue}"><c:out
+																value="${item.stLabel}" /></option>
+													</c:forEach>
 						                       	</select>
 				        					</div>
 				        					<div class="col-md-2 col-12">
-				        						<label for="zipCode" class="mx-1 my-0"><span class="MandatoryFieldFont">*</span>Zip Code&nbsp;:</label>
-		        								<input type="text" class="form-control form-control-sm MandatoryField" id="zipCode">
+				        						<label for="cuspZipcode" class="mx-1 my-0"><span class="MandatoryFieldFont">*</span>Zip Code&nbsp;:</label>
+		        								<select class="form-control form-control-sm MandatoryField" id="cuspZipcode">
+						                       		<option value=""><spring:message code="KV0.common.combobox.select" /></option>
+													<c:forEach items="${form.cuspZipcodeList}" var="item">
+														<option value="${item.stValue}"><c:out
+																value="${item.stLabel}" /></option>
+													</c:forEach>
+						                       	</select>
 				        					</div>
 				        					<div class="col-md-2 col-12">
 				        						<label for="telephone" class="mx-1 my-0">Telephone&nbsp;:</label>
@@ -488,30 +513,44 @@
 				        			<div class="col-12">
 					     				<div class="row">
 					     					<div class="col-md-3 col-12">
-				        						<label for="province" class="mx-1 my-0"><span class="MandatoryFieldFont">*</span>Province&nbsp;:</label>
-						                       	<select class="form-control form-control-sm MandatoryField" id="province">
-						                       		<option>Select</option>
-						                           	<option>Bangkok</option>
-						                           	<option>XXXX</option>
+				        						<label for="cuspBillProvince" class="mx-1 my-0"><span class="MandatoryFieldFont">*</span>Province&nbsp;:</label>
+						                       	<select class="form-control form-control-sm MandatoryField" id="cuspBillProvince">
+						                       		<option value=""><spring:message code="KV0.common.combobox.select" /></option>
+													<c:forEach items="${form.cuspBillProvinceList}" var="item">
+														<option value="${item.stValue}"><c:out
+																value="${item.stLabel}" /></option>
+													</c:forEach>
 						                       	</select>
 				        					</div>
 				        					<div class="col-md-3 col-12">
-				        						<label for="district" class="mx-1 my-0"><span class="MandatoryFieldFont">*</span>District&nbsp;:</label>
-						                       	<select class="form-control form-control-sm MandatoryField" id="district">
-						                       		<option>Select</option>
-						                           	<option>XXX</option>
+				        						<label for="cuspBillDistrict" class="mx-1 my-0"><span class="MandatoryFieldFont">*</span>District&nbsp;:</label>
+						                       	<select class="form-control form-control-sm MandatoryField" id="cuspBillDistrict">
+						                       		<option value=""><spring:message code="KV0.common.combobox.select" /></option>
+													<c:forEach items="${form.cuspBillDistrictList}" var="item">
+														<option value="${item.stValue}"><c:out
+																value="${item.stLabel}" /></option>
+													</c:forEach>
 						                       	</select>
 				        					</div>
 					     					<div class="col-md-2 col-12">
-				        						<label for="subDistrict" class="mx-1 my-0"><span class="MandatoryFieldFont">*</span>Sub District&nbsp;:</label>
-						                       	<select class="form-control form-control-sm MandatoryField" id="subDistrict">
-						                       		<option>Select</option>
-						                           	<option>XXX</option>
+				        						<label for="cuspBillSubDistrict" class="mx-1 my-0"><span class="MandatoryFieldFont">*</span>Sub District&nbsp;:</label>
+						                       	<select class="form-control form-control-sm MandatoryField" id="cuspBillSubDistrict">
+						                       		<option value=""><spring:message code="KV0.common.combobox.select" /></option>
+													<c:forEach items="${form.cuspBillSubDistrictList}" var="item">
+														<option value="${item.stValue}"><c:out
+																value="${item.stLabel}" /></option>
+													</c:forEach>
 						                       	</select>
 				        					</div>
 				        					<div class="col-md-2 col-12">
-				        						<label for="zipCode" class="mx-1 my-0"><span class="MandatoryFieldFont">*</span>Zip Code&nbsp;:</label>
-		        								<input type="text" class="form-control form-control-sm MandatoryField" id="zipCode">
+				        						<label for="cuspBillZipcode" class="mx-1 my-0"><span class="MandatoryFieldFont">*</span>Zip Code&nbsp;:</label>
+		        								<select class="form-control form-control-sm MandatoryField" id="cuspBillZipcode">
+						                       		<option value=""><spring:message code="KV0.common.combobox.select" /></option>
+													<c:forEach items="${form.cuspBillZipcodeList}" var="item">
+														<option value="${item.stValue}"><c:out
+																value="${item.stLabel}" /></option>
+													</c:forEach>
+						                       	</select>
 				        					</div>
 				        					<div class="col-md-2 col-12">
 				        					</div>
@@ -580,15 +619,21 @@
 				        			</div>
 			        				<div class="col-12">
 					     				<div class="row"> 
-				        					<div class="col-4">
+				        					<div class="col-2">
 				        						<label for="address1" class="mx-1 my-0"><span class="MandatoryFieldFont">*</span>Name&nbsp;:</label>
 		        								<input type="text" class="form-control form-control-sm MandatoryField" id="address1">
 				        					</div>
-				        					<div class="col-4">
+				        					<div class="col-2">
 				        						<label for="address2" class="mx-1 my-0">Last Name&nbsp;:</label>
 		        								<input type="text" class="form-control form-control-sm" id="address2">
 				        					</div>
 				        					<div class="col-4">
+				        						<label for="address1" class="mx-1 my-0"><span class="MandatoryFieldFont">*</span>Address 1&nbsp;:</label>
+		        								<input type="text" class="form-control form-control-sm MandatoryField" id="address1">
+				        					</div>
+				        					<div class="col-4">
+				        						<label for="address2" class="mx-1 my-0">Address 2&nbsp;:</label>
+		        								<input type="text" class="form-control form-control-sm" id="address2">
 				        					</div>
 				        				</div>
 				        			</div>
@@ -596,30 +641,44 @@
 				        			<div class="col-12">
 					     				<div class="row">
 					     					<div class="col-md-3 col-12">
-				        						<label for="province" class="mx-1 my-0"><span class="MandatoryFieldFont">*</span>Province&nbsp;:</label>
-						                       	<select class="form-control form-control-sm MandatoryField" id="province">
-						                       		<option>Select</option>
-						                           	<option>Bangkok</option>
-						                           	<option>XXXX</option>
+				        						<label for="cuscProvince" class="mx-1 my-0"><span class="MandatoryFieldFont">*</span>Province&nbsp;:</label>
+						                       	<select class="form-control form-control-sm MandatoryField" id="cuscProvince">
+						                       		<option value=""><spring:message code="KV0.common.combobox.select" /></option>
+													<c:forEach items="${form.cuscProvinceList}" var="item">
+														<option value="${item.stValue}"><c:out
+																value="${item.stLabel}" /></option>
+													</c:forEach>
 						                       	</select>
 				        					</div>
 				        					<div class="col-md-3 col-12">
-				        						<label for="district" class="mx-1 my-0"><span class="MandatoryFieldFont">*</span>District&nbsp;:</label>
-						                       	<select class="form-control form-control-sm MandatoryField" id="district">
-						                       		<option>Select</option>
-						                           	<option>XXX</option>
+				        						<label for="cuscDistrict" class="mx-1 my-0"><span class="MandatoryFieldFont">*</span>District&nbsp;:</label>
+						                       	<select class="form-control form-control-sm MandatoryField" id="cuscDistrict">
+						                       		<option value=""><spring:message code="KV0.common.combobox.select" /></option>
+													<c:forEach items="${form.cuscDistrictList}" var="item">
+														<option value="${item.stValue}"><c:out
+																value="${item.stLabel}" /></option>
+													</c:forEach>
 						                       	</select>
 				        					</div>
 					     					<div class="col-md-2 col-12">
-				        						<label for="subDistrict" class="mx-1 my-0"><span class="MandatoryFieldFont">*</span>Sub District&nbsp;:</label>
-						                       	<select class="form-control form-control-sm MandatoryField" id="subDistrict">
-						                       		<option>Select</option>
-						                           	<option>XXX</option>
+				        						<label for="cuscSubDistrict" class="mx-1 my-0"><span class="MandatoryFieldFont">*</span>Sub District&nbsp;:</label>
+						                       	<select class="form-control form-control-sm MandatoryField" id="cuscSubDistrict">
+						                       		<option value=""><spring:message code="KV0.common.combobox.select" /></option>
+													<c:forEach items="${form.cuscSubDistrictList}" var="item">
+														<option value="${item.stValue}"><c:out
+																value="${item.stLabel}" /></option>
+													</c:forEach>
 						                       	</select>
 				        					</div>
 				        					<div class="col-md-2 col-12">
-				        						<label for="zipCode" class="mx-1 my-0"><span class="MandatoryFieldFont">*</span>Zip Code&nbsp;:</label>
-		        								<input type="text" class="form-control form-control-sm MandatoryField" id="zipCode">
+				        						<label for="cuscZipcode" class="mx-1 my-0"><span class="MandatoryFieldFont">*</span>Zip Code&nbsp;:</label>
+		        								<select class="form-control form-control-sm MandatoryField" id="cuscZipcode">
+						                       		<option value=""><spring:message code="KV0.common.combobox.select" /></option>
+													<c:forEach items="${form.cuscZipcodeList}" var="item">
+														<option value="${item.stValue}"><c:out
+																value="${item.stLabel}" /></option>
+													</c:forEach>
+						                       	</select>
 				        					</div>
 				        					<div class="col-md-2 col-12">
 				        						<label for="telephone" class="mx-1 my-0">Mobile&nbsp;:</label>
@@ -649,30 +708,44 @@
 				        			<div class="col-12">
 					     				<div class="row">
 					     					<div class="col-md-3 col-12">
-				        						<label for="province" class="mx-1 my-0"><span class="MandatoryFieldFont">*</span>Province&nbsp;:</label>
-						                       	<select class="form-control form-control-sm MandatoryField" id="province">
-						                       		<option>Select</option>
-						                           	<option>Bangkok</option>
-						                           	<option>XXXX</option>
+				        						<label for="cuscBillProvince" class="mx-1 my-0"><span class="MandatoryFieldFont">*</span>Province&nbsp;:</label>
+						                       	<select class="form-control form-control-sm MandatoryField" id="cuscBillProvince">
+						                       		<option value=""><spring:message code="KV0.common.combobox.select" /></option>
+													<c:forEach items="${form.cuscBillProvinceList}" var="item">
+														<option value="${item.stValue}"><c:out
+																value="${item.stLabel}" /></option>
+													</c:forEach>
 						                       	</select>
 				        					</div>
 				        					<div class="col-md-3 col-12">
-				        						<label for="district" class="mx-1 my-0"><span class="MandatoryFieldFont">*</span>District&nbsp;:</label>
-						                       	<select class="form-control form-control-sm MandatoryField" id="district">
-						                       		<option>Select</option>
-						                           	<option>XXX</option>
+				        						<label for="cuscBillDistrict" class="mx-1 my-0"><span class="MandatoryFieldFont">*</span>District&nbsp;:</label>
+						                       	<select class="form-control form-control-sm MandatoryField" id="cuscBillDistrict">
+						                       		<option value=""><spring:message code="KV0.common.combobox.select" /></option>
+													<c:forEach items="${form.cuscBillDistrictList}" var="item">
+														<option value="${item.stValue}"><c:out
+																value="${item.stLabel}" /></option>
+													</c:forEach>
 						                       	</select>
 				        					</div>
 					     					<div class="col-md-2 col-12">
-				        						<label for="subDistrict" class="mx-1 my-0"><span class="MandatoryFieldFont">*</span>Sub District&nbsp;:</label>
-						                       	<select class="form-control form-control-sm MandatoryField" id="subDistrict">
-						                       		<option>Select</option>
-						                           	<option>XXX</option>
+				        						<label for="cuscBillSubDistrict" class="mx-1 my-0"><span class="MandatoryFieldFont">*</span>Sub District&nbsp;:</label>
+						                       	<select class="form-control form-control-sm MandatoryField" id="cuscBillSubDistrict">
+						                       		<option value=""><spring:message code="KV0.common.combobox.select" /></option>
+													<c:forEach items="${form.cuscBillSubDistrictList}" var="item">
+														<option value="${item.stValue}"><c:out
+																value="${item.stLabel}" /></option>
+													</c:forEach>
 						                       	</select>
 				        					</div>
 				        					<div class="col-md-2 col-12">
-				        						<label for="zipCode" class="mx-1 my-0"><span class="MandatoryFieldFont">*</span>Zip Code&nbsp;:</label>
-		        								<input type="text" class="form-control form-control-sm MandatoryField" id="zipCode">
+				        						<label for="cuscBillZipcode" class="mx-1 my-0"><span class="MandatoryFieldFont">*</span>Zip Code&nbsp;:</label>
+		        								<select class="form-control form-control-sm MandatoryField" id="cuscBillZipcode">
+						                       		<option value=""><spring:message code="KV0.common.combobox.select" /></option>
+													<c:forEach items="${form.cuscBillZipcodeList}" var="item">
+														<option value="${item.stValue}"><c:out
+																value="${item.stLabel}" /></option>
+													</c:forEach>
+						                       	</select>
 				        					</div>
 				        					<div class="col-md-2 col-12">
 				        						<label for="email" class="mx-1 my-0"><span class="MandatoryFieldFont">*</span>Email&nbsp;:</label>
@@ -751,4 +824,4 @@
 			</div>
 		</div>
 	</div>
-</form>
+</form:form>
