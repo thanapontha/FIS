@@ -1,0 +1,11 @@
+
+cd to parent path
+C:\00_Projects\FIS_Git\FIS\02_Source\home\TMAP\KV\src\kv0-parent
+
+for local
+C:\00_Projects\FIS_Git\FIS\02_Source\home\TMAP\KV\src\kv0-parent gradle artifactoryPublish
+
+for ift
+C:\00_Projects\FIS_Git\FIS\02_Source\home\TMAP\KV\src\kv0-parent gradle -Pift artifactoryPublish
+
+gradle -Pift clean build
