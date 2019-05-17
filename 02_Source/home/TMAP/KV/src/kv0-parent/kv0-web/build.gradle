@@ -1,11 +1,11 @@
 group = 'th.co.toyota'
 version = '1.0.0-RELEASE'
 
-buildscript {
-    repositories {
-        jcenter() 
-    } 
-} 
+repositories {
+    maven {
+      url "http://localhost:8081/artifactory/FIS-GRADLE-VIRTUAL/"
+    }
+}
 
 apply plugin: 'war'
 
@@ -16,8 +16,10 @@ def vendorName='FTH'
 def profileName=''
 
 if(project.hasProperty('dev')){
+	println("Profile is dev")
 	profileName='KV0-development(KVP)'
 } else if(project.hasProperty('ift')){
+	println("Profile is ift-jboss(KVS)")
 	profileName='KV0-ift-jboss(KVS)'
 }
 
@@ -141,7 +143,7 @@ if( profileName == '' ){
 	           'Build-OS': "${System.properties['os.name']} ${System.properties['os.arch']} ${System.properties['os.version']}",
 			   'Built-By': System.getProperty('user.name'),
 			   'Built-On': "${InetAddress.localHost.hostName}/${InetAddress.localHost.hostAddress}",
-			   "Class-Path": configurations.compile.collect { it.getName() }.join(' ')
+			   'Class-Path': configurations.compile.collect{it.getName()}.join(' ')
 			   )
 		  }
 		excludes = ['WEB-INF/web.xml','WEB-INF/jboss-web.xml']
@@ -160,26 +162,3 @@ publishing {
     }
 }
 
-artifactory {
-    contextUrl = "${artifactory_contextUrl}"   //The base Artifactory URL if not overridden by the publisher/resolver
-    publish {
-        repository {
-            repoKey = 'gradle-dev-local'
-            username = "${artifactory_user}"
-            password = "${artifactory_password}"
-            maven = true
-            defaults {
-			   publications ('mavenJava')
-			}
-        }
-    }
-    resolve {
-        repository {
-            repoKey = 'FIS-GRADLE-VIRTUAL'
-            username = "${artifactory_user}"
-            password = "${artifactory_password}"
-            maven = true
-            
-        }
-    }
-}

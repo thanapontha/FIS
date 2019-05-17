@@ -1,6 +1,12 @@
 group = 'th.co.toyota.kv0.api'
 version = '1.0.0-RELEASE'
 
+repositories {
+    maven {
+      url "http://localhost:8081/artifactory/FIS-GRADLE-VIRTUAL/"
+    }
+}
+
 description = 'FIS (API) Application Interface'
 
 def moduleName=description
@@ -101,26 +107,3 @@ publishing {
     }
 }
 
-artifactory {
-    contextUrl = "${artifactory_contextUrl}"   //The base Artifactory URL if not overridden by the publisher/resolver
-    publish {
-        repository {
-            repoKey = 'gradle-dev-local'
-            username = "${artifactory_user}"
-            password = "${artifactory_password}"
-            maven = true
-            defaults {
-			   publications ('mavenJava')
-			}
-        }
-    }
-    resolve {
-        repository {
-            repoKey = 'FIS-GRADLE-VIRTUAL'
-            username = "${artifactory_user}"
-            password = "${artifactory_password}"
-            maven = true
-            
-        }
-    }
-}

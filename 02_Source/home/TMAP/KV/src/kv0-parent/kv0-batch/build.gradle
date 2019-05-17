@@ -1,6 +1,12 @@
 group = 'th.co.toyota.kv0.batch'
 version = '1.0.0-RELEASE'
 
+repositories {
+    maven {
+      url "http://localhost:8081/artifactory/FIS-GRADLE-VIRTUAL/"
+    }
+}
+
 description = 'FIS (Batch) Application Project'
 
 def moduleName=description
@@ -8,8 +14,10 @@ def vendorName='FTH'
 def profileName=''
 
 if(project.hasProperty('dev')){
+	println("Profile is dev")
 	profileName='KV0-development(KVP)'
 } else if(project.hasProperty('ift')){
+	println("Profile is ift-jboss(KVS)")
 	profileName='KV0-ift-jboss(KVS)'
 }
 
@@ -76,26 +84,3 @@ publishing {
     }
 }
 
-artifactory {
-    contextUrl = "${artifactory_contextUrl}"   //The base Artifactory URL if not overridden by the publisher/resolver
-    publish {
-        repository {
-            repoKey = 'gradle-dev-local'
-            username = "${artifactory_user}"
-            password = "${artifactory_password}"
-            maven = true
-            defaults {
-			   publications ('mavenJava')
-			}
-        }
-    }
-    resolve {
-        repository {
-            repoKey = 'FIS-GRADLE-VIRTUAL'
-            username = "${artifactory_user}"
-            password = "${artifactory_password}"
-            maven = true
-            
-        }
-    }
-}
