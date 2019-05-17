@@ -1,24 +1,65 @@
 allprojects  {
-  apply plugin: 'maven'
+    //apply plugin: 'maven'
 
-  group = 'th.co.toyota.kv0.parent'
-version = '1.0.0-RELEASE'
+    //group = 'th.co.toyota.kv0.parent'
+	//version = '1.0.0-RELEASE'
+	apply plugin: "com.jfrog.artifactory"
+    apply plugin: 'java'
+    apply plugin: 'maven-publish'
+    group = 'th.co.toyota.kv0.parent'
+	version = '1.0.0-RELEASE'
 }
 
 subprojects {
   apply plugin: 'java'
-  apply plugin: 'maven'
+  //apply plugin: 'maven'
   apply plugin: 'eclipse'
   
   sourceCompatibility = 1.7
   targetCompatibility = 1.7
 
   
-  repositories {
-    mavenLocal()
-    mavenCentral()
-    //maven { url "http://repo.maven.apache.org/maven2" }
-    maven { url "http://10.254.245.25:8081/nexus/content/groups/public" }
-  }
+  //repositories {
+  //  mavenLocal()
+  //  mavenCentral()
+  //  maven { url "http://10.254.245.25:8081/nexus/content/groups/public" }
+  //}
   
 }
+
+buildscript {
+    repositories {
+        maven {
+	      url "http://localhost:8081/artifactory/FIS-GRADLE-VIRTUAL/"
+	    }
+    }
+    dependencies {
+        //Check for the latest version here: http://plugins.gradle.org/plugin/com.jfrog.artifactory
+        //classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4+"
+        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4.9.6"
+    }
+}
+
+/*artifactory {
+    contextUrl = "${artifactory_contextUrl}"   //The base Artifactory URL if not overridden by the publisher/resolver
+    publish {
+        repository {
+            repoKey = 'gradle-dev-local'
+            username = "${artifactory_user}"
+            password = "${artifactory_password}"
+            maven = true
+            defaults {
+			   publications ('mavenJava')
+			}
+        }
+    }
+    resolve {
+        repository {
+            repoKey = 'FIS-GRADLE-VIRTUAL'
+            username = "${artifactory_user}"
+            password = "${artifactory_password}"
+            maven = true
+            
+        }
+    }
+}*/
