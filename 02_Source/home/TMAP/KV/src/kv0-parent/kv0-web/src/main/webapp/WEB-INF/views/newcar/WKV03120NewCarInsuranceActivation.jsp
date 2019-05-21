@@ -23,57 +23,6 @@
 	MSTD0003ACFM = '<spring:message code="MSTD0003ACFM"></spring:message>';
 	MKV00002ACFM = '<spring:message code="MKV00002ACFM"></spring:message>';
 	MKV00001ACFM = '<spring:message code="MKV00001ACFM"></spring:message>';
-
-	
-	
-	/* $(function(){
-		
-		$('#premiumInput, #activation, #birthDate, #dateCompRegistration, #coverageUntil').datepicker({
-			showOn: "button",
-			buttonImage: calendarImgPath,
-			buttonImageOnly: true,
-			buttonText: "Select date",
-			dateFormat: 'dd/mm/yy',
-			onSelect: function(){
-				$(this).focus();	
-			}
-		});
-		
-		validateDate(document.getElementById('activation'));
-		validateDate(document.getElementById('birthDate'));
-		validateDate(document.getElementById('registerDate'));
-		validateDate(document.getElementById('coverageTo'));
-		
-		validateDecimal(document.getElementById('insPremium'), 10, 0, '');
-		validateDecimal(document.getElementById('coverage'), 10, 0, '');
-		validateNumber(document.getElementById('vehicleAct'), 3, 0, false);
-		
-		$("[name='typeOfCustomer']").click(function() {
-			if($(this).val()=='Personal'){
-				$('#customerIndividual').show();
-				$('#customerJuristic').hide();
-			}else{
-				$('#customerIndividual').hide();
-				$('#customerJuristic').show();
-			}
-		});
-		
-		
-		$("input:radio[name='typeOfCustomer']:first").attr("checked",true);
-		$("input:radio[name='typeOfCustomer']:first").click();
-	});
-	
-	window.doConfirmSubmit = function doConfirmSubmit() {
-		FISLib.dialog.open("NewCarConfirmSubmitDialog", _rootPath
-				+ "/NewCarInsurance/ActivateRedPlant/confirmSubmit",
-				"Do you confirm to activate ?", 400, 200);
-	}
-	
-	window.doActivate = function doActivate() {
-		FISLib.dialog.open("NewCarActivateDialog", _rootPath
-				+ "/NewCarInsurance/ActivateRedPlant/activate",
-				"Temporary Policy activated", 220, 120);
-	} */
 	
 </script>
 

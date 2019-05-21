@@ -11,7 +11,7 @@
 <views:script src="jquery-ui-1.9.1/jquery.dataTables.js"/>
 <views:style src="jquery.dataTables.css"/>
 
-<views:style src="tim/WST33060.css"/>
+<views:style src="fis/WST33060.css"/>
 <script>
 	mappingPath = '${_mappingPath}';
 	firstResult = '${form.firstResult}';
@@ -34,7 +34,7 @@
 <jsp:useBean id="now" class="java.util.Date" />
 <fmt:formatDate pattern = "yyyyMMddmmss"  value="${now}" var="currentTimestamp" />
 
-<views:script src="tim/WST33060.js?t=${currentTimestamp}"/>
+<views:script src="fis/WST33060.js?t=${currentTimestamp}"/>
 
 <div id="screen-panel" class="container-fluid">
 	<div id="search-criteria">

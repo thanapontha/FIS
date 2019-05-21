@@ -161,58 +161,7 @@
 		</screenInfo>
 	</functionInfo>
 
-
-
-	<!-- Begin Kaikieng -->
-	<functionInfo group="KV0100" functionId="KV0111">
-		<screenInfo screenId="WKV01110" screenResource="kaikiengInput">
-			<buttonInfo buttonId="WKV01110Search" accessRight="1" />
-			<buttonInfo buttonId="WKV01110Clear" accessRight="1" />
-			<buttonInfo buttonId="WKV01110Edit" accessRight="3" />
-			<buttonInfo buttonId="WKV01110Save" accessRight="3" />
-			<buttonInfo buttonId="WKV01110Cancel" accessRight="3" />
-			<buttonInfo buttonId="WKV01110Download" accessRight="3" />
-			<buttonInfo buttonId="WKV01110Browse" accessRight="1" />
-			<buttonInfo buttonId="WKV01110Upload" accessRight="3" />
-			<buttonInfo buttonId="WKV01110Submit" accessRight="3" />
-			<buttonInfo buttonId="WKV01110Fix" accessRight="3" />
-			<buttonInfo buttonId="WKV01110RejectKaikieng" accessRight="3" />
-		</screenInfo>
-	</functionInfo>
-	<functionInfo group="KV0100" functionId="KV0115">
-		<screenInfo screenId="WKV01150" screenResource="getsudoWorksheet">
-			<buttonInfo buttonId="WKV01150Search" accessRight="1" />
-			<buttonInfo buttonId="WKV01150Clear" accessRight="1" />
-			<buttonInfo buttonId="WKV01150Download" accessRight="3" />
-			<buttonInfo buttonId="WKV01150Browse" accessRight="1" />
-			<buttonInfo buttonId="WKV01150Upload" accessRight="3" />
-			<buttonInfo buttonId="WKV01150Log" accessRight="1" />
-			<buttonInfo buttonId="WKV01150Complete" accessRight="3" />
-			<buttonInfo buttonId="WKV01150Reset" accessRight="3" />
-			<buttonInfo buttonId="WKV01150CompletedReset" accessRight="3" />			
-		</screenInfo>
-	</functionInfo>
 	<!-- End Kaikieng price -->
-	<!-- Begin Rundown and Unit -->
-	<functionInfo group="KV0200" functionId="KV0211">
-		<screenInfo screenId="WKV02110" screenResource="rundownAndKompo">
-			<buttonInfo buttonId="WKV02110Search" accessRight="1" />
-			<buttonInfo buttonId="WKV02110Clear" accessRight="1" />
-			<buttonInfo buttonId="WKV02110Browse" accessRight="1" />
-			<buttonInfo buttonId="WKV02110Validate" accessRight="3" />
-			<buttonInfo buttonId="WKV02110Detail" accessRight="1" />
-			<buttonInfo buttonId="WKV02110Log" accessRight="1" />
-			<buttonInfo buttonId="WKV02110Fix" accessRight="3" />				
-		</screenInfo>
-	</functionInfo>
-	<functionInfo group="KV0200" functionId="KV0211">
-		<screenInfo screenId="WKV02111" screenResource="vanningAdjustment">
-			<buttonInfo buttonId="WKV02111Round" accessRight="3" />	
-			<buttonInfo buttonId="WKV02111Save" accessRight="3" />
-			<buttonInfo buttonId="WKV02111Cancel" accessRight="3" />					
-		</screenInfo>
-	</functionInfo>
-	<!-- End Rundown and Unit -->
 	
 	<!-- Begin Master-FIS -->
 	<functionInfo group="ST3001" subGroup="ST30011" functionId="KV0411">

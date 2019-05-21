@@ -7,132 +7,95 @@
 <%@ taglib prefix="sc2" uri="/WEB-INF/tld/sc2.tld"%>
 
 <views:script src="json2.js"/>
-<views:script src="jquery.caret.1.02.min.js"/>
-<views:script src="jquery-ui-1.9.1/jquery.dataTables.js"/>
-<views:style src="jquery.dataTables.css"/>
 
-
-<views:style src="fis/WKV04110.css"/>
+<views:style src="fis/WKV05110.css"/>
 <script>
 	mappingPath = '${_mappingPath}';
-	firstResult = '${form.firstResult}';
-	rowsPerPage = '${form.rowsPerPage}';
 </script>
 
 <jsp:useBean id="now" class="java.util.Date" />
 <fmt:formatDate pattern = "yyyyMMddmmss"  value="${now}" var="currentTimestamp" />
 
-<views:script src="fis/WKV04110.js?t=${currentTimestamp}"/>
-
- <div class="container-fluid">
- 
- 	 <div class="row"> 
-	 	<div class="py-2 mx-auto text-center">
-	   		<h3 class="display-5">Insurance Company Data Import & Export</h3>
-	 	</div>
-	</div>
- 	<div class="row"> 
-       	<div class="py-1 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-			<div class="card">
-				<div class="card-header text-white bg-primary">Import / Download template</div>
-		     	<div class="card-body">
-		        	<div class="row"> 
-       					<div class="input-group col-12">
-       						<label for="importType" class="mx-1 my-0">Type&nbsp;:</label>
-	                       	<select class="form-control form-control-sm" id="importType">
-	                           <option>1st year INS Sales Premium <br>(Normal/TLT Exclusive and etc.)</option>
-	                           <option>Import Transfer Premium</option>
-	                           <option>No Claim Bonus Premium(NCB)</option>
-	                           <option>Status of issued INS Policy</option>
-	                       	</select>
-       					</div>
-       					<div class="col-12">
-       						<label for="importFile" class="mx-1 my-0"><spring:message code="KV0.WKV01110.Label.FileName" />&nbsp;:</label>
-							<input type="file" class="form-control-file" id="importFile">
-       					</div>
-       					<div class="pt-1 col-12 text-right">
-	                       <sc2:button functionId="KV0511"  screenId="WKV05110" buttonId="WKV05110Import"
-								type="button" value="Import"
-								styleClass="button" secured="false" onClick="clearSearch();"
-							/>
-							<sc2:button functionId="KV0511"  screenId="WKV05110" buttonId="WKV05110DownloadTemplate"
-								type="button" value="DownloadTemplate"
-								styleClass="button" secured="false" onClick="clearSearch();"
-							/>
-	                   </div>
-       				</div>
-		      	</div>
-		  	</div>
-		</div>
-		<div class="py-1 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-			<div class="card">
-				<div class="card-header text-white bg-success">Export</div>
-		     	<div class="card-body">
-		        	<div class="row"> 
-       					<div class="input-group col-12">
-       						<label for="exportType" class="mx-1 my-0">Type&nbsp;:</label>
-	                       <select class="form-control form-control-sm" id=""exportType"">
-	                           <option>1st year INS Sales Daily</option>
-	                           <option>Renewal Insurance Sales Daily</option>
-	                       </select>
-	                       <sc2:button functionId="KV0511"  screenId="WKV05110" buttonId="WKV05110Export"
-								type="button" value="Export"
-								styleClass="button" secured="false" onClick="clearSearch();"
-							/>
-       					</div>
-       				</div>
-		      	</div>
-		  	</div>
-		</div>
-	</div>
-	
-	<div id="data-head-panel" class="row" style="border: none; padding-top: 0.5rem;">	
-		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-			<div id="search-result" class="overflow-hidden">
-				<div id="dataList" class="" style="width:100%;" >
-					<form id="result-list-form" 
-							action="dataList" 
-							method="post"  
-							ajax="updateObjectFinish" 
-							ajax-loading-target="#screen-panel" 
-				   			validate-error="saveValidateError">
-					    
-						<datatables:table id="result" 
-						    					data="${dataList}" 
-						    					cdn="false" 
-						    					row="row" 
-						    					cssClass="result fixedheader fixedcolumn" 
-						    					paginate="true" 
-						    					cssStyle="height:310px;width:100%;"
-												info="true" 
-												filter="false"
-												displayLength="${form.rowsPerPage}" 
-												paginationType="full_numbers" 
-												fixedPosition="col"
-												lengthChange="false"
-												sort="false"
-												serverData="serverData"
-												serverSide="true"
-												>
-										  
-							<datatables:column title="No." cssClass="col1" sortable="false" searchable="false" cssStyle="text-align:center;" />
-			        		<datatables:column title="DDMS Status" cssClass="col2 rownum" cssStyle="text-align:center;" sortable="false" searchable="false"/>
-			        		<datatables:column title="INS Status" cssClass="col3" sortable="false" cssStyle="text-align:center;" />
-							<datatables:column title="Model" cssClass="col4" sortable="false" cssStyle="text-align:center;" />
-							<datatables:column title="V/N" cssClass="col5" sortable="false" searchable="false" cssStyle="text-align:center;"/>
-							<datatables:column title="Type of purchase" cssClass="col6" sortable="false" searchable="false" cssStyle="text-align:center;"/>
-							<datatables:column title="FN Company" cssClass="col7" sortable="false" searchable="false" cssStyle="text-align:center;"/>
-							<datatables:column title="INS Code" cssClass="col8" sortable="false" searchable="false" cssStyle="text-align:center;"/>
-							<datatables:column title="INS Company" cssClass="col9" sortable="false" searchable="false" cssStyle="text-align:center;"/>
-							<datatables:column title="INS Type" cssClass="col10" sortable="false" searchable="false" cssStyle="text-align:center;"/>
-							<datatables:column title="INS Premium" cssClass="col11" sortable="false" searchable="false" cssStyle="text-align:center;"/>
-							<datatables:column title="INS Activation Date" cssClass="col12" sortable="false" searchable="false" cssStyle="text-align:center;"/>
-							
-						</datatables:table>
-					</form>		
+<views:script src="fis/WKV05110.js?t=${currentTimestamp}"/>
+<div class="container-fluid" style="width: 85%;">
+	<div class="row mt-3"> 
+    	<div class="col-12">
+			<div class="card px-4 py-4">
+				<ul class="nav nav-tabs" id="myTab" role="tablist">
+			  		<li class="nav-item">
+			    		<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Template</a>
+			  		</li>
+				  	<li class="nav-item">
+				    	<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Import</a>
+				  	</li>
+			  		<li class="nav-item">
+			    		<a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Export</a>
+			  		</li>
+				</ul>
+				<div class="tab-content" id="myTabContent">
+					<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+						<div class="row">
+					  		<div class="pt-4 pb-2 col-12 input-group">
+								<label class="control-label" for="importType"><span class="MandatoryFieldFont">*</span>Excel Template Type &nbsp;:&nbsp;</label>
+							    <select class="form-control form-control-sm MandatoryField" id="importType">
+			                    	<option>1st year INS Sales Premium (Normal/TLT Exclusive and etc.)</option>
+			                        <option>Import Transfer Premium</option>
+			                        <option>No Claim Bonus Premium(NCB)</option>
+			                        <option>Status of issued INS Policy</option>
+			                    </select>
+					        </div>  
+							<div class="col-12" style="text-align: right;"> 
+		                    	<sc2:button functionId="KV0511"  screenId="WKV05110" buttonId="WKV05110DownloadTemplate"
+										type="button" value="Download"
+										styleClass="button" secured="false" onClick=""/>
+							</div> 
+						</div>
+				  	</div>
+				  	<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+				  		<div class="row">
+				  			<div class="pt-4 col-12 input-group">
+								<label class="control-label" for="importType"><span class="MandatoryFieldFont">*</span>Excel Template Type &nbsp;:&nbsp;</label>
+						    	<select class="form-control form-control-sm MandatoryField" id="importType">
+		                        	<option>1st year INS Sales Premium (Normal/TLT Exclusive and etc.)</option>
+		                           	<option>Import Transfer Premium</option>
+		                           	<option>No Claim Bonus Premium(NCB)</option>
+		                           	<option>Status of issued INS Policy</option>
+		                       	</select> 
+				           	</div> 
+				            <div class="py-2 col-12 input-group"> 
+				            	<spring:message code="KV0.WKV05110.Label.BtnBrowse" var="WKV05110Browse" />
+				            	<label class="control-label" for="importFile"><span class="MandatoryFieldFont">*</span>Excel File Upload &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;</label>					
+								<sc2:button functionId="KV0511" screenId="WKV05110"
+											buttonId="WKV05110Browse" type="file" value="${WKV05110Browse}"
+											styleClass="button form-control form-control-sm form-control-sm-file MandatoryField"
+											onClick="" /> 
+							</div> 
+							<div class="col-12" style="text-align: right;"> 
+							   <spring:message code="KV0.WKV05110.Label.BtnUpload" var="WKV05110Upload" />
+		                       <sc2:button functionId="KV0511"  screenId="WKV05110" buttonId="WKV05110Upload"
+									type="button" value="${WKV05110Upload}"
+									styleClass="button" secured="false" onClick=""/>
+							</div>
+						</div>
+				  	</div>
+				  	<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+				  		<div class="row">
+				  			<div class="pt-4 pb-2 col-12 input-group"> 
+				        		<label class="control-label" for="importType"><span class="MandatoryFieldFont">*</span>Excel Template Type &nbsp;:&nbsp;</label>
+								<select class="form-control form-control-sm MandatoryField" id="exportType">
+					            	<option>1st year INS Sales Daily</option>
+					                <option>Renewal Insurance Sales Daily</option>
+					            </select>
+							</div> 
+							<div class="col-12" style="text-align: right;"> 
+				            	<sc2:button functionId="KV0511"  screenId="WKV05110" buttonId="WKV05110Export"
+											type="button" value="Export"
+											styleClass="button" secured="false" onClick=""/>
+							</div> 
+						</div>
+				  </div>
 				</div>
-			</div>
+		  	</div>
 		</div>
 	</div>
-
 </div>

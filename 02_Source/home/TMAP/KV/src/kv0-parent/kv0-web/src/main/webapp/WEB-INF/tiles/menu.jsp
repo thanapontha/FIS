@@ -32,7 +32,7 @@
 		srcImgPin="${pageContext.request.contextPath}${rootimagepath}icons/pin.png">
 		
 		<!-- Application module -->
-		<sc2:menuGroup groupId="KV0100" title="${groupNewCar}">
+		<sc2:menuGroup groupId="KV0300" title="${groupNewCar}">
 			<!-- Define Menu Item -->
 			<sc2:menuItem screenId="WKV03110" href="${pageContext.request.contextPath}/NewCarInsurance" target="WKV03110">${itemNewCarInquiry}</sc2:menuItem>
 		</sc2:menuGroup>

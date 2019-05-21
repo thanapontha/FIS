@@ -12,7 +12,7 @@
 <views:style src="jquery.dataTables.css"/>
 
 
-<views:style src="tim/WKV03110.css"/>
+<views:style src="fis/WKV03110.css"/>
 <script>
 	mappingPath = '${_mappingPath}';
 	firstResult = '${form.firstResult}';
@@ -22,7 +22,7 @@
 <jsp:useBean id="now" class="java.util.Date" />
 <fmt:formatDate pattern = "yyyyMMddmmss"  value="${now}" var="currentTimestamp" />
 
-<views:script src="tim/WKV03110.js?t=${currentTimestamp}"/>
+<views:script src="fis/WKV03110.js?t=${currentTimestamp}"/>
 	
 	<div id="screen-panel" class="container-fluid">
 	

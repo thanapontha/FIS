@@ -5,21 +5,14 @@
        "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
 
 <tiles-definitions>
-  <definition name="baseLayoutOld" template="/WEB-INF/tiles/baseLayoutOld.jsp">
+  <definition name="baseLayout" template="/WEB-INF/tiles/baseLayout.jsp">
       <put-attribute name="title"  value="Template"/>
-      <put-attribute name="header" value="/WEB-INF/tiles/headerOld.jsp"/>
+      <put-attribute name="header" value="/WEB-INF/tiles/header.jsp"/>
       <put-attribute name="menu"   value="/WEB-INF/tiles/menu.jsp"/>
       <put-attribute name="body"   value="/WEB-INF/tiles/body.jsp"/>
       <put-attribute name="footer"   value="/WEB-INF/tiles/footer.jsp"/>
   </definition>
 
-  <definition name="baseLayout" template="/WEB-INF/tiles/baseLayout.jsp">
-      <put-attribute name="title"  value="Template"/>
-      <put-attribute name="header" value="/WEB-INF/tiles/header.jsp"/>
-      <put-attribute name="body"   value="/WEB-INF/tiles/body.jsp"/>
-      <put-attribute name="footer"   value="/WEB-INF/tiles/footer.jsp"/>
-  </definition>
-  
   <definition name="noTemplateLayout" template="/WEB-INF/tiles/noTemplateLayout.jsp">
       <put-attribute name="title"  value="Template"/>
       <put-attribute name="body"   value="/WEB-INF/tiles/body.jsp"/>
@@ -36,22 +29,17 @@
       <put-attribute name="body"   value="/WEB-INF/tiles/body.jsp"/>
   </definition>
   
-   <definition name="WKV00000" extends="baseLayoutOld">
+   <definition name="WKV00000" extends="baseLayout">
       <put-attribute name="title"  value="Welcome Page"/>
       <put-attribute name="body"   value="/WEB-INF/views/welcomeNew.jsp"/>      
   </definition>
   
-  <definition name="WKV03000" extends="baseLayout">		
-  	  <put-attribute name="title"  value="New Car Insurance Menu"/>
-	  <put-attribute name="body"   value="/WEB-INF/views/newcar/WKV03000NewCarInsuranceMenu.jsp"/>	
-  </definition>
-  
-  <definition name="WKV03110" extends="baseLayoutOld">		
+  <definition name="WKV03110" extends="baseLayout">		
 		<put-attribute name="title"  value="New Car Insurance Screen"/>
 		<put-attribute name="body"   value="/WEB-INF/views/newcar/WKV03110NewCarInsurance.jsp"/>	
   </definition>
   
-  <definition name="WKV03120" extends="baseLayoutOld">		
+  <definition name="WKV03120" extends="baseLayout">		
 		<put-attribute name="title"  value="New Car Insurance Activation Screen"/>
 		<put-attribute name="body"   value="/WEB-INF/views/newcar/WKV03120NewCarInsuranceActivation.jsp"/>	
   </definition>
@@ -66,152 +54,33 @@
 	<put-attribute name="body"   value="/WEB-INF/views/newcar/WKV03140NewCarActivated.jsp"/>	
   </definition>
   
-  <definition name="WKV03210" extends="baseLayout">		
-		<put-attribute name="title"  value="Report and Data Export"/>
-		<put-attribute name="body"   value="/WEB-INF/views/newcar/WKV03210ReportDataExport.jsp"/>	
-  </definition>  
-  
-  <definition name="WKV04000" extends="baseLayout">		
- 	  <put-attribute name="title"  value="Insurance Renewal Menu"/>
-	  <put-attribute name="body"   value="/WEB-INF/views/renewal/WKV04000InsuranceRenewalMenu.jsp"/>	
-  </definition>
-  
-   <definition name="WKV04110" extends="baseLayout">		
- 	  <put-attribute name="title"  value="Insurance Renewal - Overall Screen for Telemarketing"/>
-	  <put-attribute name="body"   value="/WEB-INF/views/renewal/WKV04110InsRenewalOverallForTelemarketing.jsp"/>	
-  </definition>
-  
-  <definition name="WKV04210" extends="baseLayout">		
- 	  <put-attribute name="title"  value="Add New Customer Profile"/>
-	  <put-attribute name="body"   value="/WEB-INF/views/renewal/WKV04210AddNewCustomerProfile.jsp"/>	
-  </definition>
-
-  <definition name="WKV05110" extends="baseLayoutOld">		
+  <definition name="WKV05110" extends="baseLayout">		
   	  <put-attribute name="title"  value="Insurance Company"/>
-	  <put-attribute name="body"   value="/WEB-INF/views/insCompany/WKV05110InsuranceCompany2.jsp"/>	
-  </definition>
-
-  <definition name="WKV06000" extends="baseLayout">		
- 	  <put-attribute name="title"  value="Management Menu"/>
-	  <put-attribute name="body"   value="/WEB-INF/views/management/WKV06000ManagementMenu.jsp"/>	
+	  <put-attribute name="body"   value="/WEB-INF/views/insCompany/WKV05110InsuranceCompany.jsp"/>	
   </definition>
   
-  <definition name="WKV06100" extends="baseLayout">		
-		<put-attribute name="title"  value="New Car Insurance Management Menu"/>
-		<put-attribute name="body"   value="/WEB-INF/views/management/WKV06100NewCarInsuranceSubMenu.jsp"/>	
-  </definition>
-  
-  <definition name="WKV06110" extends="baseLayout">		
-		<put-attribute name="title"  value="New Car Insurance Portfolio Management"/>
-		<put-attribute name="body"   value="/WEB-INF/views/management/WKV06110NewCarInsurancePortfolioManagement.jsp"/>	
-  </definition>
-  
-  <definition name="WKV06120" extends="baseLayout">		
-		<put-attribute name="title"  value="New Car Insurance Activation Management"/>
-		<put-attribute name="body"   value="/WEB-INF/views/management/WKV06120NewCarInsuranceActivationManagement.jsp"/>	
-  </definition>
-  
-  <definition name="WKV06200" extends="baseLayout">		
-		<put-attribute name="title"  value="Insurance Renewal Management Menu"/>
-		<put-attribute name="body"   value="/WEB-INF/views/management/WKV06200InsuranceRenewalManagementSubMenu.jsp"/>	
-  </definition>
-  
-  <definition name="WKV06211" extends="baseLayout">		
-  		<put-attribute name="title"  value="Standard Renewal SOP PIC Setting"/>
-		<put-attribute name="body"   value="/WEB-INF/views/management/WKV06211StandardRenewalSOPPICSetting.jsp"/>	
-  </definition>
-  
-  <definition name="WKV06212" extends="baseLayout">		
-  		<put-attribute name="title"  value="Insurance Renew Portfolio Control"/>
-		<put-attribute name="body"   value="/WEB-INF/views/management/WKV06212InsuranceRenewPortfolioControl.jsp"/>	
-  </definition> 
-  
-  <definition name="WKV06213" extends="baseLayout">		
-  		<put-attribute name="title"  value="Tele Sales Team Management"/>
-		<put-attribute name="body"   value="/WEB-INF/views/management/WKV06213TeleSalesTeamManagement.jsp"/>	
-  </definition>
-  
-  <definition name="WKV06220" extends="baseLayout">		
-  		<put-attribute name="title"  value="Special Contact Setting"/>
-		<put-attribute name="body"   value="/WEB-INF/views/management/WKV06220SpecialContactSettingSubMenu.jsp"/>	
-  </definition>
-  
-  <definition name="WKV06221" extends="baseLayout">		
-  		<put-attribute name="title"  value="Special Contact Activity Management"/>
-		<put-attribute name="body"   value="/WEB-INF/views/management/WKV06221SpecialContactActivityManagement.jsp"/>	
-  </definition>
-  
-  <definition name="WKV06222" extends="baseLayout">		
-  		<put-attribute name="title"  value="Target Group Setting"/>
-		<put-attribute name="body"   value="/WEB-INF/views/management/WKV06222TargetGroupSetting.jsp"/>	
-  </definition>
-  
-  <definition name="WKV06231" extends="baseLayout">		
-  		<put-attribute name="title"  value="Activities Reminder"/>
-		<put-attribute name="body"   value="/WEB-INF/views/management/WKV06231ActivitiesReminder.jsp"/>	
-  </definition>
-  
-  <definition name="WKV06300" extends="baseLayout">		
-		<put-attribute name="title"  value="Manpower and Account Management Menu"/>
-		<put-attribute name="body"   value="/WEB-INF/views/management/WKV06300ManpowerAccountManagementSubMenu.jsp"/>	
-  </definition>
-  
-  <definition name="WKV06311" extends="baseLayout">		
-  		<put-attribute name="title"  value="Insurance Customer Databased Management"/>
-		<put-attribute name="body"   value="/WEB-INF/views/management/WKV06311InsuranceCustomerDatabasedManagement.jsp"/>	
-  </definition>
-  
-  <definition name="WKV06410" extends="baseLayout">		
-		<put-attribute name="title"  value="Insurance Premium Management"/>
-		<put-attribute name="body"   value="/WEB-INF/views/management/WKV06410InsurancePremiumManagement.jsp"/>	
-  </definition>
-  
-  <definition name="WKV06500" extends="baseLayout">		
-		<put-attribute name="title"  value="Report Management Menu"/>
-		<put-attribute name="body"   value="/WEB-INF/views/management/WKV06500ReportManagementSubMenu.jsp"/>	
-  </definition>
-  
-  <definition name="WKV06510" extends="baseLayout">		
-		<put-attribute name="title"  value="Report and Data Export of INS Renewal"/>
-		<put-attribute name="body"   value="/WEB-INF/views/management/WKV06510ReportDataExportofINSRenewal.jsp"/>	
-  </definition>
-  
-  <definition name="WKV06520" extends="baseLayout">		
-		<put-attribute name="title"  value="Process and Result KPIs"/>
-		<put-attribute name="body"   value="/WEB-INF/views/management/WKV06520ProcessResultKPIs.jsp"/>	
-  </definition>
-  
-  <definition name="WKV06530" extends="baseLayout">		
-		<put-attribute name="title"  value="BP Returning Report"/>
-		<put-attribute name="body"   value="/WEB-INF/views/management/WKV06530BPReturningReport.jsp"/>	
-  </definition>
-  
-  <definition name="WKV06540" extends="baseLayout">		
-		<put-attribute name="title"  value="1st Year (Red Plate) INS Report "/>
-		<put-attribute name="body"   value="/WEB-INF/views/management/WKV065401stYearRedPlateINSReport.jsp"/>	
-  </definition>
   
 <!--   <definition name="WST33060" extends="baseLayout">
       <put-attribute name="title"  value="System Master"/>
       <put-attribute name="body"   value="/WEB-INF/views/WST33060SystemMasterView.jsp"/>      
   </definition> -->
   
-  <definition name="WST33060" extends="baseLayoutOld">
+  <definition name="WST33060" extends="baseLayout">
       <put-attribute name="title"  value="System Master"/>
       <put-attribute name="body"   value="/WEB-INF/views/master/WST33060SystemMaster.jsp"/>      
   </definition>
   
-  <definition name="WST33010" extends="baseLayoutOld">		
+  <definition name="WST33010" extends="baseLayout">		
 	<put-attribute name="title"  value="Log Monitoring Summary Screen"/>	
 	<put-attribute name="body"   value="/WEB-INF/views/WST33010LogMonitoringView.jsp"/>	
   </definition>
   
-  <definition name="WST33011" extends="baseLayoutOld">		
+  <definition name="WST33011" extends="baseLayout">		
 	<put-attribute name="title"  value="Log Monitoring Detail Screen"/>	
 	<put-attribute name="body"   value="/WEB-INF/views/WST33011LogMonitoringDetailsView.jsp"/>	
   </definition>		
   
-  <definition name="WST33020" extends="baseLayoutOld">		
+  <definition name="WST33020" extends="baseLayout">		
 	<put-attribute name="title"  value="Excel Download Monitoring Screen"/>	
 	<put-attribute name="body"   value="/WEB-INF/views/WST33020ExcelDownloadMonitoringView.jsp"/>	
   </definition>		
@@ -234,7 +103,7 @@
       <put-attribute name="title"  value="Batch Master"/>
       <put-attribute name="body"   value="/WEB-INF/views/WST33040BatchMasterView.jsp"/>      
   </definition>
-  <definition name="WST33050" extends="baseLayoutOld">
+  <definition name="WST33050" extends="baseLayout">
       <put-attribute name="title"  value="Batch Status"/>
       <put-attribute name="body"   value="/WEB-INF/views/WST33050BatchStatusView.jsp"/>      
   </definition>
@@ -244,22 +113,5 @@
       <put-attribute name="body"   value="/WEB-INF/views/APITestView.jsp"/>      
   </definition>
   <!-- End -->
-  
-  <definition name="WKV01150" extends="baseLayout">		
-	<put-attribute name="title"  value="New Car Insurance"/>
-	<put-attribute name="body"   value="/WEB-INF/views/newcar/NewCarInsuranceMenu.jsp"/>	
-  </definition>
-  <definition name="WKV02110" extends="baseLayout">		
-	<put-attribute name="title"  value="Rundown and Kompo Management Screen"/>
-	<put-attribute name="body"   value="/WEB-INF/views/rundown/WKV02110RundownKompoManagement.jsp"/>	
-  </definition>
-  <definition name="WKV02111" extends="popupLayout">		
-	<put-attribute name="title"  value="Vanning Adjustment Screen"/>	
-	<put-attribute name="body"   value="/WEB-INF/views/rundown/WKV02111VanningAdjustment.jsp"/>	
-  </definition>
-  <definition name="WKV02160" extends="baseLayout">		
-	<put-attribute name="title"  value="Unit Capacity Management"/>
-	<put-attribute name="body"   value="/WEB-INF/views/rundown/WKV02160UnitCapacityManagement.jsp"/>	
-  </definition>
-  
+
 </tiles-definitions>
