@@ -1,0 +1,23 @@
+Install Robot Framework for Windows
+(Python, PIP, wxPython, Ride)
+1. download python https://www.python.org/ftp/python/2.7.15/python-2.7.15.amd64.msi
+2. install
+3. add environment variables Path 
+ - C:\Python27
+ - C:\Python27\Scripts
+4. Open command Prompt
+5. >python -m pip install -U pip
+6. >pip install robotframework
+7. >pip install --upgrade robotframework
+8. download wxPython from https://sourceforge.net/projects/wxpython/files/wxPython/2.8.12.1/
+	and install (You need to install “wxPython2.8-win64-unicode-2.8.12.1-py27.exe” 64-bit version.)
+9. >pip install robotframework-ride
+10. >pip install robotframework-selenium2library
+11. Start RIDE program
+	>ride.py
+
+RIDE : Robot Framework IDE	
+	
+Reference :
+https://www.swtestacademy.com/getting-started-robotframework/
+https://www.python.org/downloads/release/python-2715/

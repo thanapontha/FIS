@@ -1,0 +1,86 @@
+*** Settings ***
+Library           SeleniumLibrary    screenshot_root_directory=C:/Robot/GWRDS/screenshot
+Library           BuiltIn
+Library           String
+Library           DateTime
+Library           uuid
+
+*** Variable ***
+${url_sc2}        https://sc2-dev.tmap-em.toyota-asia.com
+${title_sc2}      Security Center - Login
+${input_user}     //*[@id="username"]
+${input_pass}     //*[@id="password"]
+${btn_login}      //*[@id="login2"]/div[1]/div[1]/div[3]/input[4]
+${title_login_success}    Security Center Home: System Menu
+${error_msg_div}    //div[@id="messageBar"]//div[@class='message err']
+${info_msg_div}    //div[@id="messageBar"]//div[@class='message inf']
+${warn_msg_div}    //div[@id="messageBar"]//div[@class='message warn']
+${username}       gwrds03
+${password}       P@ssw0rd18
+${browser}        ie
+
+*** Keywords ***
+Verify Security Center page
+    [Arguments]    ${title}
+    Title Should Be    ${title}
+
+Input Username and Password
+    [Arguments]    ${xpath_user}    ${xpath_pass}    ${username}    ${password}
+    Element Should Be Visible    ${xpath_user}
+    Element Should Be Visible    ${xpath_pass}
+    Input Text    ${xpath_user}    ${username}
+    Input Text    ${xpath_pass}    ${password}
+
+Click Button Login
+    [Arguments]    ${btn}
+    Element Should Be Visible    ${btn}
+    Click Element    ${btn}
+
+Verify Login Success
+    [Arguments]    ${title}
+    Title Should Be    ${title}
+
+Check Message
+    [Arguments]    ${msgs}    ${msg_chk}
+    Wait Until Page Contains Element    ${msgs}    timeout=5s
+    ${count}    Get Element Count    ${msgs}
+    For-Loop-In-Range-Chk-Msg    ${count}    ${msgs}    ${msg_chk}
+
+For-Loop-In-Range-Chk-Msg
+    [Arguments]    ${count}    ${msgs}    ${msg_chk}
+    : FOR    ${INDEX}    IN RANGE    1    ${count}+1
+    \    ${name}    Get Text    ${msgs}[${INDEX}]
+    \    ${check_message_ok}    Evaluate    "${name}" == "${msg_chk}"
+    \    Run Keyword If    ${check_message_ok}    Exit For Loop
+    Run Keyword Unless    ${check_message_ok}    Fail    Error Message '${name}' not match with correct '${msg_chk}'
+
+Select Checkbox Datatable
+    [Arguments]    ${element_Checkbox}
+    Wait Until Page Contains Element    ${element_Checkbox}    timeout=5s
+    Select Checkbox    ${element_Checkbox}
+
+Login Security Center
+    Open Browser    about:blank    ${browser}
+    Go To    ${url_sc2}
+    Maximize Browser Window
+    Verify Security Center page    ${title_sc2}
+    Input Username and Password    ${input_user}    ${input_pass}    ${username}    ${password}
+    Click Button Login    ${btn_login}
+    sleep    3s
+    ${present}=    Run Keyword And Return Status    Element Should Be Visible    //*[@id="login2"]/div[1]/div/div/div/input[4]
+    Run Keyword If    ${present}    Click Button    //*[@id="login2"]/div[1]/div/div/div/input[4]
+    Verify Login Success    ${title_login_success}
+    ${curDate}=    Get Current Date    result_format=%Y%m%d%H%M%S
+    Capture Page Screenshot    login-scsh-${curDate}-{index}.png
+
+Log out
+    Go Back
+    Go To    ${url_sc2}/logout
+    ${curDate}=    Get Current Date    result_format=%Y%m%d%H%M%S
+    Capture Page Screenshot    logout-scsh-${curDate}-{index}.png
+    Close All Browsers
+
+Verify Datatable
+    [Arguments]    ${datatable_id}    ${row}    ${column}    ${value_chk}
+    ${val_from_datatable}    Get Text    css=#${datatable_id} tbody tr:nth-child(${row}) td:nth-child(${column})
+    Evaluate    "${val_from_datatable}" == "${value_chk}"
