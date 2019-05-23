@@ -145,4 +145,10 @@ public class ActivateRedPlantService {
 		}
 	}
 	
+	public void searchObject(CSC22110UserInfo userInfo, NewCarInsuranceActivationForm form) throws Exception {
+		try(Connection conn = commonRepository.getConnection()){
+			repository.searchObject(conn, form);
+		}
+	}
+	
 }

@@ -118,7 +118,7 @@ public class FormatUtilTest {
 	public void isValidDate2FormatTest() {
 		String value = "12/11/2018";
 		boolean result = FormatUtil.isValidDate(value);
-		assertEquals("Result",result , false);
+		assertEquals("Result",result , true);
 	}
 	@Test
 	public void isValidByPatternFormatTest() {
@@ -216,7 +216,7 @@ public class FormatUtilTest {
 	}
 	@Test
 	public void convertDateToOracleDB2FormatTest() {
-		String value = "jan-18";
+		String value = "01/01/2018";
 		Date result = FormatUtil.convertDateToOracleDB(value);
 		assertEquals("Result",result.toString() , "2018-01-01");
 	}

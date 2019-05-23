@@ -24,6 +24,15 @@
 			}
 		});
 		
+		$('#openActivateRedPlant').live('click',function(e){
+			var jsonParams = {
+					"vehBrand" : $(this).attr("brand"),
+					"vehVinNo" : $(this).attr("vinNo")				
+					};			
+			
+			FISLib.PageOpen(_rootPath + '/NewCarInsurance/ActivateRedPlant', "WKV03120", jsonParams);
+		});
+		
 		validateDate(document.getElementById('deliveryDateFrom'));
 		validateDate(document.getElementById('deliveryDateTo'));
 		validateDate(document.getElementById('createDateFrom'));
@@ -127,7 +136,9 @@
 				for(var j = 0; j < processPerTick; ++j) {
 					var data = dataList[i++];
 					if ( data ) {
-						var link = '<a href="'+_rootPath+'/NewCarInsurance/ActivateRedPlant">' + data.vinNo + '</a>';
+						var link = "<a id='openActivateRedPlant' class='openActivateRedPlant' brand='Toyota' vinNo='"+data.vinNo+"'>"+data.vinNo+"</a>";
+						
+						//var link = '<a href="'+_rootPath+'/NewCarInsurance/ActivateRedPlant">' + data.vinNo + '</a>';
 						arrayData.push([ 
 						                ''
 						                , data.documentStatus || ''

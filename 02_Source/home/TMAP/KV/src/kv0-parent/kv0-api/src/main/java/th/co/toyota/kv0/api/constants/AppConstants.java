@@ -21,7 +21,7 @@ public final class AppConstants {
 	public static final String DATE_STRING_MONTH_FULLNAME = "MMMM";
 	public static final String DATE_STRING_FORMAT_DDMM = "ddMM";
 	public static final String DATE_MONTH_YEAR = "MM/yyyy";
-	public static final String DATE_SHOW_IN_SCREEN = "MMM-yy";
+//	public static final String DATE_SHOW_IN_SCREEN = "MMM-yy";
 	public static final String DATE_SHOW_IN_SCREEN_MMM_YYYY = "MMM-yyyy";
 	public static final String DATE_TIME_IN_SCREEN = "dd-MMM-yy HH24:mm:ss";
 	public static final String DATE_SHOW_IN_REPORT = "dd-MMM-yyyy";

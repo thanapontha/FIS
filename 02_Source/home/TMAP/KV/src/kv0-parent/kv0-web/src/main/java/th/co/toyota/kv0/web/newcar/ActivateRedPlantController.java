@@ -10,6 +10,7 @@ import javax.validation.ConstraintViolation;
 import javax.validation.Validator;
 
 import org.apache.commons.lang.exception.ExceptionUtils;
+import org.codehaus.jackson.map.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,7 +56,7 @@ public class ActivateRedPlantController extends CommonBaseController {
 	@Autowired
 	protected CommonWebService commonService;
 
-	@RequestMapping(method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.POST)
 	public ModelAndView initial(HttpServletRequest request, NewCarInsuranceActivationForm form) {
 		ModelAndView mv = new ModelAndView(VIEW_NAME);
 		Payload payload = new XmlPayload();
@@ -68,9 +69,14 @@ public class ActivateRedPlantController extends CommonBaseController {
 			mv.addObject(AppConstants.MV_USER, userInfo);
 			mv.addObject(AppConstants.MV_FORM, form);
 			mv.addObject(AppConstants.MV_PAYLOAD, payload);
-			
+			 
 			service.loadCombobox(userInfo, form);
 			
+			service.searchObject(userInfo, form);
+			form.setInsCoverageYear("3");
+			
+			ObjectMapper mapper = new ObjectMapper();
+			mv.addObject("jsonForm", mapper.writeValueAsString(form));
 		}catch (CommonErrorException e){
 			log.error(ExceptionUtils.getStackTrace(e));
 			status = ServiceStatus.NG;
@@ -550,7 +556,7 @@ public class ActivateRedPlantController extends CommonBaseController {
 	*/
 
 	@RequestMapping(value = "/saveAdd", method = RequestMethod.POST, produces = "application/json")
-	public @ResponseBody Object submitAddObject(NewCarInsuranceActivationForm form, HttpServletRequest request) {
+	public @ResponseBody Object saveAdd(NewCarInsuranceActivationForm form, HttpServletRequest request) {
 		Payload payload = new XmlPayload();
 		try {
 			
@@ -564,21 +570,24 @@ public class ActivateRedPlantController extends CommonBaseController {
 				payload.addErrorMessages(errorList);
 			} else {
 				CSC22110UserInfo userInfo = getUserInSession(request);
-//				form.setVehiclePlantSearch(form.getVehiclePlant());
 					
-//				errorList = service.submitAddObject(messageSource, RequestContextUtils.getLocale(request), payload, form, userInfo);
-//				if ((!errors.isEmpty()) || (!errorList.isEmpty())) {
-//					errorList.addAll(processErrorMessageFromValidator(errors.toArray(), RequestContextUtils.getLocale(request), new NewCarInsuranceActivationForm()));
-//					payload.setStatus(ServiceStatus.NG);
-//					payload.addErrorMessages(errorList);
-//				} else {
+				errorList = service.submitAddObject(messageSource, RequestContextUtils.getLocale(request), payload, form, userInfo);
+				if ((!errors.isEmpty()) || (!errorList.isEmpty())) {
+					errorList.addAll(processErrorMessageFromValidator(errors.toArray(), RequestContextUtils.getLocale(request), new NewCarInsuranceActivationForm()));
+					payload.setStatus(ServiceStatus.NG);
+					payload.addErrorMessages(errorList);
+				} else {
+					
+					service.searchObject(userInfo, form);
+					
 					payload.setObjectForm(form);
+					
 					String message = messageSource.getMessage(CST30000Messages.INFO_SAVE_SUCCESSFUL, null,
 							RequestContextUtils.getLocale(request));
 					payload.setStatus(ServiceStatus.OK);
 					payload.addInfoMessage(message);
 					form.setMessageResult(message);
-//				}
+				}
 			}
 		} catch (CommonErrorException e) {
 			log.error(ExceptionUtils.getStackTrace(e));

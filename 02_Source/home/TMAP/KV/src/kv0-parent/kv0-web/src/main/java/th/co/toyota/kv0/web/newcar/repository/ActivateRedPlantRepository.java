@@ -13,6 +13,7 @@ public interface ActivateRedPlantRepository {
 	public boolean addObject(Connection conn, CommonBaseForm activeform, CSC22110UserInfo userInfo) throws CommonErrorException;
 	public boolean editObject(Connection conn, CommonBaseForm activeform, CSC22110UserInfo userInfo) throws CommonErrorException;
 	void deleteObject(Connection conn, List<Object[]> dataList, CommonBaseForm activeform) throws CommonErrorException;
+	void searchObject(Connection conn, CommonBaseForm activeform) throws CommonErrorException;
 	public List<ComboValue> loadDistrict(Connection conn, String proviceCode) throws CommonErrorException;
 	public List<ComboValue> loadSubDistrict(Connection conn, String proviceCode, String districtCode) throws CommonErrorException;
 	public List<ComboValue> loadZipcode(Connection conn, String subDistrictCode) throws CommonErrorException;

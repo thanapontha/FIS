@@ -11,7 +11,17 @@
 
 	$(function() {
 		
-		$('#premiumInput, #activation, #birthDate, #dateCompRegistration, #coverageUntil').datepicker({
+		$("[name='cusType']").click(function() {
+			if($(this).val()=='P'){
+				$('#customerIndividual').show();
+				$('#customerJuristic').hide();
+			}else{
+				$('#customerIndividual').hide();
+				$('#customerJuristic').show();
+			}
+		});
+		
+		$('#insActivationDate, #cuspBirthDate, #cuscRegisterDate, #insCoverageDate').datepicker({
 			showOn: "button",
 			buttonImage: calendarImgPath,
 			buttonImageOnly: true,
@@ -22,28 +32,15 @@
 			}
 		});
 		
-		validateDate(document.getElementById('activation'));
-		validateDate(document.getElementById('birthDate'));
-		validateDate(document.getElementById('registerDate'));
-		validateDate(document.getElementById('coverageTo'));
+		validateDate(document.getElementById('insActivationDate'));
+		validateDate(document.getElementById('cuspBirthDate'));
+		validateDate(document.getElementById('cuscRegisterDate'));
+		validateDate(document.getElementById('insCoverageDate'));
 		
 		validateDecimal(document.getElementById('insPremium'), 10, 0, '');
-		validateDecimal(document.getElementById('coverage'), 10, 0, '');
-		validateNumber(document.getElementById('vehicleAct'), 3, 0, false);
+		validateDecimal(document.getElementById('insCoverage'), 10, 0, '');
+		validateDecimal(document.getElementById('insAct'), 6, 0, 2, false);
 		
-		$("[name='typeOfCustomer']").click(function() {
-			if($(this).val()=='Personal'){
-				$('#customerIndividual').show();
-				$('#customerJuristic').hide();
-			}else{
-				$('#customerIndividual').hide();
-				$('#customerJuristic').show();
-			}
-		});
-		
-		
-		$("input:radio[name='typeOfCustomer']:first").attr("checked",true);
-		$("input:radio[name='typeOfCustomer']:first").click();
 		
 		//begin personal
 		$('#cuspProvince').change(function() {
@@ -364,11 +361,33 @@
 				.error(function() {});
 		});
 		//end of company
+		
+		if (dataForm!=null) { 
+			if(dataForm.documentNo && dataForm.documentNo!=''){
+				lastAction = "edit";
+				
+				checkedCheckboxOrRadio(dataForm.cusType, dataForm.insChoice, dataForm.cuspPolicyDelivery, dataForm.cuscPolicyDelivery, dataForm.cuspSameAddressFlag, dataForm.cuscSameAddressFlag);
+			}else{
+				lastAction = "add";
+				$("input:radio[name='cusType'][value='P']").attr("checked",true);
+				$("input:radio[name='cusType'][value='P']").click();
+				
+				$("input:radio[name='cuspPolicyDelivery'][value='D']").attr("checked",true);
+				$("input:radio[name='cuscPolicyDelivery'][value='D']").attr("checked",true);
+			}
+			$.each(dataForm, function(item, value){
+	            $("#"+item).val(value);
+	        });  
+		}else{
+			$("input:radio[name='cusType'][value='P']").attr("checked",true);
+			$("input:radio[name='cusType'][value='P']").click();
+			
+			$("input:radio[name='cuspPolicyDelivery'][value='D']").attr("checked",true);
+			$("input:radio[name='cuscPolicyDelivery'][value='D']").attr("checked",true);
+		}
 	});
 	
-	
-	window.saveAddEditObject = 
-		function saveAddEditObject(){
+	window.doSave = function doSave(){
 			var confirmMsg = MKV00001ACFM;
 			var confirmCode = 'MKV00001ACFM';
 			if (lastAction !== 'add') {
@@ -380,11 +399,10 @@
 				if (!ret) {
 					return;
 				}else{
-					GWRDSLib.clearST3Message();
+					FISLib.clearST3Message();
 					if (lastAction === 'add') {
 						$('#search-form').attr('action', mappingPath + '/saveAdd').attr('_method', 'post');
 					} else {
-						$("#tcFrom").val($("#hidtcFrom").val());
 						$('#search-form').attr('action', mappingPath + '/saveEdit').attr('_method', 'post');
 					}
 					var saveForm = $('#search-form');
@@ -392,9 +410,88 @@
 				}
 			});
 		};
+		
+		window.updateObjectFinish =
+			function updateObjectFinish(datas, loading){
+				if (datas === null) {
+					loading.close();
+					return;	
+				}
+			
+				if(datas.status === 'OK'){
+					checkConfirmMessageBeforeExit = false;
+					
+					if(datas.infoMessages.length > 0) {
+						 ST3Lib.message.show(1);
+					}
+					
+					dataForm = datas.objectForm;
+					if (dataForm!=null) { 
+						
+						$.each(dataForm, function(item, value){
+				            $("#"+item).val(value);
+				        });  
+						
+						$("#documentNoDisp").text(dataForm.documentNo);
+						$("#documentStatusDisp").text(dataForm.documentStatus);
+						$("input:radio[name='cusType'][value='"+dataForm.cusType+"']").attr("checked",true);
+						$("input:radio[name='cusType'][value='"+dataForm.cusType+"']").click();
+						
+						checkedCheckboxOrRadio(dataForm.cusType, dataForm.insChoice, dataForm.cuspPolicyDelivery, dataForm.cuscPolicyDelivery, dataForm.cuspSameAddressFlag, dataForm.cuscSameAddressFlag);
+					}
 	
+					
+					lastAction = 'edit';
+					
+				}else{
+					if(datas.errorMessage) {
+						ST3Lib.message.show(1);
+					}else if(datas.errorMessages != null && datas.errorMessages.length > 0) {
+						ST3Lib.message.show(1);
+					}
+					if (datas.focusId != "" && typeof datas.focusId != 'undefined') {
+						setFormFocus(datas.focusId);
+					}else{
+						$('#result input:text:first').focus();
+					}
+				}
+				if (loading) {
+					loading.close();
+				}
+		};
+		
+	window.checkedCheckboxOrRadio = 
+		function checkedCheckboxOrRadio(cusType, insChoice, cuspPolicyDelivery, cuscPolicyDelivery, cuspSameAddressFlag, cuscSameAddressFlag){
+			$("input:radio[name='cusType'][value='"+cusType+"']").attr("checked",true);
+			$("input:radio[name='cusType'][value='"+cusType+"']").click();
+			
+			$("input:radio[name='insChoice'][value='"+insChoice+"']").attr("checked",true);
+			$("input:radio[name='cuspPolicyDelivery'][value='"+cuspPolicyDelivery+"']").attr("checked",true);
+			$("input:radio[name='cuscPolicyDelivery'][value='"+cuscPolicyDelivery+"']").attr("checked",true);
+			
+			if("P"==cusType){
+				$("input:checkbox[name='cuscSameAddressFlag']").attr("checked",false);
+				if("Y"==cuspSameAddressFlag){
+					$("input:checkbox[name='cuspSameAddressFlag']").attr("checked",true);
+				}else{
+					$("input:checkbox[name='cuspSameAddressFlag']").attr("checked",false);
+				}
+			}else{
+				$("input:checkbox[name='cuspSameAddressFlag']").attr("checked",false);
+				if("Y"==cuscSameAddressFlag){
+					$("input:checkbox[name='cuscSameAddressFlag']").attr("checked",true);
+				}else{
+					$("input:checkbox[name='cuscSameAddressFlag']").attr("checked",false);
+				}
+			}
+	};
 	
-	window.doConfirmSubmit = function doConfirmSubmit() {
+	window.saveValidateError =
+		function saveValidateError(){
+			return;
+		};
+		
+	window.doSubmit = function doSubmit() {
 		FISLib.dialog.open("NewCarConfirmSubmitDialog", _rootPath
 				+ "/NewCarInsurance/ActivateRedPlant/confirmSubmit",
 				"Do you confirm to activate ?", 400, 200);

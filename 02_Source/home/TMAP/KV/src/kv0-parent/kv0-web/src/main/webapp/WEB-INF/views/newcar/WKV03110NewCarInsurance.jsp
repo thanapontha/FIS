@@ -238,8 +238,8 @@
 											  
 								<datatables:column title="No." cssClass="col1 rownum" sortable="false" searchable="false" cssStyle="text-align:center;" />
 				        		<datatables:column title="Document Status" cssClass="col2" cssStyle="text-align:center;" sortable="false" searchable="false"/>
-								<datatables:column title="Model" cssClass="col3 fixed" sortable="false" searchable="false" cssStyle="text-align:center;" />
-								<datatables:column title="VIN" cssClass="col4" sortable="false" searchable="false" cssStyle="text-align:center;"/>
+								<datatables:column title="Model" cssClass="col3" sortable="false" searchable="false" cssStyle="text-align:center;" />
+								<datatables:column title="VIN" cssClass="col4 fixed" sortable="false" searchable="false" cssStyle="text-align:center;"/>
 								<datatables:column title="Customer Name" cssClass="col5" sortable="false" cssStyle="text-align:center;" />
 								<datatables:column title="INS Type" cssClass="col6" sortable="false" searchable="false" cssStyle="text-align:center;"/>
 								<datatables:column title="Premium Type" cssClass="col7" sortable="false" searchable="false" cssStyle="text-align:center;"/>

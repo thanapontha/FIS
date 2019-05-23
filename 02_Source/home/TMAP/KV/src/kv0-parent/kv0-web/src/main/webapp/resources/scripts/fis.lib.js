@@ -317,19 +317,6 @@ jQuery.fn.serializeObject = function() {
 	  return objectData;
 	};
 
-
-FISLib.OpenOperationCommon = function(docNo, revision, mode) {
-	var jsonParams = {"docNo" : docNo,
-			  "revision" : revision,
-			  "mode" : mode};
-	
-	if (mode === undefined) {
-		jsonParams = {"docNo" : docNo,
-				  "mode" : revision};
-	}
-	
-	FISLib.PageOpen(_rootPath+"/prs/CommonOperation", "operationCommon", jsonParams);
-};
 /*
  * Function FISLib.PageOpen()
  * Parameters:

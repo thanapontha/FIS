@@ -43,9 +43,9 @@ public class FormatUtil {
 	
     public static Date convertStringToDate(String value, String stFormat) {
     	if((stFormat!=null && stFormat.trim().length() <= 0) || (stFormat == null)){
-    		stFormat = AppConstants.DATE_SHOW_IN_SCREEN;
+    		stFormat = AppConstants.DATE_STRING_SCREEN_FORMAT;
     	}
-    	if(AppConstants.DATE_SHOW_IN_SCREEN.equals(stFormat)){
+    	if(DATE_MMM_YYYY.equals(stFormat)){
     		String[] tmp = value.split(DASH);
     		if(tmp!=null && tmp.length==2){
     			value = tmp[0]+DASH+START_PREFIX_YEAR+tmp[1];
@@ -64,15 +64,9 @@ public class FormatUtil {
 		return date;
 	}
     
-    /**
-	 * Format string to date
-	 * @param value
-	 * @param stFormat = AppConstants.DATE_SHOW_IN_SCREEN MMM-YY
-	 * @return date
-	 * @throws Exception 
-	 */
+
     public static Date convertStringToDate(String value) {
-		return convertStringToDate(value, AppConstants.DATE_SHOW_IN_SCREEN);
+		return convertStringToDate(value, AppConstants.DATE_STRING_SCREEN_FORMAT);
 	}
     
     /**
@@ -84,7 +78,7 @@ public class FormatUtil {
 	 */
     public static String convertDateToString(Date dDate, String stFormat) {
     	if((stFormat!=null && stFormat.trim().length() <= 0) || (stFormat == null)){
-    		stFormat = AppConstants.DATE_SHOW_IN_SCREEN;
+    		stFormat = AppConstants.DATE_STRING_SCREEN_FORMAT;
     	}
 		SimpleDateFormat dateFormat = new SimpleDateFormat(stFormat);
 		String dateStr = "";
@@ -104,7 +98,7 @@ public class FormatUtil {
 	 * @throws Exception 
 	 */
     public static String convertDateToString(Date dDate) {
-    	return convertDateToString(dDate, AppConstants.DATE_SHOW_IN_SCREEN);
+    	return convertDateToString(dDate, AppConstants.DATE_STRING_SCREEN_FORMAT);
     }
     
     /**
@@ -364,9 +358,9 @@ public class FormatUtil {
 		dateStr = dateStr.trim();
 		try{
 			if(Strings.isNullOrEmpty(format)){
-				format = AppConstants.DATE_SHOW_IN_SCREEN;
+				format = AppConstants.DATE_STRING_SCREEN_FORMAT;
 			}
-	    	if(AppConstants.DATE_SHOW_IN_SCREEN.equals(format)){
+	    	if(DATE_MMM_YYYY.equals(format)){
 	    		String[] tmp = dateStr.split(DASH);
 	    		if(tmp!=null && tmp.length==2){
 	    			dateStr = tmp[0]+DASH+START_PREFIX_YEAR+tmp[1];
@@ -405,10 +399,10 @@ public class FormatUtil {
 	//Remark 0 = equal, 1 = greater, -1 = less, -2 = error
 	public static int compareDate(Date from, Date to){
     	try {
-    		String dtStrTo = convertDateToString(to, AppConstants.DATE_SHOW_IN_SCREEN);
-    		String dtStrFrom = convertDateToString(from, AppConstants.DATE_SHOW_IN_SCREEN);
-    		Date dtCurNotTime = convertStringToDate(dtStrTo, AppConstants.DATE_SHOW_IN_SCREEN);
-    		Date dtFromNotTime = convertStringToDate(dtStrFrom, AppConstants.DATE_SHOW_IN_SCREEN);
+    		String dtStrTo = convertDateToString(to, AppConstants.DATE_STRING_SCREEN_FORMAT);
+    		String dtStrFrom = convertDateToString(from, AppConstants.DATE_STRING_SCREEN_FORMAT);
+    		Date dtCurNotTime = convertStringToDate(dtStrTo, AppConstants.DATE_STRING_SCREEN_FORMAT);
+    		Date dtFromNotTime = convertStringToDate(dtStrFrom, AppConstants.DATE_STRING_SCREEN_FORMAT);
     		return dtFromNotTime.compareTo(dtCurNotTime);
       	} catch (Exception e) {
     	   return -2;
@@ -427,8 +421,8 @@ public class FormatUtil {
 	
 	public static Date getCurrentMonth(){
     	try {
-    		String currenttStr = convertDateToString(new Date(), AppConstants.DATE_SHOW_IN_SCREEN);
-    		Date dtCurNotTime = convertStringToDate(currenttStr, AppConstants.DATE_SHOW_IN_SCREEN);
+    		String currenttStr = convertDateToString(new Date(), AppConstants.DATE_STRING_SCREEN_FORMAT);
+    		Date dtCurNotTime = convertStringToDate(currenttStr, AppConstants.DATE_STRING_SCREEN_FORMAT);
     		return dtCurNotTime;
       	} catch (Exception e) {
     	   return new Date();
@@ -615,7 +609,7 @@ public class FormatUtil {
   	}
   	
  	public static java.sql.Date convertDateToOracleDB(String strDate) {
-  		return FormatUtil.convert(FormatUtil.convertStringToDate(strDate, AppConstants.DATE_SHOW_IN_SCREEN));
+  		return FormatUtil.convert(FormatUtil.convertStringToDate(strDate, AppConstants.DATE_STRING_SCREEN_FORMAT));
   	}
   	
   	/**

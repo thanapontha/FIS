@@ -11,31 +11,101 @@ import th.co.toyota.kv0.common.form.CommonBaseForm;
 import th.co.toyota.kv0.util.ComboValue;
 
 public class NewCarInsuranceActivationForm extends CommonBaseForm {
+	private String documentNo;
+	private String documentStatus;
+	private String vehBrand;
+	private String vehVinNo;
+	private String vehSeries;
+	private String vehModel;
+	private String vehColor;
+	private String vehYear;
+	private String vehRegNo;
+	private String vehEngine;
+	private String vehWeight;
+	private String vehCC;
+	private String vehType;
 	
-	private String cuspGender;
 	private String finLisingCompany;
 	private String finTypePurchase;
+	
+	private String insChoice;
+	private String insCompany;
 	private String insClass;
 	private String insPremiumType;
 	private String insType;	
+	private String insCoverageYear;
+	private String insPremium;
+	private String insCoverage;
+	private String insAct;
+	private String insActivationDate;
+	private String insCoverageDate;
+	private String insRemark;
 	
+	private String insTempPolicyNo;
+	private String insPolicyNo;
+	
+	private String cusType;
+	private String cuspPolicyDelivery;
+	private String cuspIdCardNo;
+	private String cuspMobile;
+	private String cuspTitle1;
+	private String cuspTitle2;
+	private String cuspFirstName;
+	private String cuspLastName;
+	private String cuspGender;
+	private String cuspBirthDate;
+	private String cuspAddress1;
+	private String cuspAddress2;
 	private String cuspProvince;
 	private String cuspDistrict;
 	private String cuspSubDistrict;
 	private String cuspZipcode;
+	private String cuspTelephone;
+	private String cuspSameAddressFlag;
+	private String cuspBillAddress1;
+	private String cuspBillAddress2;
 	private String cuspBillProvince;
 	private String cuspBillDistrict;
 	private String cuspBillSubDistrict;
 	private String cuspBillZipcode;
+	private String cuspBeneficiary;
+	private String cuspRefTelNo;
+	private String cuspLineID;
+	private String cuspEmail;
 	
+	private String cuscPolicyDelivery;
+	private String cuscTaxID;
+	private String cuscPhone;
+	private String cuscCompanyName;
+	private String cuscBranchNo;
+	private String cuscRegisterDate;
+	private String cuscFirstName;
+	private String cuscLastName;
+	private String cuscAddress1;
+	private String cuscAddress2;
 	private String cuscProvince;
 	private String cuscDistrict;
 	private String cuscSubDistrict;
 	private String cuscZipcode;
+	private String cuscMobile;
+	private String cuscSameAddressFlag;
+	private String cuscBillAddress1;
+	private String cuscBillAddress2;
 	private String cuscBillProvince;
 	private String cuscBillDistrict;
 	private String cuscBillSubDistrict;
 	private String cuscBillZipcode;
+	private String cuscEmail;
+
+	private String salesman;
+	private String createdBy;
+	private String createdDate;
+	private String updatedBy;
+	private String updatedDate;
+	private String updatedDateDisp;
+	private String cancelBy;
+	private String cancelDate;
+	private String cancelReason;
 	
 	private List<ComboValue> genderList;
 	private List<ComboValue> finLisingCompanyList;
@@ -64,12 +134,108 @@ public class NewCarInsuranceActivationForm extends CommonBaseForm {
 	
 	private String messageResult;
 
-	public String getCuspGender() {
-		return cuspGender;
+	public String getDocumentNo() {
+		return documentNo;
 	}
 
-	public void setCuspGender(String cuspGender) {
-		this.cuspGender = cuspGender;
+	public void setDocumentNo(String documentNo) {
+		this.documentNo = documentNo;
+	}
+
+	public String getDocumentStatus() {
+		return documentStatus;
+	}
+
+	public void setDocumentStatus(String documentStatus) {
+		this.documentStatus = documentStatus;
+	}
+
+	public String getVehBrand() {
+		return vehBrand;
+	}
+
+	public void setVehBrand(String vehBrand) {
+		this.vehBrand = vehBrand;
+	}
+
+	public String getVehVinNo() {
+		return vehVinNo;
+	}
+
+	public void setVehVinNo(String vehVinNo) {
+		this.vehVinNo = vehVinNo;
+	}
+
+	public String getVehSeries() {
+		return vehSeries;
+	}
+
+	public void setVehSeries(String vehSeries) {
+		this.vehSeries = vehSeries;
+	}
+
+	public String getVehModel() {
+		return vehModel;
+	}
+
+	public void setVehModel(String vehModel) {
+		this.vehModel = vehModel;
+	}
+
+	public String getVehColor() {
+		return vehColor;
+	}
+
+	public void setVehColor(String vehColor) {
+		this.vehColor = vehColor;
+	}
+
+	public String getVehYear() {
+		return vehYear;
+	}
+
+	public void setVehYear(String vehYear) {
+		this.vehYear = vehYear;
+	}
+
+	public String getVehRegNo() {
+		return vehRegNo;
+	}
+
+	public void setVehRegNo(String vehRegNo) {
+		this.vehRegNo = vehRegNo;
+	}
+
+	public String getVehEngine() {
+		return vehEngine;
+	}
+
+	public void setVehEngine(String vehEngine) {
+		this.vehEngine = vehEngine;
+	}
+
+	public String getVehWeight() {
+		return vehWeight;
+	}
+
+	public void setVehWeight(String vehWeight) {
+		this.vehWeight = vehWeight;
+	}
+
+	public String getVehCC() {
+		return vehCC;
+	}
+
+	public void setVehCC(String vehCC) {
+		this.vehCC = vehCC;
+	}
+
+	public String getVehType() {
+		return vehType;
+	}
+
+	public void setVehType(String vehType) {
+		this.vehType = vehType;
 	}
 
 	public String getFinLisingCompany() {
@@ -86,6 +252,22 @@ public class NewCarInsuranceActivationForm extends CommonBaseForm {
 
 	public void setFinTypePurchase(String finTypePurchase) {
 		this.finTypePurchase = finTypePurchase;
+	}
+
+	public String getInsChoice() {
+		return insChoice;
+	}
+
+	public void setInsChoice(String insChoice) {
+		this.insChoice = insChoice;
+	}
+
+	public String getInsCompany() {
+		return insCompany;
+	}
+
+	public void setInsCompany(String insCompany) {
+		this.insCompany = insCompany;
 	}
 
 	public String getInsClass() {
@@ -110,6 +292,174 @@ public class NewCarInsuranceActivationForm extends CommonBaseForm {
 
 	public void setInsType(String insType) {
 		this.insType = insType;
+	}
+
+	public String getInsCoverageYear() {
+		return insCoverageYear;
+	}
+
+	public void setInsCoverageYear(String insCoverageYear) {
+		this.insCoverageYear = insCoverageYear;
+	}
+
+	public String getInsPremium() {
+		return insPremium;
+	}
+
+	public void setInsPremium(String insPremium) {
+		this.insPremium = insPremium;
+	}
+
+	public String getInsCoverage() {
+		return insCoverage;
+	}
+
+	public void setInsCoverage(String insCoverage) {
+		this.insCoverage = insCoverage;
+	}
+
+	public String getInsAct() {
+		return insAct;
+	}
+
+	public void setInsAct(String insAct) {
+		this.insAct = insAct;
+	}
+
+	public String getInsActivationDate() {
+		return insActivationDate;
+	}
+
+	public void setInsActivationDate(String insActivationDate) {
+		this.insActivationDate = insActivationDate;
+	}
+
+	public String getInsCoverageDate() {
+		return insCoverageDate;
+	}
+
+	public void setInsCoverageDate(String insCoverageDate) {
+		this.insCoverageDate = insCoverageDate;
+	}
+
+	public String getInsRemark() {
+		return insRemark;
+	}
+
+	public void setInsRemark(String insRemark) {
+		this.insRemark = insRemark;
+	}
+
+	public String getInsTempPolicyNo() {
+		return insTempPolicyNo;
+	}
+
+	public void setInsTempPolicyNo(String insTempPolicyNo) {
+		this.insTempPolicyNo = insTempPolicyNo;
+	}
+
+	public String getInsPolicyNo() {
+		return insPolicyNo;
+	}
+
+	public void setInsPolicyNo(String insPolicyNo) {
+		this.insPolicyNo = insPolicyNo;
+	}
+
+	public String getCusType() {
+		return cusType;
+	}
+
+	public void setCusType(String cusType) {
+		this.cusType = cusType;
+	}
+
+	public String getCuspPolicyDelivery() {
+		return cuspPolicyDelivery;
+	}
+
+	public void setCuspPolicyDelivery(String cuspPolicyDelivery) {
+		this.cuspPolicyDelivery = cuspPolicyDelivery;
+	}
+
+	public String getCuspIdCardNo() {
+		return cuspIdCardNo;
+	}
+
+	public void setCuspIdCardNo(String cuspIdCardNo) {
+		this.cuspIdCardNo = cuspIdCardNo;
+	}
+
+	public String getCuspMobile() {
+		return cuspMobile;
+	}
+
+	public void setCuspMobile(String cuspMobile) {
+		this.cuspMobile = cuspMobile;
+	}
+
+	public String getCuspTitle1() {
+		return cuspTitle1;
+	}
+
+	public void setCuspTitle1(String cuspTitle1) {
+		this.cuspTitle1 = cuspTitle1;
+	}
+
+	public String getCuspTitle2() {
+		return cuspTitle2;
+	}
+
+	public void setCuspTitle2(String cuspTitle2) {
+		this.cuspTitle2 = cuspTitle2;
+	}
+
+	public String getCuspFirstName() {
+		return cuspFirstName;
+	}
+
+	public void setCuspFirstName(String cuspFirstName) {
+		this.cuspFirstName = cuspFirstName;
+	}
+
+	public String getCuspLastName() {
+		return cuspLastName;
+	}
+
+	public void setCuspLastName(String cuspLastName) {
+		this.cuspLastName = cuspLastName;
+	}
+
+	public String getCuspGender() {
+		return cuspGender;
+	}
+
+	public void setCuspGender(String cuspGender) {
+		this.cuspGender = cuspGender;
+	}
+
+	public String getCuspBirthDate() {
+		return cuspBirthDate;
+	}
+
+	public void setCuspBirthDate(String cuspBirthDate) {
+		this.cuspBirthDate = cuspBirthDate;
+	}
+
+	public String getCuspAddress1() {
+		return cuspAddress1;
+	}
+
+	public void setCuspAddress1(String cuspAddress1) {
+		this.cuspAddress1 = cuspAddress1;
+	}
+
+	public String getCuspAddress2() {
+		return cuspAddress2;
+	}
+
+	public void setCuspAddress2(String cuspAddress2) {
+		this.cuspAddress2 = cuspAddress2;
 	}
 
 	public String getCuspProvince() {
@@ -144,6 +494,38 @@ public class NewCarInsuranceActivationForm extends CommonBaseForm {
 		this.cuspZipcode = cuspZipcode;
 	}
 
+	public String getCuspTelephone() {
+		return cuspTelephone;
+	}
+
+	public void setCuspTelephone(String cuspTelephone) {
+		this.cuspTelephone = cuspTelephone;
+	}
+
+	public String getCuspSameAddressFlag() {
+		return cuspSameAddressFlag;
+	}
+
+	public void setCuspSameAddressFlag(String cuspSameAddressFlag) {
+		this.cuspSameAddressFlag = cuspSameAddressFlag;
+	}
+
+	public String getCuspBillAddress1() {
+		return cuspBillAddress1;
+	}
+
+	public void setCuspBillAddress1(String cuspBillAddress1) {
+		this.cuspBillAddress1 = cuspBillAddress1;
+	}
+
+	public String getCuspBillAddress2() {
+		return cuspBillAddress2;
+	}
+
+	public void setCuspBillAddress2(String cuspBillAddress2) {
+		this.cuspBillAddress2 = cuspBillAddress2;
+	}
+
 	public String getCuspBillProvince() {
 		return cuspBillProvince;
 	}
@@ -174,6 +556,118 @@ public class NewCarInsuranceActivationForm extends CommonBaseForm {
 
 	public void setCuspBillZipcode(String cuspBillZipcode) {
 		this.cuspBillZipcode = cuspBillZipcode;
+	}
+
+	public String getCuspBeneficiary() {
+		return cuspBeneficiary;
+	}
+
+	public void setCuspBeneficiary(String cuspBeneficiary) {
+		this.cuspBeneficiary = cuspBeneficiary;
+	}
+
+	public String getCuspRefTelNo() {
+		return cuspRefTelNo;
+	}
+
+	public void setCuspRefTelNo(String cuspRefTelNo) {
+		this.cuspRefTelNo = cuspRefTelNo;
+	}
+
+	public String getCuspLineID() {
+		return cuspLineID;
+	}
+
+	public void setCuspLineID(String cuspLineID) {
+		this.cuspLineID = cuspLineID;
+	}
+
+	public String getCuspEmail() {
+		return cuspEmail;
+	}
+
+	public void setCuspEmail(String cuspEmail) {
+		this.cuspEmail = cuspEmail;
+	}
+
+	public String getCuscPolicyDelivery() {
+		return cuscPolicyDelivery;
+	}
+
+	public void setCuscPolicyDelivery(String cuscPolicyDelivery) {
+		this.cuscPolicyDelivery = cuscPolicyDelivery;
+	}
+
+	public String getCuscTaxID() {
+		return cuscTaxID;
+	}
+
+	public void setCuscTaxID(String cuscTaxID) {
+		this.cuscTaxID = cuscTaxID;
+	}
+
+	public String getCuscPhone() {
+		return cuscPhone;
+	}
+
+	public void setCuscPhone(String cuscPhone) {
+		this.cuscPhone = cuscPhone;
+	}
+
+	public String getCuscCompanyName() {
+		return cuscCompanyName;
+	}
+
+	public void setCuscCompanyName(String cuscCompanyName) {
+		this.cuscCompanyName = cuscCompanyName;
+	}
+
+	public String getCuscBranchNo() {
+		return cuscBranchNo;
+	}
+
+	public void setCuscBranchNo(String cuscBranchNo) {
+		this.cuscBranchNo = cuscBranchNo;
+	}
+
+	public String getCuscRegisterDate() {
+		return cuscRegisterDate;
+	}
+
+	public void setCuscRegisterDate(String cuscRegisterDate) {
+		this.cuscRegisterDate = cuscRegisterDate;
+	}
+
+	public String getCuscFirstName() {
+		return cuscFirstName;
+	}
+
+	public void setCuscFirstName(String cuscFirstName) {
+		this.cuscFirstName = cuscFirstName;
+	}
+
+	public String getCuscLastName() {
+		return cuscLastName;
+	}
+
+	public void setCuscLastName(String cuscLastName) {
+		this.cuscLastName = cuscLastName;
+	}
+
+	public String getCuscAddress1() {
+		return cuscAddress1;
+	}
+
+	public void setCuscAddress1(String cuscAddress1) {
+		this.cuscAddress1 = cuscAddress1;
+	}
+
+	public String getCuscAddress2() {
+		return cuscAddress2;
+	}
+
+	public void setCuscAddress2(String cuscAddress2) {
+		this.cuscAddress2 = cuscAddress2;
 	}
 
 	public String getCuscProvince() {
@@ -208,6 +702,38 @@ public class NewCarInsuranceActivationForm extends CommonBaseForm {
 		this.cuscZipcode = cuscZipcode;
 	}
 
+	public String getCuscMobile() {
+		return cuscMobile;
+	}
+
+	public void setCuscMobile(String cuscMobile) {
+		this.cuscMobile = cuscMobile;
+	}
+
+	public String getCuscSameAddressFlag() {
+		return cuscSameAddressFlag;
+	}
+
+	public void setCuscSameAddressFlag(String cuscSameAddressFlag) {
+		this.cuscSameAddressFlag = cuscSameAddressFlag;
+	}
+
+	public String getCuscBillAddress1() {
+		return cuscBillAddress1;
+	}
+
+	public void setCuscBillAddress1(String cuscBillAddress1) {
+		this.cuscBillAddress1 = cuscBillAddress1;
+	}
+
+	public String getCuscBillAddress2() {
+		return cuscBillAddress2;
+	}
+
+	public void setCuscBillAddress2(String cuscBillAddress2) {
+		this.cuscBillAddress2 = cuscBillAddress2;
+	}
+
 	public String getCuscBillProvince() {
 		return cuscBillProvince;
 	}
@@ -238,6 +764,86 @@ public class NewCarInsuranceActivationForm extends CommonBaseForm {
 
 	public void setCuscBillZipcode(String cuscBillZipcode) {
 		this.cuscBillZipcode = cuscBillZipcode;
+	}
+
+	public String getCuscEmail() {
+		return cuscEmail;
+	}
+
+	public void setCuscEmail(String cuscEmail) {
+		this.cuscEmail = cuscEmail;
+	}
+
+	public String getSalesman() {
+		return salesman;
+	}
+
+	public void setSalesman(String salesman) {
+		this.salesman = salesman;
+	}
+
+	public String getCreatedBy() {
+		return createdBy;
+	}
+
+	public void setCreatedBy(String createdBy) {
+		this.createdBy = createdBy;
+	}
+
+	public String getCreatedDate() {
+		return createdDate;
+	}
+
+	public void setCreatedDate(String createdDate) {
+		this.createdDate = createdDate;
+	}
+
+	public String getUpdatedBy() {
+		return updatedBy;
+	}
+
+	public void setUpdatedBy(String updatedBy) {
+		this.updatedBy = updatedBy;
+	}
+
+	public String getUpdatedDate() {
+		return updatedDate;
+	}
+
+	public void setUpdatedDate(String updatedDate) {
+		this.updatedDate = updatedDate;
+	}
+
+	public String getUpdatedDateDisp() {
+		return updatedDateDisp;
+	}
+
+	public void setUpdatedDateDisp(String updatedDateDisp) {
+		this.updatedDateDisp = updatedDateDisp;
+	}
+
+	public String getCancelBy() {
+		return cancelBy;
+	}
+
+	public void setCancelBy(String cancelBy) {
+		this.cancelBy = cancelBy;
+	}
+
+	public String getCancelDate() {
+		return cancelDate;
+	}
+
+	public void setCancelDate(String cancelDate) {
+		this.cancelDate = cancelDate;
+	}
+
+	public String getCancelReason() {
+		return cancelReason;
+	}
+
+	public void setCancelReason(String cancelReason) {
+		this.cancelReason = cancelReason;
 	}
 
 	public List<ComboValue> getGenderList() {
