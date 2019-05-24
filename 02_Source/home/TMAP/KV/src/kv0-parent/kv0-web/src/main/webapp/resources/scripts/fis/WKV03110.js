@@ -30,7 +30,7 @@
 					"vehVinNo" : $(this).attr("vinNo")				
 					};			
 			
-			FISLib.PageOpen(_rootPath + '/NewCarInsurance/ActivateRedPlant', "WKV03120", jsonParams);
+			FISLib.PageOpen(_rootPath + '/NewCarInsurance/ActivateRedPlant', "WKV03120", jsonParams,'POST');
 		});
 		
 		validateDate(document.getElementById('deliveryDateFrom'));

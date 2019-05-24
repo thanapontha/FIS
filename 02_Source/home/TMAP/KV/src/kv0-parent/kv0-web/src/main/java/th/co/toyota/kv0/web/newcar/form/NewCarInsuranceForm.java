@@ -1,7 +1,6 @@
 package th.co.toyota.kv0.web.newcar.form;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
@@ -13,93 +12,220 @@ import th.co.toyota.kv0.util.ComboValue;
 
 public class NewCarInsuranceForm extends CommonBaseForm {
 
-	private String vehiclePlantSearch;
-	private String includeExpiredData;
-
-	private String vehiclePlant;
-	private String vehicleModel;
-	private String tcFrom;
-	private String tcTo;
-
-	private List<ComboValue> vehicleModelList;
-	private List<ComboValue> vehiclePlantList;
+	private String vinNo;
+	private String series;
+	private String model;
+	private String ddmsStatus;
+	private String typeOfPurchase;
+	private String personalId;
+	private String firstName;
+	private String lastName;
+	private String companyName;
+	private String documentStatus;
+	private String insuranceCompany;
+	private String insuranceType;
+	private String premiumType;
+	private String insuranceClass;
+	private String createDateFrom;
+	private String createDateTo;
+	private String deliveryDateFrom;
+	private String deliveryDateTo;
+	private String activationDateFrom;
+	private String activationDateTo;
+	
+	private List<ComboValue> seriesList;
+	private List<ComboValue> modelList;
+	private List<ComboValue> ddmsStatusList;
+	private List<ComboValue> typeOfPurchaseList;
+	private List<ComboValue> documentStatusList;
+	private List<ComboValue> insuranceCompanyList;
+	private List<ComboValue> insuranceTypeList;
+	private List<ComboValue> premiumTypeList;
+	private List<ComboValue> insuranceClassList;
 	
 	private String messageResult;
 	
-	public List<ComboValue> getVehiclePlantList() {
-		return vehiclePlantList;
+	public String getVinNo() {
+		return vinNo;
 	}
-
-	public void setVehiclePlantList(List<ComboValue> vehiclePlantList) {
-		this.vehiclePlantList = vehiclePlantList;
+	public void setVinNo(String vinNo) {
+		this.vinNo = vinNo;
 	}
-
-
-	public String getVehicleModel() {
-		return vehicleModel;
+	public String getSeries() {
+		return series;
 	}
-
-	public void setVehicleModel(String vehicleModel) {
-		this.vehicleModel = vehicleModel;
+	public void setSeries(String series) {
+		this.series = series;
 	}
-
-	public String getTcFrom() {
-		return tcFrom;
+	public String getModel() {
+		return model;
 	}
-
-	public void setTcFrom(String tcFrom) {
-		this.tcFrom = tcFrom;
+	public void setModel(String model) {
+		this.model = model;
 	}
-
-	public String getTcTo() {
-		return tcTo;
+	public String getDdmsStatus() {
+		return ddmsStatus;
 	}
-
-	public void setTcTo(String tcTo) {
-		this.tcTo = tcTo;
+	public void setDdmsStatus(String ddmsStatus) {
+		this.ddmsStatus = ddmsStatus;
 	}
-
-	public String getVehiclePlantSearch() {
-		return vehiclePlantSearch;
+	public String getTypeOfPurchase() {
+		return typeOfPurchase;
 	}
-
-	public void setVehiclePlantSearch(String vehiclePlantSearch) {
-		this.vehiclePlantSearch = vehiclePlantSearch;
+	public void setTypeOfPurchase(String typeOfPurchase) {
+		this.typeOfPurchase = typeOfPurchase;
 	}
-
-	public String getVehiclePlant() {
-		return vehiclePlant;
+	public String getPersonalId() {
+		return personalId;
 	}
-
-	public void setVehiclePlant(String vehiclePlant) {
-		this.vehiclePlant = vehiclePlant;
+	public void setPersonalId(String personalId) {
+		this.personalId = personalId;
 	}
-
-	public List<ComboValue> getVehicleModelList() {
-		return vehicleModelList;
+	public String getFirstName() {
+		return firstName;
 	}
-
-	public void setVehicleModelList(List<ComboValue> vehicleModelList) {
-		this.vehicleModelList = vehicleModelList;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
-
-	public String getIncludeExpiredData() {
-		return includeExpiredData;
+	public String getLastName() {
+		return lastName;
 	}
-
-	public void setIncludeExpiredData(String includeExpiredData) {
-		this.includeExpiredData = includeExpiredData;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
-
+	public String getCompanyName() {
+		return companyName;
+	}
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
+	}
+	public String getDocumentStatus() {
+		return documentStatus;
+	}
+	public void setDocumentStatus(String documentStatus) {
+		this.documentStatus = documentStatus;
+	}
+	public String getInsuranceCompany() {
+		return insuranceCompany;
+	}
+	public void setInsuranceCompany(String insuranceCompany) {
+		this.insuranceCompany = insuranceCompany;
+	}
+	public String getInsuranceType() {
+		return insuranceType;
+	}
+	public void setInsuranceType(String insuranceType) {
+		this.insuranceType = insuranceType;
+	}
+	public String getPremiumType() {
+		return premiumType;
+	}
+	public void setPremiumType(String premiumType) {
+		this.premiumType = premiumType;
+	}
+	public String getInsuranceClass() {
+		return insuranceClass;
+	}
+	public void setInsuranceClass(String insuranceClass) {
+		this.insuranceClass = insuranceClass;
+	}
+	public String getCreateDateFrom() {
+		return createDateFrom;
+	}
+	public void setCreateDateFrom(String createDateFrom) {
+		this.createDateFrom = createDateFrom;
+	}
+	public String getCreateDateTo() {
+		return createDateTo;
+	}
+	public void setCreateDateTo(String createDateTo) {
+		this.createDateTo = createDateTo;
+	}
+	public String getDeliveryDateFrom() {
+		return deliveryDateFrom;
+	}
+	public void setDeliveryDateFrom(String deliveryDateFrom) {
+		this.deliveryDateFrom = deliveryDateFrom;
+	}
+	public String getDeliveryDateTo() {
+		return deliveryDateTo;
+	}
+	public void setDeliveryDateTo(String deliveryDateTo) {
+		this.deliveryDateTo = deliveryDateTo;
+	}
+	public String getActivationDateFrom() {
+		return activationDateFrom;
+	}
+	public void setActivationDateFrom(String activationDateFrom) {
+		this.activationDateFrom = activationDateFrom;
+	}
+	public String getActivationDateTo() {
+		return activationDateTo;
+	}
+	public void setActivationDateTo(String activationDateTo) {
+		this.activationDateTo = activationDateTo;
+	}
+	public List<ComboValue> getSeriesList() {
+		return seriesList;
+	}
+	public void setSeriesList(List<ComboValue> seriesList) {
+		this.seriesList = seriesList;
+	}
+	public List<ComboValue> getModelList() {
+		return modelList;
+	}
+	public void setModelList(List<ComboValue> modelList) {
+		this.modelList = modelList;
+	}
+	public List<ComboValue> getDdmsStatusList() {
+		return ddmsStatusList;
+	}
+	public void setDdmsStatusList(List<ComboValue> ddmsStatusList) {
+		this.ddmsStatusList = ddmsStatusList;
+	}
+	public List<ComboValue> getTypeOfPurchaseList() {
+		return typeOfPurchaseList;
+	}
+	public void setTypeOfPurchaseList(List<ComboValue> typeOfPurchaseList) {
+		this.typeOfPurchaseList = typeOfPurchaseList;
+	}
+	public List<ComboValue> getDocumentStatusList() {
+		return documentStatusList;
+	}
+	public void setDocumentStatusList(List<ComboValue> documentStatusList) {
+		this.documentStatusList = documentStatusList;
+	}
+	public List<ComboValue> getInsuranceCompanyList() {
+		return insuranceCompanyList;
+	}
+	public void setInsuranceCompanyList(List<ComboValue> insuranceCompanyList) {
+		this.insuranceCompanyList = insuranceCompanyList;
+	}
+	public List<ComboValue> getInsuranceTypeList() {
+		return insuranceTypeList;
+	}
+	public void setInsuranceTypeList(List<ComboValue> insuranceTypeList) {
+		this.insuranceTypeList = insuranceTypeList;
+	}
+	public List<ComboValue> getPremiumTypeList() {
+		return premiumTypeList;
+	}
+	public void setPremiumTypeList(List<ComboValue> premiumTypeList) {
+		this.premiumTypeList = premiumTypeList;
+	}
+	public List<ComboValue> getInsuranceClassList() {
+		return insuranceClassList;
+	}
+	public void setInsuranceClassList(List<ComboValue> insuranceClassList) {
+		this.insuranceClassList = insuranceClassList;
+	}
 	public String getMessageResult() {
 		return messageResult;
 	}
-
 	public void setMessageResult(String messageResult) {
 		this.messageResult = messageResult;
 	}
 	
-
 	public List<String> validate(MessageSource messagesource, Locale locale, String action, Payload payload) throws Exception {
 		List<String> errors = new ArrayList<String>();
 		/*try{

@@ -369,12 +369,16 @@
 				checkedCheckboxOrRadio(dataForm.cusType, dataForm.insChoice, dataForm.cuspPolicyDelivery, dataForm.cuscPolicyDelivery, dataForm.cuspSameAddressFlag, dataForm.cuscSameAddressFlag);
 			}else{
 				lastAction = "add";
+				$("#vehVinNoDisp").attr("disabled",false);
+				$("#vehVinNoDisp").focus();
+				
 				$("input:radio[name='cusType'][value='P']").attr("checked",true);
 				$("input:radio[name='cusType'][value='P']").click();
 				
 				$("input:radio[name='cuspPolicyDelivery'][value='D']").attr("checked",true);
 				$("input:radio[name='cuscPolicyDelivery'][value='D']").attr("checked",true);
 			}
+			
 			$.each(dataForm, function(item, value){
 	            $("#"+item).val(value);
 	        });  

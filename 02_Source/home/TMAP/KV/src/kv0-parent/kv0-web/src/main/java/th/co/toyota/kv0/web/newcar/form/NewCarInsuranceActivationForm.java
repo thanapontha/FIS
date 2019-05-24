@@ -1029,6 +1029,14 @@ public class NewCarInsuranceActivationForm extends CommonBaseForm {
 	public void setMessageResult(String messageResult) {
 		this.messageResult = messageResult;
 	}
+	
+	public String getInsTempPolicyNoDisp() {
+		return this.getInsTempPolicyNo();
+	}
+	
+	public String getInsPolicyNoDisp() {
+		return this.getInsPolicyNo();
+	}
 
 	public List<String> validate(MessageSource messagesource, Locale locale, String action, Payload payload) throws Exception {
 		List<String> errors = new ArrayList<String>();

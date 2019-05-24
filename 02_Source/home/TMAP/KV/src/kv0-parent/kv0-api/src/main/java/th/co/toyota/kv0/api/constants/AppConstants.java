@@ -146,6 +146,8 @@ public final class AppConstants {
 	public static final String SYS_SUB_CATEGORY_INS_CLASS = "INS_CLASS";
 	public static final String SYS_SUB_CATEGORY_INS_PREMIUM_TYPE = "INS_PREMIUM_TYPE";
 	public static final String SYS_SUB_CATEGORY_INS_TYPE = "INS_TYPE";
+	public static final String SYS_SUB_CATEGORY_DDMS_STATUS = "DDMS_STATUS";
+	public static final String SYS_SUB_CATEGORY_DOCUMENT_STATUS = "DOCUMENT_STATUS";
 	
 	public static final String SYSTEM_NAME = "SYSTEM";
 	public static final String SYS_CD_MANAGER = "MANAGER";

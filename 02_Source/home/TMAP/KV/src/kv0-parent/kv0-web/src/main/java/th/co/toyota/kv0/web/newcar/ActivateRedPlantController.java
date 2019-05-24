@@ -56,7 +56,7 @@ public class ActivateRedPlantController extends CommonBaseController {
 	@Autowired
 	protected CommonWebService commonService;
 
-	@RequestMapping(method = RequestMethod.POST)
+	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView initial(HttpServletRequest request, NewCarInsuranceActivationForm form) {
 		ModelAndView mv = new ModelAndView(VIEW_NAME);
 		Payload payload = new XmlPayload();
@@ -72,8 +72,40 @@ public class ActivateRedPlantController extends CommonBaseController {
 			 
 			service.loadCombobox(userInfo, form);
 			
+			ObjectMapper mapper = new ObjectMapper();
+			mv.addObject("jsonForm", mapper.writeValueAsString(form));
+		}catch (CommonErrorException e){
+			log.error(ExceptionUtils.getStackTrace(e));
+			status = ServiceStatus.NG;
+			payload.addErrorMessage(messageSource.getMessage(e.getMessageCode(), e.getMessageArg(), Locale.getDefault()));
+		} catch (Exception e) {
+			log.error(ExceptionUtils.getStackTrace(e));
+			status = ServiceStatus.NG;
+			payload.addErrorMessage(messageSource.getMessage(CST30000Messages.ERROR_UNDEFINED_ERROR, new String[] { e.getMessage() },
+					RequestContextUtils.getLocale(request)));
+		}
+		payload.setStatus(status);
+		return mv;
+	}
+	
+	@RequestMapping(method = RequestMethod.POST)
+	public ModelAndView initial2(HttpServletRequest request, NewCarInsuranceActivationForm form) {
+		ModelAndView mv = new ModelAndView(VIEW_NAME);
+		Payload payload = new XmlPayload();
+		ServiceStatus status = ServiceStatus.OK;
+		try {			
+			payload = populatePayloadForDisplay(VIEW_NAME, payload, RequestContextUtils.getLocale(request));
+			CSC22110UserInfo userInfo = getUserInSession(request);
+
+			mv.addObject(AppConstants.MV_USER_COMPANY, this.getUserCompany(userInfo));
+			mv.addObject(AppConstants.MV_USER, userInfo);
+			mv.addObject(AppConstants.MV_FORM, form);
+			mv.addObject(AppConstants.MV_PAYLOAD, payload);
+			 
+			service.loadCombobox(userInfo, form);
+			
 			service.searchObject(userInfo, form);
-			form.setInsCoverageYear("3");
+			
 			
 			ObjectMapper mapper = new ObjectMapper();
 			mv.addObject("jsonForm", mapper.writeValueAsString(form));
@@ -384,45 +416,42 @@ public class ActivateRedPlantController extends CommonBaseController {
 		return mv;
 	}
 	
-	/*
-	@RequestMapping(value = "/search", method = RequestMethod.POST, produces = "application/json")
-	public @ResponseBody Object searchData(CKV04110Form form, HttpServletRequest request, RequestContext context) {
-		log.info("Searching VehiclePlant");
-
-		Payload payload = new XmlPayload();
-		ServiceStatus status = ServiceStatus.OK;
-		try {
-			Set<ConstraintViolation<CKV04110Form>> errors = validator.validate(form);
-			List<String> errorList = form.validate(messageSource, RequestContextUtils.getLocale(request), AppConstants.ACTION_SEARCH, payload, tableMeataData);
-
-			if ((!errors.isEmpty()) || (!errorList.isEmpty())) {
-				errorList.addAll(processErrorMessageFromValidator(errors.toArray(), RequestContextUtils.getLocale(request), new CKV04110Form()));
-				status = ServiceStatus.NG;
-				payload.addErrorMessages(errorList);
-			}else{			
-				payload = populatePayloadForDisplay(VIEW_NAME, payload, RequestContextUtils.getLocale(request));
-				boolean isFound = service.searchAllData(form, payload, request);
-				form.setMessageResult(request.getParameter("messageResult"));
-				if (!isFound && Strings.isNullOrEmpty(form.getMessageResult())) {
-					status = ServiceStatus.NG;
-					payload.addErrorMessage(messageSource.getMessage(CST30000Messages.ERROR_MESSAGE_DATA_NOT_FOUND, new String[] {},
-							Locale.getDefault()));
-				}
-			}
-		}catch (CommonErrorException e){
-			log.error(ExceptionUtils.getStackTrace(e));
-			status = ServiceStatus.NG;
-			payload.addErrorMessage(messageSource.getMessage(e.getMessageCode(), e.getMessageArg(), Locale.getDefault()));
-		}catch (Exception e) {
-			log.error(ExceptionUtils.getStackTrace(e));
-			status = ServiceStatus.NG;
-			payload.addErrorMessage(messageSource.getMessage(CST30000Messages.ERROR_UNDEFINED_ERROR, new String[] { e.getMessage() },
-					RequestContextUtils.getLocale(request)));
-		}
-		payload.setStatus(status);
-		return payload;
-	}
-
+//	@RequestMapping(value = "/search", method = RequestMethod.POST)
+//	public ModelAndView search(HttpServletRequest request, NewCarInsuranceActivationForm form) {
+//		ModelAndView mv = new ModelAndView(VIEW_NAME);
+//		Payload payload = new XmlPayload();
+//		ServiceStatus status = ServiceStatus.OK;
+//		try {			
+//			payload = populatePayloadForDisplay(VIEW_NAME, payload, RequestContextUtils.getLocale(request));
+//			CSC22110UserInfo userInfo = getUserInSession(request);
+//
+//			mv.addObject(AppConstants.MV_USER_COMPANY, this.getUserCompany(userInfo));
+//			mv.addObject(AppConstants.MV_USER, userInfo);
+//			mv.addObject(AppConstants.MV_FORM, form);
+//			mv.addObject(AppConstants.MV_PAYLOAD, payload);
+//			 
+//			service.loadCombobox(userInfo, form);
+//			
+//			service.searchObject(userInfo, form);
+//			
+//			
+//			ObjectMapper mapper = new ObjectMapper();
+//			mv.addObject("jsonForm", mapper.writeValueAsString(form));
+//		}catch (CommonErrorException e){
+//			log.error(ExceptionUtils.getStackTrace(e));
+//			status = ServiceStatus.NG;
+//			payload.addErrorMessage(messageSource.getMessage(e.getMessageCode(), e.getMessageArg(), Locale.getDefault()));
+//		} catch (Exception e) {
+//			log.error(ExceptionUtils.getStackTrace(e));
+//			status = ServiceStatus.NG;
+//			payload.addErrorMessage(messageSource.getMessage(CST30000Messages.ERROR_UNDEFINED_ERROR, new String[] { e.getMessage() },
+//					RequestContextUtils.getLocale(request)));
+//		}
+//		payload.setStatus(status);
+//		return mv;
+//	}
+	
+/*
 	@RequestMapping(value = "/delete", method = RequestMethod.POST, produces = "application/json")
 	public @ResponseBody Object deleteObject(@RequestParam("dataList[]") String[] objects, CKV04110Form activeform, HttpServletRequest request) {
 		log.info("Delete VehiclePlantMaster");

@@ -175,6 +175,9 @@ public class CommonWebRepositoryImpl implements CommonWebRepository {
 		List<ComboValue> comboLs = new ArrayList<>();
 		StringBuilder sql = new StringBuilder();
 		sql.append("SELECT DISTINCT ").append(selectField[0]).append(" AS ST_VALUE, ").append(selectField[1]).append(" AS ST_LABEL ");
+		if (!Strings.isNullOrEmpty(orderBy)) {
+			sql.append(" ,").append(orderBy.toUpperCase().replaceAll("ASC", "").replaceAll("DESC", ""));
+		}
 		sql.append(" FROM ").append(tableName).append(" M ");
 		sql.append(" WHERE   1 = 1 ");
 		if (!Strings.isNullOrEmpty(criteria)) {

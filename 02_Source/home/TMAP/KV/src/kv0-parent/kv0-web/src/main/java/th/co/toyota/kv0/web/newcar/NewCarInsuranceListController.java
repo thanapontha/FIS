@@ -1,6 +1,5 @@
 package th.co.toyota.kv0.web.newcar;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Set;
@@ -68,18 +67,15 @@ public class NewCarInsuranceListController extends CommonBaseController {
 			mv.addObject(AppConstants.MV_FORM, form);
 			mv.addObject(AppConstants.MV_PAYLOAD, payload);
 			
-//			int rowsPerPage = commonRepository.getRowPerPage(VIEW_NAME);
-//			form.setRowsPerPage(rowsPerPage);
-			form.setRowsPerPage(10);
+			int rowsPerPage = commonRepository.getRowPerPage(VIEW_NAME);
+			form.setRowsPerPage(rowsPerPage);
 			
-			/*service.loadCombobox(userInfo, form);*/
-			
+			service.loadCombobox(userInfo, form);
 		
-			
-//		}catch (CommonErrorException e){
-//			log.error(ExceptionUtils.getStackTrace(e));
-//			status = ServiceStatus.NG;
-//			payload.addErrorMessage(messageSource.getMessage(e.getMessageCode(), e.getMessageArg(), Locale.getDefault()));
+		}catch (CommonErrorException e){
+			log.error(ExceptionUtils.getStackTrace(e));
+			status = ServiceStatus.NG;
+			payload.addErrorMessage(messageSource.getMessage(e.getMessageCode(), e.getMessageArg(), Locale.getDefault()));
 		} catch (Exception e) {
 			log.error(ExceptionUtils.getStackTrace(e));
 			status = ServiceStatus.NG;

@@ -325,11 +325,11 @@ jQuery.fn.serializeObject = function() {
  * 		jsonParams	= Parameter for open page
  * 					  Ex. { "Key1" : "Value", "Key2" : "Value" }
  */
-FISLib.PageOpen = function(url, windowName, jsonParams) {
+FISLib.PageOpen = function(url, windowName, jsonParams, method) {
 	// Create Form
 	var mapForm = document.createElement("form");
 	mapForm.target = windowName;
-    mapForm.method = "POST";
+    mapForm.method = method;
     mapForm.action = url;
     
     // Create input Element

@@ -1030,7 +1030,7 @@ $('#openLogByAppId').live('click',function(e){
 			"dateTo" : $(this).attr("dateTo")==""?" ":$(this).attr("dateTo")					
 			};			
 	
-	FISLib.PageOpen(_rootPath + '/common/logMonitoring', "WST33010", jsonParams);
+	FISLib.PageOpen(_rootPath + '/common/logMonitoring', "WST33010", jsonParams, 'POST');
 });
 
 $.fn.formatNumberWithcomma = function(){ 
